@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Komponenty</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Komponenty (Aplikace) </h3>
+
+	
+	<p class="divText" >
+	Aplikace v Django jsou komponenty, ze kterých se skládá celkový projekt. Není myšleno aplikace jako je např. mobilní aplikace. 
+	V souboru <b>settings.py</b>, v <b class="ks">INSTALLED_APPS</b> již jsou k dispozici výchozí komponenty. Sem potom můžeme vkládat další komponenty od třetích stran nebo svoje vlastní komponenty. 
+ 
+	</p>
+
+	<h4 class = "podKapitola">Komponenta/aplikace admin</h4>
+
+
+	<p class="divText">
+	První aplikace je admin. Na webové stránce si můžeme zobrazit admin pomocí adresy
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+	127.0.0.1:8000/admin
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Zobrazí se nám formulář pro přihlášení na administrátorský učet.
+Pro používaní administrátorských práv musíme vytvořit nový účet v terminálu ve virtuálním prostředí našeho projektu.
+
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+	python manage.py migrate <br>
+	python manage.py createsuperuser
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Zvolíme si uživatelské jméno, necháme e-mail prázdný a vybereme si heslo k účtu. 
+	Máme vytvořený nový účet, ke kterému se můžeme přihlásit přes webovou stránku. Tento účet je již automaticky uložen uvnitř databáze. Uvnitř tohoto účtu můžeme např. přidávat a mazat další uživatele. <br>
+	Tento celý proces byl možný kvůli komponentům <b class="ks">admin</b> a <b class="ks">auth</b> v <b class="ks">INSTALLED_APPS</b>. 
+ 
+	</p>
+
+
+	<h4 class = "podKapitola">Vlastní aplikace/komponenta</h4>
+
+	<p class="divText">
+		V terminálu ve virtuálním prostředí, tam kde se nachází soubor <b>manage.py</b>, vytvoříme vlastní komponenty. Komponeny se budou jmenovat např. 
+		<b class="barvaPromenne">zbozi</b>, 
+		<b class="barvaPromenne">profil</b>, 
+		<b class="barvaPromenne">kosik</b>
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python manage.py startapp zbozi <br>
+		python manage.py startapp profil <br>
+		python manage.py startapp kosik
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	V editoru budeme mít k dispozici nové soubory, které představují naše komponenty. 
+Na začátku budeme pracovat pouze s jednou komponentou, např. zboží. <br>
+Uvnitř zboží se nachází soubory – <b>init.py, admin.py, models.py, tests.py, views.py</b> <br>
+Otevřeme soubor <b>models.py</b> <br>
+Abychom mohli mít nějaké zboží, tak si ho musíme vytvořit. <br>
+Vytvoříme tedy třídu <b class="barvaPromenne">Zbozi</b>. Zbozi bude mít nějaké vlastnosti, např. název, popis a cenu. <br>
+Tyto data musíme uložit do databáze, pomocí klíčového slova <b class="ks">models</b>. Budeme to ukládat jako např. textové pole. <br>
+Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b class="ks">Model</b>
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Zbozi(models.Model): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;jmeno = models.TextField() <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;popis = models.TextField() <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cena = models.TextField()
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Uložíme soubor <b>models.py</b>. 
+	V <b>settings.py</b> musíme do <b class="ks">INSTALLED_APPS</b> vložit naši novou aplikaci Zbozi. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		'zbozi',
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Uložíme soubor <b>settings.py</b>. <br>
+	Aby vše bylo uložené a funkční, musíme v terminálu provést dva příkazy
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python manage.py makemigrations <br>
+		python manage.py migrate
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Tyto dva příkazy musíme provést vždy, když provedeme nějakou změnu v souboru <b>models.py</b>
+	<br><br>
+	Abychom si mohli zobrazit naši novou komponentu <b class="barvaPromenne">Zbozi</b> ve webovém prohlížeči na našem účtu, musíme ještě upravit soubor admin.py <br>
+	Vložíme do tohoto souboru dva řádky kódu. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">from</b> .models <b class="ks">import</b> Zbozi <br>
+		admin.site.register(Zbozi)
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Soubor <b>admin.py</b> uložíme. <br>
+	<br>
+	Když otevřeme náš účet v prohlížeči, tak uvidíme komponentu zbozi. Při kliknutí se nám zobrazí textová pole s názvem, popisem a cenou. Tímto způsobem můžeme vytvářet nějaké zboží. Po vytvoření je dané zboží uloženo v databázi. 
+
+	</p>
+
+	<h4 class = "podKapitola">Vlastní komponenta/aplikace</h4>
+
+	
+
+	<p class="divText">
+	Ukázali jsme si, jak vytvořit základní aplikaci, kterou jsme si pojmenovali zbozi. <br>
+	Nyní tuto aplikaci vylepšíme. <br>
+	Uvnitř adresáře zbozi, migrations, smažeme všechny soubory kromě init.py <br>
+	V adresáři, kde se nachází settings.py, smažeme db.sqlite3. <br>
+	<br>
+	Uvnitř zbozi otevřeme <b>models.py</b> <br>
+	U jednotlivých vlastností jsme použili textová pole. Samozřejmě by cena měla být nějaká číselná hodnota a ne text. <br>
+	Upravíme tedy typy jednotlivých vlastností. <br>
+	Název bude mít maximální povolený počet znaků. <br>
+	Popis necháme jako textové pole, ale přidáme možnost, že popis může být nevyplněný. <br>
+	Cena bude nějaké desetinné číslo, kde musíme určit počet desetinných míst a maximální počet číslic.
+
+
+
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Zbozi(models.Model): <br>
+		   	&nbsp;&nbsp;&nbsp;&nbsp;jmeno = models.CharField(max_length=120) <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;popis = models.TextField(blank=True, null=True) <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cena = models.DecimalField(decimal_places=2, max_digits=10000)
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Soubor uložíme. Protože jsme provedli změny v souboru <b>models.py</b>, musíme provést v terminálu dva příkazy.
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python manage.py makemigrations <br>
+		python manage.py migrate
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Jelikož jsme smazali databázi, tak musíme znovu vytvořit uživatele, který bude mít přistup k administrátorským oprávněním. <br>
+	V prohlížeči na účtu uvidíme, že se naše změny provedly. <br> <br>
+
+	Může nastat situace, že jsme se rozhodli přidat další vlastnost k Zbozi. Např. bude informace o tom, zda je zboží skladem nebo není. Toto vyřešíme pomocí <b class="ks">True</b> nebo <b class="ks">False</b>. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Zbozi(models.Model): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;jmeno = models.CharField(max_length=120) <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;popis = models.TextField(blank=True, null=True) <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cena = models.DecimalField(decimal_places=2, max_digits=10000) <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;skladem = models.BooleanField()
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Pokud tuto vlastnost přidáme, tak předchozí objekty zboží v databázi, nemají žádné informace o tom, zda je zboží skladem nebo není. <br>
+	Musí se tedy zpětně doplnit tato vlastnost již existujícím zbožím. <br>
+	Toto lze provést v terminálu. <br>
+	Provedeme příkaz
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python manage.py makemigrations
+	</p>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Dostaneme upozornění a máme na výběr dvě možnosti. První je, že dáme nějakou výchozí hodnotu předchozím zbožím. Druhá možnost je, že to manuálně doplníme uvnitř souboru models.py <br>
+	Vybereme možnost první, zmáčkneme tedy na klávesnici <b>1</b>. <br>
+	Nyní musíme vybrat výchozí hodnoty pro předchozí zboží.  <br>
+	Napíšeme <b class="ks">True</b>.  <br>
+	<br>
+	Nesmíme zapomenout na druhý příkaz  
+
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python manage.py migrate
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Nyní mají všechna zboží informaci o tom, zda jsou skladem.
+	</p>
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

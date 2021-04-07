@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> Webpage name </title>
+
+		
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+		<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+
+/* TEXTY A KODY */
+
+		.myHeader{
+			position: relative;
+			margin-left: 100px;
+			margin-right: 100px;
+			font-size: 35px;
+			color: #4CCECE;
+
+		}
+
+		.podKapitola{
+			position: relative;
+			margin-left: 100px;
+			margin-right: 100px;
+		}
+
+		.divText{
+			position: relative;
+			margin-left: 100px;
+			margin-right: 100px;
+
+		}	
+
+		.divBox{
+			border: 1px outset black;
+  			background-color: #F5F5F5;    
+  			margin-left: 100px;
+			margin-right: 100px;
+		}
+
+		.codeText{
+			position: relative;
+			margin-top: 3px;
+			margin-bottom: 3px;
+			margin-left: 10px;
+			margin-right: 10px;
+			font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+			font-size: 14px;
+		}
+
+		.divBlackBox{
+			border: 1px outset black;
+  			background-color: #263238;    
+  			margin-left: 100px;
+			margin-right: 100px;	
+		}
+
+
+		.codeWhiteText{
+			position: relative;
+			margin-top: 3px;
+			margin-bottom: 3px;
+			margin-left: 10px;
+			margin-right: 10px;
+			font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+			font-size: 14px;
+			color: #FFFAFA;
+		}
+
+		.barvaFunkce{
+			color: #259B59; /* zelena */
+		}
+
+		.barvaPromenne{
+			color: #007ebe; /* modra */
+		}
+
+		.ks{
+			color: #259B59; /* modra */ 
+			/* font-weight: lighter; */
+
+		}
+
+		.kself{
+			color:#663399;
+		}
+
+		.zavinac{
+			color:#DAA520;
+		}
+
+		.divKarty{
+			position: relative;
+			margin-left: 100px;
+			margin-right: 100px;
+
+		}
+		
+		.card-img-top {
+    		width: 100%;
+    		height: 15vw;
+    		object-fit: cover;
+	}
+
+		.divPriklady{
+			border: 2px solid #4CCECE;
+  			background-color: white;    
+  			margin-left: 100px;
+			margin-right: 100px;
+		}
+
+
+
+
+/* TABULKA */
+
+			#metody {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  position: relative;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+
+#metody td, #metody th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#metody tr:nth-child(even){background-color: #f2f2f2;}
+
+#metody tr:hover {background-color: #ddd;}
+
+#metody th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CCECE;
+  color: white;
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+	{% include 'navbar.html' %}
+
+	
+
+	{% block content %}
+	replace me
+	
+
+	{% endblock %}
+
+	
+
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+
+</body>
+</html>

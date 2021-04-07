@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dekorátory</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Dekorátory</h3>
+
+	
+	<p class="divText" >
+	Dekorátory (anglicky decorators) umožňují přidat nebo odebrat nějakou funkčnost k určité funkci.
+	Pomocí dekorátů můžeme zapnout nějakou funkčnost k funkci a v době, kdy tuto funkčnost již nepožadujeme, tak ji vypneme. <br>
+	Při práci s dekorátory se používá operátor <b>@</b> <br>
+	<br>
+	Představme si, že máme jednoduchou funkci. Po nějaké době chceme uvnitř funkce mít další operace. Jsou dvě možnosti. První je ta, že nový kód přidáme do původní funkce. Druhá možnost je, že vytvoříme novou funkci a zkopírujeme kód z té původní funkce. 
+	Můžeme, ale nastat situace, že později přidaný kód nechceme používat. To bychom museli zase upravovat původní funkci. Proto se používají dekorátory.
+	Pomocí dekorátů můžeme zapnout nebo vypnout přidanou funkčnost. 
+
+	</p>
+
+	
+
+	<h4 class = "podKapitola">Funkce</h4>
+
+
+	<p class="divText">
+	Pro pochopení dekorátorů musíme se seznámit s funkcemi uvnitř funkce a předávání funkce jako argument. <br> <br>
+	Vytvoříme funkci s názvem <b class="barvaPromenne">pozdrav</b>, která má parametr <b class="barvaPromenne">jmeno</b>. Uvnitř funkce budou další dvě funkce s názvem <b class="barvaPromenne">dobry_den</b> a <b class="barvaPromenne">ahoj</b> <br>
+	Pokud se jméno bude rovnat předanému argumentu, tak se vypíše na výstup obsah funkce <b class="barvaPromenne">dobry_den()</b>. Poté do <b class="barvaPromenne">moje_funkce()</b> přiřadíme funkci <b class="barvaPromenne">pozdrav()</b>. Následně na výstup vypíšeme celý obsah <b class="barvaPromenne">moje_funkce()</b>
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdrav(jmeno): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Toto je pozdrav") <br>
+    		<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dobry_den(): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> "Dobry den" <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> ahoj(): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> "Ahoj" <br>
+        	<br>	
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> jmeno == "Gustav": <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> dobry_den <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br> 
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> ahoj <br>
+        	<br>
+		moje_funkce = pozdrav("Gustav") <br>
+		<b class="ks">print</b>(moje_funkce()) <br>
+		# vypise: <br>
+		# Toto je pozdrav <br>
+		# Dobry den <br>
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro předávání funkce jako argument vytvoříme dvě funkce. První je <b class="barvaPromenne">pozdraveni()</b> a druhá je <b class="barvaPromenne">jiny()</b>
+	Budeme volat funkci <b class="barvaPromenne">jiny()</b> a jako argument vložíme funkci <b class="barvaPromenne">pozdraveni()</b>.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdraveni(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> "Ahoj" <br>
+		<br>
+		<b class="ks">def</b> jiny(nejaka_funkce): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Druha funkce") <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(nejaka_funkce()) <br>
+    	<br>
+		jiny(pozdraveni) <br>
+		# vypise: <br>  
+		# Druha funkce <br> 
+		# Ahoj <br>
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Vlastní dekorátory</h4>
+
+
+
+	<p class="divText">
+	Vytvoříme funkci <b class="barvaPromenne">novy_dekorator()</b>, kde bude parametrem <b class="barvaPromenne">originalni_funkce</b>.
+	Uvnitř funkce bude funkce <b class="barvaPromenne">obal_funkci()</b>, ve které budeme volat <b class="barvaPromenne">originalni_funkce()</b>. Poté se vrátí funkce <b class="barvaPromenne">obal_funkci()</b>. <br>
+	Další samostatná funkce bude <b class="barvaPromenne">chce_dekorator()</b> <br>
+	Poté jako argument pro <b class="barvaPromenne">novy_dekorator()</b> zvolíme <b class="barvaPromenne">chce_dekorator</b>, následně to přiřadíme k <b class="barvaPromenne">dekorovana_funkce</b>
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> novy_dekorator(originalni_funkce): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> obal_funkci(): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Extra kod pred originalni funkci") <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;originalni_funkce() <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Extra kod za originalni funkci") <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> obal_funkci <br>
+ 		<br>
+		<b class="ks">def</b> chce_dekorator(): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Chci byt dekorovan") <br>
+    	<br>
+		dekorovana_funkce = novy_dekorator(chce_dekorator) <br>
+		dekorovana_funkce() <br>
+		#vypise: <br>
+		#Extra kod pred originalni funkci <br>
+		#Chci byt dekorovan <br>
+		#Extra kod za originalni funkci
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Tento způsob lze zjednodušit pomocí operátoru <b>@</b> <br>
+		Nad funkcí <b class="barvaPromenne">chce_dekorator()</b> napíšeme <b class="zavinac">@novy_dekorator</b>. <br>
+		Poté pouze zavoláme <b class="barvaPromenne">chce_dekorator()</b>
+ 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> novy_dekorator(originalni_funkce): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> obal_funkci(): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Extra kod pred originalni funkci") <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;originalni_funkce() <br> 
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Extra kod za originalni funkci") <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> obal_funkci <br>
+    	<br>
+		<b class="zavinac">@novy_dekorator</b> <br>
+		<b class="ks">def</b> chce_dekorator(): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Chci byt dekorovan") <br>
+    	<br>
+		chce_dekorator() <br>
+		#vypise: <br>
+		#Extra kod pred originalni funkci <br>
+		#Chci byt dekorovan <br>
+		#Extra kod za originalni funkci
+
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Uvedené zapínaní a vypínaní je u řádku, kde je operator <b>@</b>. Stačí pouze zakomentovat nebo odkomentovat podle potřeby. <br>
+	S operátory se lze často setkat například při prací s frameworkem Django. 
+	</p>
+
+
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  Vytvořte funkci, která obsahuje další dvě funkce. Hlavní funkci bude předáno číslo. Pokud číslo je sudé, tak se použije funkce, která informuje, že číslo je sudé. Pokud číslo je liché, tak se použije druhá funkce, která informuje, že číslo je liché.
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  Vytvořte vlastní dekorátor a použijte operátor <b>@</b>.
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

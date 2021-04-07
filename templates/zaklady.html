@@ -1,0 +1,1143 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Základy</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Základy</h3>
+
+	<br>
+
+
+
+	<h4 class = "podKapitola">Proměnné</h4>
+
+
+	<p class="divText">
+	Proměnné slouží k uchování hodnot. Proměnná se v Pythonu vytváří tak, že se napíše její jméno a přiřadí se k ní nějaká hodnota. Jsou určitá pravidla, která je potřeba dodržovat při vytváření proměnné. Název nesmí začínat číslem. Nesmí být nikde mezery, pro spojení více slov se často používá symbol podtržítko. 
+	Název proměnné nesmí obsahovat následující symboly	<b>:’”,&lt;&gt;/?|\()!@#$%^&~-+</b> <br>
+	Je zvykem psát název malými písmeny. Vyhnout se názvům, který mají speciální význam v Pythonu (<b class="barvaFunkce">list</b>, <b class="barvaFunkce">str</b>…)
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 10 <br>
+		jmeno = "Tim"
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	V ukázce jsou dvě proměnné. První má název <b class="barvaPromenne">cislo</b>, za názvem následuje symbol rovná se, které přiřadí hodnotu 10. Druhá proměnná má název <b class="barvaPromenne">jmeno</b>, zase následuje symbol pro rovná se a poté řetězcová hodnota v uvozovkách. <br>
+	<br>
+	Pro ověření, že proměnná cislo obsahuje hodnotu 10, tak vypíšeme tuto proměnnou na výstup.
+	Pro výpis na výstup slouží funkce <b class="barvaFunkce">print()</b>. Uvnitř kulatých závorek vložíme proměnnou cislo.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 10 <br>
+		jmeno = "Tim" <br>
+		<br>
+		<b class="ks">print</b>(cislo) # vypise: 10
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Stejným způsobem lze vypsat na výstup proměnnou <b class="barvaPromenne">jmeno</b>.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 10 <br>
+		jmeno = "Tim" <br>
+		<br>
+		<b class="ks">print</b>(jmeno) # vypise: Tim
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Hodnoty, které jsme použili mají určitý datový typ. U proměnné <b class="barvaPromenne">cislo</b> jsme zvolili hodnotu 10, což je celé číslo. U proměnné <b class="barvaPromenne">jmeno</b> jsme zvolili hodnotu "Tim", což je řetězec. V Pythonu se celé číslo označuje jako <b class="barvaFunkce">int</b> (od slova integer), řetězec se označuje jako 
+		<b class="barvaFunkce">str</b> (od slova string). Jednotlivé datové typy budou probrány později. Pro zjištění jakého datové typu je proměnná, slouží funkce <b class="barvaFunkce">type()</b> <br>
+		Prvně použijeme funkci <b class="barvaFunkce">type()</b> pro proměnnou <b class="barvaPromenne">cislo</b> a poté pro proměnnou <b class="barvaPromenne">jmeno</b>
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 10 <br>
+		jmeno = "Tim" <br>
+		<b class="ks">print</b>(<b class="ks">type</b>(cislo)) # vypise: < class 'int' >
+
+	</p>
+	</div>
+
+	<br>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 10 <br>
+		jmeno = "Tim" <br>
+		<b class="ks">print</b>(<b class="ks">type</b>(jmeno)) # vypise: < class 'str' >
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Python umožňuje přiřadit libovolný datový typ. Budeme mít tedy proměnnou 
+	<b class="barvaPromenne">x</b>, obsahující celé číslo a poté hodnotu změníme na řetězec.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		<b class="ks">print</b>(x) # vypise: 5 <br>
+		x = "ahoj" <br>
+		<b class="ks">print</b>(x) # vypise: ahoj
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Datové typy </h4>
+
+	<p class="divText">
+	Při vytváření nějakého programu se pracuje s daty. Je potřeba, aby data byla nějakým způsobem reprezentována. Python nabízí různé druhy datových typů. Ukázka základních datových typu je možné vidět v následující tabulce. 
+	</p>
+
+	
+	
+
+	<table id="metody">
+  <tr>
+    <th style="text-align: center; vertical-align: middle;">Název</th>
+    <th style="text-align: center; vertical-align: middle;">Typ</th>
+    <th style="text-align: center; vertical-align: middle;">Popis</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Celé číslo </td>
+    <td style="text-align: center; vertical-align: middle;">int </td>
+    <td style="text-align: center; vertical-align: middle;">8 &nbsp;&nbsp;200 &nbsp;&nbsp;26</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Desetinné číslo</td>
+    <td style="text-align: center; vertical-align: middle;">float </td>
+    <td style="text-align: center; vertical-align: middle;">6.4 &nbsp;&nbsp;10.09 &nbsp;&nbsp;50.33 </td>
+    
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Řetězec</td>
+    <td style="text-align: center; vertical-align: middle;">str </td>
+    <td style="text-align: center; vertical-align: middle;"> "Ahoj" &nbsp;"Cokolada" &nbsp;"1000"</td>
+    
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Seznam </td>
+    <td style="text-align: center; vertical-align: middle;">list </td>
+    <td style="text-align: center; vertical-align: middle;">Uspořádaná posloupnost prvků: [5, "ahoj", 20.1]</td>
+    
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Množina </td>
+    <td style="text-align: center; vertical-align: middle;">set </td>
+    <td style="text-align: center; vertical-align: middle;">Neuspořádané unikátní prvky: {"a", "b"} </td>
+    
+ 
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">N-tice </td>
+    <td style="text-align: center; vertical-align: middle;">tup </td>
+    <td style="text-align: center; vertical-align: middle;">Neměnitelná posloupnost prvků: (10, "c", 2) </td>
+    
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Slovník </td>
+    <td style="text-align: center; vertical-align: middle;">dict </td>
+    <td style="text-align: center; vertical-align: middle;">Klíče a hodnoty {"klic": "hodnota"} </td>
+    
+
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;">Boolean </td>
+    <td style="text-align: center; vertical-align: middle;">bool </td>
+    <td style="text-align: center; vertical-align: middle;">Logická hodnota True nebo False (Pravda, Nepravda) </td>
+    	
+  
+  </tr>
+</table>
+
+	<br>
+
+	<p class="divText">
+	Jednotlivé datové typy budou popsány podrobněji pro lepší pochopení. Tabulka slouží jen jako ukázka. 
+	</p>
+
+
+	<h4 class = "podKapitola">Operátory</h4>
+
+
+	<p class="divText">
+	Operátory slouží pro provádění operací nad hodnotami a proměnnýma. <br>
+	Pro provádění základních matematických operací se používají aritmetické operátory, které jsou uvedeny v tabulce.
+
+	</p>
+
+
+	<table id="metody">
+  <tr>
+    <th>Operátor</th>
+    <th>Název</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"> <b>+</b></td>
+    <td>Sčítání</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"> <b>-</b></td>
+    <td>Odčítání</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>*</b></td>
+    <td>Násobení</td>
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>/</b></td>
+    <td>Dělení</td>
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>%</b></td>
+    <td>Modulo (zbytek po dělení)</td>
+ 
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>**</b></td>
+    <td>Mocnina</td>
+  
+  </tr>
+</table>
+
+<br>
+
+
+	<p class="divText">
+	Pro vyzkoušení jednotlivých uvedených operátoru, vybereme si dvě hodnoty a výsledek vypíšeme na výstup.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">print</b>(10 + 5) # 15 <br>
+		<b class="ks">print</b>(10 - 5) # 5 <br>
+		<b class="ks">print</b>(10 * 5) # 50 <br>
+		<b class="ks">print</b>(10 / 5) # 2.0 <br>
+		<b class="ks">print</b>(10 % 5) # 0 <br>
+		<b class="ks">print</b>(10**5) # 100 000
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText"> 
+	Pro přiřazení hodnoty k proměnné používáme přiřazovací operátory. 
+	K proměnné <b class="barvaPromenne">x</b> přiřadíme pomocí symbolu <b>=</b> hodnotu 5.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Proměnná <b class="barvaPromenne">x</b> tedy obsahuje hodnotu 5. V dalším kroku přičteme hodnotu 10 a <b class="barvaPromenne">x</b> bude tedy rovno 15.
+	Na levé straně bude <b class="barvaPromenne">x</b> a na pravé straně bude původní <b class="barvaPromenne">x</b> s hodnotou 5 a přičtení hodnoty 10.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		x = x + 10 
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Pro ověření aktuální hodnoty <b class="barvaPromenne">x</b>, vypíšeme <b class="barvaPromenne">x</b> na výstup
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		x = x + 10 <br>
+		<b class="ks">print</b>(x) # vypise: 15
+
+
+	</p>
+	</div>
+
+	<br>
+	
+	<p class="divText">
+	Uvedený zápis <b class="barvaPromenne">x = x + 10</b>, lze zapsat i jinak. Symbol pro sčítání bude před symbolem rovná se. Původní <b class="barvaPromenne">x</b> se na pravé straně se smaže. Tento zápis je kratší. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		x += 10 <br>
+		<b class="ks">print</b>(x) # vypise: 15
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Podobně lze použít operátory pro odčítaní, násobení atd. 
+	</p>
+
+
+	<p class="divText">
+	Pro srovnání hodnot jsou k dispozici tyto operátory: 
+	</p>
+
+
+		<table id="metody">
+  <tr>
+    <th>Operátor</th>
+    <th>Název</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"> <b>==</b></td>
+    <td>Je rovno</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"> <b>!=</b></td>
+    <td>Není rovno</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b> > </b></td>
+    <td>Je větší než</td>
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b> < </b></td>
+    <td>Je menší než</td>
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b> >= </b></td>
+    <td>Je větší nebo rovno</td>
+ 
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b> <= </b></td>
+    <td>Je menší nebo rovno</td>
+  
+  </tr>
+</table>
+
+
+
+	<br>
+
+	<p class="divText">
+	Pro vyzkoušení těchto operátorů budeme mít dvě proměnné <b class="barvaPromenne">x</b>, 
+	<b class="barvaPromenne">y</b>. <br>
+	<b class="barvaPromenne">x</b> bude rovno 5, <b class="barvaPromenne">y</b> 
+	bude rovno 10. <br>
+	Budeme tyto dvě hodnoty srovnávat. Pokud je tvrzení pravdivé, na výstup se vypíše 
+	<b class="barvaFunkce">True</b>, v opačném případě 
+	se vypíše <b class="barvaFunkce">False</b>.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		y = 10 <br>
+		<b class="ks">print</b>(x == x) # True <br>
+		<b class="ks">print</b>(x == y) # False <br>
+		<b class="ks">print</b>(x != y) # True 
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Podobně porovnáme pomocí dalších operátorů.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		y = 10 <br>
+		<b class="ks">print</b>(x > x) # False <br>
+		<b class="ks">print</b>(x < y) # True <br>
+		<b class="ks">print</b>(x >= y) # False <br>
+		<b class="ks">print</b>(x <= y) # True
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Logické operátory se používají při vyhodnocování nějakých podmínek. 
+	</p>
+
+
+
+<table id="metody">
+  <tr>
+    <th>Operátor</th>
+    <th>Název</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"> <b>and</b></td>
+    <td>Vrací True, když obě podmínky jsou pravdivé</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"> <b>or</b></td>
+    <td>Vrací True, když alespoň jedna podmínka je pravdivá</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>not</b></td>
+    <td>Vrací opak výsledku, vrátí False, pokud je výsledek True</td>
+  
+  </tr>
+  
+  </tr>
+</table>
+
+
+	<br>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 5 <br>
+		y = 10 <br>
+		<b class="ks">print</b>(x > 2 <b class="ks">and</b> y > 5) # True <br>
+		<b class="ks">print</b>(x > 20 <b class="ks">or</b> y > 2) # True <br>
+		<b class="ks">print</b>(<b class="ks">not</b>(x > 2 <b class="ks">and</b> y > 5)) # False
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Čísla</h4>
+
+
+	<p class="divText">
+	V Pythonu jsou tři typy čísel. 
+	Datový typ 
+	<b class="barvaFunkce">int</b>, 
+	<b class="barvaFunkce">float</b>
+	a <b class="barvaFunkce">complex</b>. 
+	Celé číslo je <b class="barvaFunkce">int</b>, 
+	desetinné číslo je <b class="barvaFunkce">float</b> 
+	a komplexní číslo je <b class="barvaFunkce">complex</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		a = 2 # int <br>
+		b = 3.6 # float <br>
+		c = 8j # complex
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Datový typ <b class="barvaFunkce">int</b> jsou celá čísla, mohou být kladná nebo záporná, bez desetinné tečky. <br>
+Datový typ <b class="barvaFunkce">float</b> jsou desetinná čísla, mohou být kladná nebo záporná, s desetinnou tečkou. <br>
+Datový typ komplex se píšou s písmenem <b>j</b>. <br>
+<br>
+Python umožňuje převést jeden datový typ na druhý. 
+Je to pomocí funkcí <b class="barvaFunkce">int()</b>, <b class="barvaFunkce">float()</b> nebo <b class="barvaFunkce">complex()</b>. 
+Komplexní čísla nelze převést na jiný datový typ. Název funkce popisuje, na který datový typ chceme číslo převést. Převáděné číslo se vkládá do závorky. 
+
+Převedeme tedy číslo datového typu <b class="barvaFunkce">int</b> na datový typ <b class="barvaFunkce">float</b>. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		a = 2 # int <br>
+		x = <b class="ks">float</b>(a) # z int na float <br>
+		<b class="ks">print</b>(x)  # vypise: 2.0
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Řetězce</h4>
+
+	<p class="divText">
+	Řetězec je posloupnost znaků, který se zapisuje pomocí jednoduchých nebo dvojitých uvozovek. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		a = 'Ahoj' <br>
+		b = "Ahoj"
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Python umožnuje mít součástí řetězce uvozovku.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		a = "Tento retez obsahuje ' uvozovku "
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Jelikož řetězec je uspořádána posloupnost znaků, můžeme nad ním provádět operace jako indexování (anglicky indexing) a řezání (anglicky slicing). <br>
+	<br>
+	Každý znak v řetězci má svoji pozici, nebo-li svůj index. Tento index je vyjádřen číslem. Počáteční znak má hodnotu 0. Poslední znak má hodnotu rovno počtu znaků, méně 1. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		a = "ahoj" <br>
+		# a = 0, h = 1, o = 2, j = 3
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Máme řetězec "ahoj", který je složen ze 4 znaků. První znak je písmeno a, který má index 0. <br>
+	Python umožňuje záporné indexování. Index s hodnotou -1 představuje poslední prvek v řetězci. Hodnota -2 je pro předposlední prvek atd. <br>
+	<br>
+	Máme řetězec a budeme chtít vypsat pouze první znak. Víme, že první znak je na pozici 0. 
+	Použijeme k tomu metodu <b class="barvaFunkce">print()</b>. Zadáme název řetězce, za ním budou následovat hranaté závorky. Uvnitř těchto hranatých závorek bude pozice našeho znaku. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "ahoj" <br>
+		<b class="ks">print</b>(slovo[0]) # vypise: a
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	V případě, že chceme vypsat poslední prvek a nevíme délku řetězce, použijeme záporný index.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "ahoj" <br>
+		<b class="ks">print</b>(slovo[-1]) # vypise: j
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Python umožnuje vypsat i část nějakého řetězce. Budeme mít řetězec automobil.
+		Prvním úkolem je vypsat pouze slovo mobil. <br>
+		Zjistíme index znaku m. V tomto případě je m na pozici 4, protože číslování je od nuly. 
+		Do hranatých závorek dáme číslo 4, poté bude následovat dvojtečka, které představuje zbytek znaků.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "automobil" <br>
+		<b class="ks">print</b>(slovo[4:]) # vypise: mobil
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Druhým úkolem je vypsat slovo auto. Rozdíl bude v tom, že dvojtečka bude před číslem. Znamená to, že začínáme od prvního písmene (s indexem 0). <br>
+	Poslední písmeno ve slově auto je o, které je na pozici 3. Ale v závorce bude hodnota 4. Znamená to, že budou vybrána všechna písmena od počátku po index 4, ale index 4 nebude zahrnut.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "automobil" <br>
+		<b class="ks">print</b>(slovo[:4]) # vypise: mobil
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Také lze vybrat znaky podle rozsahu. Vybereme první dva znaky z řetězce. V závorce bude číslo představující začátek, poté dvojtečka a následně číslo, které představuje konec, ale není zahrnuto. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "automobil" <br>
+		<b class="ks">print</b>(slovo[0:2]) # vypise: au
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Také je možné určit kolik znaků se má přeskočit. Toto je pomocí třetího parametru, kde číslo představuje o kolik se má přeskočit.  <br>
+	Budeme chtít vypsat každé druhé slovo v řetězci. Chceme tedy vypsat každý druhý znak. Použijeme tedy hodnotu 2, která bude na konci závorek, jelikož používáme třetí parametr, tak budou dvojtečky dvě.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "automobil" <br>
+		<b class="ks">print</b>(slovo[::2]) # vypise: atmbl
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dalším úkolem je na výstup vypsat řetězec, od druhého indexu, po index 5 (který není zahrnut), se skokem 2
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "automobil" <br>
+		<b class="ks">print</b>(slovo[2:5:2]) # vypise: tm
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Podobně lze vypsat na výstup řetězec pozpátku. Použije se k tomu index se zápornou hodnotu. 
+	<br>Od začátku až po konec řetězce se skokem -1. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		slovo = "automobil" <br>
+		<b class="ks">print</b>(slovo[::-1]) # vypise: libomotua
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	 V následující tabulce jsou typické metody, které lze použít s řetězci.
+	</p>
+
+
+
+<table id="metody">
+  <tr>
+    <th>Metody</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td>.<b>capitalize</b>() </td>
+    <td>Převede počáteční písmeno na velké</td>
+    
+  </tr>
+  <tr>
+    <td>.<b>count</b>()</td>
+    <td>Vrátí počet výskytu určité hodnoty v řetězci</td>
+    
+  </tr>
+  <tr>
+    <td>.<b>find</b>()</td>
+    <td>Vrátí hledanou hodnotu uvnitř řetězce</td>
+  
+  </tr>
+  <tr>
+    <td>.<b>index</b>()</td>
+    <td>Vrátí index dané hodnoty v řetězci</td>
+  
+  </tr>
+  <tr>
+    <td>.<b>lower</b>()</td>
+    <td>Převede všechny písmena na velké v řetězci</td>
+ 
+  </tr>
+  <tr>
+    <td>.<b>upper</b>()</td>
+    <td>Převede všechny písmena na malé v řetězci</td>
+  
+  </tr>
+
+</table>
+
+	<br>
+
+	<h4 class = "podKapitola">Boolean</h4>
+
+
+	<p class="divText">
+	Boolean může být <b class="barvaFunkce">True</b> nebo <b class="barvaFunkce">False</b>. 
+	<b class="barvaFunkce">True</b> představuje pravdivou hodnotu. 
+	<b class="barvaFunkce">False</b> představuje nepravdivou hodnotu. 
+	V Pythonu se <b class="barvaFunkce">True</b> nebo <b class="barvaFunkce">False</b> píše velkým počátečním písmenem. <br>
+	Často se boolean používá pro vyhodnocení nějaké podmínky. Např. porovnání dvou hodnot. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">print</b>(5>2) # vypise: True
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Casting</h4>
+
+	<p class="divText">
+	Casting v Pythonu je přetypování, kdy máme datový typ a chceme jiný datový typ. Pro casting lze v použít funkce 
+	<b class="barvaFunkce">int()</b>, 
+	<b class="barvaFunkce">float()</b>, 
+	<b class="barvaFunkce">str()</b>.  Uvnitř závorek funkcí budeme vkládat hodnoty, které chceme, aby byly daného typu. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		a = <b class="ks">int</b>(5) # z int na int <br>
+		b = <b class="ks">int</b>(1.3) # z float na int <br>
+		c = <b class="ks">int</b>("10") # z string na int <br>
+
+		<b class="ks">print</b>(a) # vypise: 5 <br>
+		<b class="ks">print(b)</b> # vypise: 1 <br>
+		<b class="ks">print(c)</b> # vypise: 10 
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Komentáře</h4>
+
+
+	<p class="divText">
+	Komentáře se používají k vysvětlení nebo k popisu kódu. Komentáře se vkládají ke kódu, který chceme popsat. Komentář začíná symbolem <b>#</b> a za ním je libovolný text. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		x = 10 <br>
+		y = 5 <br>
+		# scitani dvou cisel <br>
+		<b class="ks">print</b>(x+y)
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Pro napsání komentáře na několik řádku, lze na každém řádku mít symbol <b>#</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		# Tento komentar <br>
+		# je napsan <br>
+		# na vice radku <br>
+		x = 10
+
+	</p>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+	Kromě symbolu <b>#</b>, lze také použít tři uvozovky.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		""" <br>
+		Tento komentar <br>
+		je napsan <br>
+		na vice radku <br>
+		""" <br>
+		x = 10
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+ 	1. Vytvořte dvě proměnné, kde první má hodnotu 5 a druhá má hodnotu 10. Tyto proměnné sečtěte a výsledek vypište na výstup.
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  2. Vytvořte dvě proměnné, které mají hodnotu 10. Vypište na výstup, jestli jsou si tyto proměnné rovny. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Máte proměnnou <b class="barvaPromenne">x</b>, které je rovna hodnotě 5. Přičtěte k <b class="barvaPromenne">x</b> číslo 20 a výsledné <b class="barvaPromenne">x</b> vypište na výstup.
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  4. Vytvořte proměnnou, která obsahuje libovolný řetězec a vypište ho na výstup.
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Máte proměnnou <b class="barvaPromenne">ret</b> = "drahokam" <br>
+Vypište na výstup první písmeno. 
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  6. Máte proměnnou <b class="barvaPromenne">ret</b> = "drahokam" <br>
+Vypište na výstup poslední písmeno pomocí záporného indexování.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+ 7. Máte proměnnou <b class="barvaPromenne">ret</b> = "drahokam" <br>
+Vypište na výstup první tři znaky řetězce.
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  
+8. Máte proměnnou <b class="barvaPromenne">ret</b> = "drahokam" <br>
+Vypište na výstup každý druhý znak.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+   
+  9. Máte proměnnou <b class="barvaPromenne">ret</b> = "drahokam" <br>
+Vypište na výstup znaky řetězce v obráceném pořadí.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  10. Vytvořte dvě proměnné, které budou obsahovat řetězec. <br> 
+Porovnejte tyto dva řetězce a na výstup vypište, jestli jsou stejné. 
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

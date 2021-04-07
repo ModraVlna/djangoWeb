@@ -1,0 +1,479 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>N-tice</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">N-tice</h3>
+
+	
+	<p class="divText" >
+	N-tice (anglicky tuple) je uspořádaná posloupnost prvků. N-tice jsou neměnitelné. To znamená, že žádný z prvků nemůžeme změnit. Nelze ani mazat a přidávat prvky. Toto je rozdíl mezi n-ticí a seznamem.
+	Jednotlivé prvky mohou být libovolného datového typu. Tyto prvky se oddělují od sebe čárkou a jsou uvnitř kulatých závorek.
+
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	moje_ntice = (“auto”, 10, 3.2)
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Přistup k n-tici</h4>
+
+
+	<p class="divText">
+	Každý prvek v n-tici má svůj index. Index je číslo, které uvádí pořadí daného prvku v n-tici. Indexování je od nuly. To znamená, že první prvek má index s hodnotou nula. Index posledního prvku je o jedničku menší než počet prvků v n-tici. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	nakup = ("chleba","cokolada","banan","jahoda","jogurt", "syr")
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pokud chceme vypsat první prvek, tak se uvede název n-tice, na konci názvu budou kulaté závorky a v nich index prvku, v tomto případě bude index nula. . 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	<b class="ks">print</b>(nakup[0]) # vypise: chleba
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Při vypsání určité části prvků v n-tici, lze použít symbol dvojtečka. 
+	Budeme chtít vypsat první tři prvky. Budeme tedy mít na výstupu n-tici o třech prvcích. Jako první číslo bude v hranatých závorkách 0, poté symbol dvojtečka a poslední číslo bude index posledního prvku, který chceme vypsat. To znamená, že budeme mít <b class="barvaPromenne">[0:3]</b>
+	Jelikož začínáme od začátku, tak se nula nemusí zapisovat a stačí <b class="barvaPromenne">[:3]</b>
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">print</b>(nakup[0:3]) # vypise: [chleba, cokolada, banan] <br>
+		<b class="ks">print</b>(nakup[:3]) # vypise: [chleba, cokolada, banan]
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Pokud musíme vypsat poslední prvek n-tici a nevíme aktuální počet prvků, tak je možné použít záporné indexování. Když v hranatých závorkách bude hodnota -1, znamená to, že přistupujeme k poslednímu prvku. Hodnota -2 je pro předposlední prvek atd. 
+	</p>
+
+
+
+
+	<h4 class = "podKapitola">Práce s n-ticemi</h4>
+
+	<p class="divText"> 
+	Jelikož se hodnoty v n-tici nedají měnit, lze vzít dvě n-tice a spojit je do nové n-tice. Často se této operaci říká sčítání. Je provedena pomocí symbolu <b>+</b> 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		predmet = ("matematika", "zemepis", "dejepis") <br>
+		pocet =  (20, 15, 60) <br>
+		informace = predmet + pocet <br>
+		<b class="ks">print</b>(informace) # vypise: ('matematika', 'zemepis', 'dejepis', 20, 15, 60) 
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Pokud chceme všechny hodnoty v n-tici opakovat několikrát, tak lze použít symbol <b>*</b> a napíšeme číslo, které bude značit, kolikrát se hodnoty budou opakovat. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		hodnota = (10, 20) <br>
+		data = hodnota * 3 <br>
+		<b class="ks">print</b>(data) # vypise: (10, 20, 10, 20, 10, 20) 
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Pro smazání n-tice lze použít klíčové slovo <b class="barvaFunkce">del</b>.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		hodnota = (10, 20) <br>
+		<b class="ks">del</b> hodnota
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Bylo řečeno, že nelze měnit hodnoty v n-tici. Toto lze obejít tak, že se n-tice konvertuje na seznam, do toho seznamu přidáme prvky a zpátky konvertujeme na n-tici.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		ovoce = ("jahoda", "pomeranc") <br>
+		muj_seznam = <b class="ks">list</b>(ovoce) <br>
+		muj_seznam.append("jablko") <br>
+		ovoce = <b class="ks">tuple</b>(muj_seznam) <br>
+		<b class="ks">print</b>(ovoce) # vypise: ('jahoda', 'pomeranc', 'jablko')
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+
+	<h4 class = "podKapitola">Průchod n-tice</h4>
+
+	<p class="divText">
+	N-tice lze procházet pomocí cyklů. První z možností je použití <b class="barvaFunkce">for</b> cyklu. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cisla = (5, 10, 15, 20) <br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla:    <br>
+     		&nbsp;&nbsp;&nbsp;&nbsp;print(i) #vypise: 5 10 15 20
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Při použití <b class="barvaFunkce">while</b> cyklu použijeme funkci <b class="barvaFunkce">len()</b>, která nám určí délku n-tice. Procházet začneme od indexu 0.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cisla = (5, 10, 15, 20) <br>
+		i = 0 <br>
+		<b class="ks">while</b> i < <b class="ks">len</b>(cisla): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;print(cisla[i]) # vypise: 5 10 15 20 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;i = i+1 
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Typické metody n-tice</h4>
+
+
+<table id="metody">
+  <tr>
+    <th>Metody</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td>tuple.<b>count</b>(x) </td>
+    <td>Vrátí počet výskytů prvku x v n-tici</td>
+    
+  </tr>
+  <tr>
+    <td>tuple.<b>index</b>(x)</td>
+    <td>Vrátí index nejlevějšího výskytu prvku v n-tici</td>
+    
+  </tr>
+  
+</table>
+
+<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+<br>
+
+	
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	1. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (10, "jaro", 6.3) <br>
+	Napište program, který vypíše na výstup jednotlivé prvky v n-tici. 
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	2. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (10, "jaro", 6.3) <br>
+Napište program, který vypíše na výstup počet prvků v n-tici. 
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	3. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (10, 6, 8, 20) <br>
+Napište program, který vypíše na výstup třetí prvek v n-tici. 
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	4. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (10, 6, 8, 20, 4, 1) <br>
+Napište na výstup nejmenší a největší číslo v n-tici. 
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Máte dvě n-tice. <br>
+<b class="barvaPromenne">cisla</b> = ("jaro", "leto",) <br>
+<b class="barvaPromenne">retezec</b> = (1, 2) <br>
+Napište program, který zamění tyto dvě n-tice. Výslednou n-tici napište na výstup. 
+
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	6. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (1, 2) <br>
+Vytvořte dvě proměnné, kde každá proměnná bude obsahovat jedno číslo z n-tice. Tyto dvě proměnné vypište na výstup. 
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	7. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (1, 5, 6, 5, 9, 5, 2) <br>
+Napište program, který spočítá počet výskytů čísla 5 v n-tici. Výsledek napište na výstup. 
+
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	8. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (10, "jaro", [2, 5, 8] 6.3) <br>
+Z n-tice vyberte hodnotu 5 a napište ji na výstup.
+
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	9. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (1, 2, 3, 4, 5) <br>
+Napište program, přehodí prvky v n-tici od největšího po nejmenší. Výslednou n-tici napište na výstup. 
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  10. Máte n-tici <b class="barvaPromenne">hodnoty</b> = (1, 1, 1, 1) <br>
+Napište program, který zkontroluje, jestli jsou všechny hodnoty v n-tici stejné.
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

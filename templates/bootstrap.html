@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap a static</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Bootstrap a static</h3>
+
+
+	<h4 class = "podKapitola">Bootstrap v Django</h4>
+
+
+	<p class="divText">
+	Bootstrap je framework, pomocí kterého můžeme stylovat webovou aplikaci použitím šablon pro ikony, texty, tlačítka, navigační menu a další. Bootstrap používá CSS, Javascript, jQuery a je dostupný zdarma. <br><br>
+	Abychom mohli využívat předem připravené styly od Bootstrap, tak musíme přidat nějaký kód uvnitř našeho projektu. <br>
+	Otevřeme naši základní šablonu, ze které ostatní šablony dědí. Tato šablona je base.html
+	Na úplném začátku přidáme tag
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	<xmp> <!doctype html></xmp>
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Uvnitř &lt;head&gt;&lt;/head&gt; bude meta tag pro kódování v UTF-8 a druhý meta tag, aby se webová aplikace správně zobrazovala i na mobilním zařízením.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+			&lt;meta charset="utf-8"&gt; <br>
+			&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dále bude následovat uvnitř &lt;head&gt;&lt;/head&gt; stylesheet pro načtení CSS. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"&gt;
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Na úplném konci &lt;body&gt;&lt;/body&gt; přidáme skript, který slouží pro různé animace tlačítek atd.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Nyní jsme připraveni používat Bootstrap 
+	</p>
+
+	
+	<h4 class = "podKapitola">Použití Bootstrap</h4>
+	
+	<p class="divText">
+	Veškeré nabízené styly jsou k dispozici na oficiálních stránkách Bootstrap. <br>
+Pro otestování vložíme tlačítko z Bootstrap do našeho projektu. <br>
+Otevřeme si šablonu, např. home.html, kam budeme chtít tlačítko přidat. <br>
+Na oficiálních stránkách jsou v položce Buttons, dostupná tlačítka různých velikostí a barev. 
+<br><br>
+Vložíme do šablony dvě tlačítka, jedno bude zelené, které bude sloužit ke koupi výrobku. Druhé tlačítko bude červené, pro prodej výrobku. Kód pro tlačítka vložíme uvnitř &lt;body&gt;&lt;/body&gt;
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		&lt;button type="button" class="btn btn-success">Koupit&lt;/button&gt; <br>
+		&lt;button type="button" class="btn btn-danger">Prodat&lt;/button&gt;
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Static soubor</h4>
+
+	<p class="divText">
+	Static soubor slouží k ukládání CSS, Javascript kódu a obrázků. Pomocí static souboru můžeme rozdělit tyto kódy a obrázky od Pythonu a šablon v rámci projektu.
+	Např. je webová aplikace, která má mnoho obrázků. Je lepší mít všechny obrázky na jednom místě pro lepší přehlednost a přístup. 
+ 
+	</p>
+
+
+
+	<h4 class = "podKapitola">Vytvoření static souboru</h4>
+
+	<p class="divText">
+	Uvnitř našeho projektu vytvoříme nový soubor a pojmenujeme ho <b>static</b>. Uvnitř static vytvoříme tři další soubory. Soubory se budou jmenovat <b>css, js, images</b> <br>
+	Uvnitř css souboru vytvoříme soubor zvaný <b>main.css</b> <br>
+	Soubor <b>main.css</b> bude obsahovat CSS kód. <br>
+	CSS kód budeme tedy vkládat do <b>css</b>. <br>
+	Javascript kód budeme vkládat do <b>js</b>. <br>
+	Obrázky budeme vkládat do <b>images</b>. 
+	<br><br>
+
+	V <b>settings.py</b> musíme nastavit cesty k těmto souborům, 
+	abychom je mohli používat s Django. <br>
+	Na úplném konci přidáme <b>settings.py</b> přidáme toto:
+
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		STATICFILES_DIRS =[ Path.joinpath(BASE_DIR , 'static'), ]
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dále otevřeme náš base.html. Musíme sem vložit odkaz na náš CSS kód. <br>
+	Vložíme to uvnitř &lt;head&gt;&lt;/head&gt;
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		&lt;link rel="stylesheet" type="text/css" href="{&percnt; static '/css/main.css' &percnt;}">
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro obrázky musíme v <b>settings.py</b> přidat 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		MEDIA_URL = /'images'/
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Vložíme do images obrázek, bude mít název např. <b>obr1.png</b>
+	<br> <br>
+	Uvnitř base.html na úplném začátku napíšeme kód pro načtení static souboru.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		{&percnt; load static &percnt;}
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Obrázek přidáme takto:
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		
+		&lt;img src="{&percnt; static 'images/obr1.png' &percnt;}">
+	</p>
+	</div>
+
+	<br>
+
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

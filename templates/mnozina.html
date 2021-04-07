@@ -1,0 +1,551 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Množina</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Množina</h3>
+
+	
+	<p class="divText" >
+	Množina anglicky (set) je v Pythonu kolekce, obsahující neuspořádané a unikátní prvky. Tyto prvky v množině nejsou uspořádány, takže k nim nelze přistupovat pomocí indexů. Hodnoty jednotlivých prvků v množině nelze měnit, ale lze přidávat další prvky do množiny. Množina nesmí obsahovat prvky se stejnými hodnotami. 
+	</p>
+
+
+	<h4 class = "podKapitola">Vytvoření množiny</h4>
+
+
+	<p class="divText">
+	Jednou z možností, jak vytvořit množinu je, že se vytvoří prázdná množina pomocí funkce <b class="barvaFunkce">set()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	prazdna_mnozina = <b class="ks">set</b>()
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dále je možné vytvořit množinu, která obsahuje jeden nebo více prvků. Tyto prvky jsou ve složených závorkách od sebe odděleny čárkou.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	moje_mnozina = {1, "auto", 3.2}
+	</p>
+	</div>
+
+
+	<br>
+
+	<h4 class = "podKapitola">Přístup k množině</h4>
+
+	<p class="divText"> 
+	Přistupovat k prvkům množiny podle indexu nebo klíče není možné.  Pomocí cyklu <b class="barvaFunkce">for</b>, můžeme projít celou množinu a vypsat např. její prvky. Výpis prvků nemusí odpovídat pořadí prvků v množině, protože nejsou uspořádány.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		zelenina = {"salat", "mrkev", "brokolice"} <br>
+		<b class="ks">for</b> i <b class="ks">in</b> zelenina: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: brokolice, mrkev, salat
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Také můžeme zjistit, zda daný prvek se nachází v množině pomocí klíčového slova <b class="barvaFunkce">in</b>. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		zelenina = {"salat", "mrkev", "brokolice"} <br>
+		<b class="ks">print</b>("mrkev" <b class="ks">in</b> zelenina) # vypise: True
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Přidávání prvků do množiny</h4>
+
+	<p class="divText">
+	Přidávat prvky do seznamu lze pomocí metody <b class="barvaFunkce">.add()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		zelenina = {"salat", "mrkev", "brokolice"} <br>
+		zelenina.add("paprika") <br>
+		<b class="ks">print</b>(zelenina) # vypise: {'paprika', 'brokolice', 'mrkev', 'salat'}
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Také můžeme přídavat prvky z jedné množiny do druhé množiny pomocí metody <b class="barvaFunkce">.update()</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		jidlo = {"salat", "mrkev"} <br>
+		ovoce = {"jablko", "hruska"} <br>
+		jidlo.update(ovoce) <br>
+		<b class="ks">print</b>(jidlo) # vypise: {'hruska', 'salat', 'mrkev', 'jablko'}
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pomocí <b class="barvaFunkce">.update()</b> můžeme přidat i prvky, které jsou např. v seznamu nebo slovníku.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		jidlo = {"salat", "mrkev"} <br>
+		ovoce = ["jablko", "hruska"] # seznam <br>
+		jidlo.update(ovoce) <br>
+		<b class="ks">print</b>(jidlo) # vypise: {'salat', 'hruska', 'jablko', 'mrkev'}
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Odebírání prvků z množiny</h4>
+
+	<p class="divText"> 
+	Prvek z množiny lze odstranit pomocí metody 
+	<b class="barvaFunkce">.remove()</b> nebo 
+	<b class="barvaFunkce">.discard()</b> <br>
+	Odstranění prvku, který není v množině metodou 
+	<b class="barvaFunkce">.remove()</b>, vyhodí error. <br>
+	Odstranění prvku, který není v množině metodou 
+	<b class="barvaFunkce">.discard()</b>, nevyhodí error.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		barvy = {"cervena", "zelena", "modra"} <br>
+		barvy.remove("zelena") <br>
+		<b class="ks">print</b>(barvy) # vypise: {'cervena', 'modra'} 
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		barvy = {"cervena", "zelena", "modra"} <br>
+		barvy.discard("zelena") <br>
+		<b class="ks">print</b>(barvy) # vypise: {'cervena', 'modra'}
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Prvky ze seznamu se odstraňují metodou <b class="barvaFunkce">.pop()</b>. 
+	Metoda <b class="barvaFunkce">.pop()</b> odstraní poslední prvek. Jelikož nevíme, který prvek je na konci množiny, tak nebudeme vědět, který prvek se odstraní z množiny. <br>
+	Pro smazání všech prvků v množině slouží metoda <b class="barvaFunkce">.clear()</b> <br>
+	</p>
+
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		barvy = {"cervena", "zelena", "modra"} <br>
+		barvy.clear() <br>
+		<b class="ks">print</b>(barvy) # vypise: set()
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pomocí klíčového slova <b class="barvaFunkce">del</b> se smaže celá množina.	
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		barvy = {"cervena", "zelena", "modra"} <br>
+		<b class="ks">del</b> barvy 
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Další operace s množinami</h4>
+
+	<p class="divText">
+	Metoda <b class="barvaFunkce">.union()</b> umožňuje vytvořit novou množinu, které obsahuje všechny prvky z dvou jíných množin.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		prvni = {1,2,3} <br>
+		druhy = {4,5,6} <br>
+		hodnoty = prvni.union(druhy) <br>
+		<b class="ks">print</b>(hodnoty) # vypise: {1, 2, 3, 4, 5, 6}
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Metoda <b class="barvaFunkce">.intersection_update()</b> nechá v první množině pouze prvky, které jsou v obou množin současně.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		prvni = {10, 20, 30} <br>
+		druhy = {4, 5, 20} <br>
+		prvni.intersection_update(druhy) <br>
+		<b class="ks">print</b>(prvni) # vypise: {20}
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Metoda <b class="barvaFunkce">.intersection()</b> se použije pro vytvoření množiny obsahující pouze prvky, které jsou v obou množin současně.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		prvni = {10, 20, 30} <br>
+		druhy = {4, 5, 20} <br>
+		hodnoty  = prvni.intersection(druhy) <br>
+		<b class="ks">print</b>(hodnoty) # vypise: {20}
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Metoda <b class="barvaFunkce">.symmetric_diffrence()</b> je určena pro vytvoření množinu, kde prvky nejsou v obou množin současně.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		prvni = {1, 2, 3} <br>
+		druhy = {4, 1, 2} <br>
+		hodnoty  = prvni.symmetric_difference(druhy) <br>
+		<b class="ks">print</b>(hodnoty) # vypise: {3, 4} 
+
+	</p>
+	</div>
+
+	<br>
+
+
+
+
+	<h4 class = "podKapitola">Typické metody množin</h4>
+
+
+<table id="metody">
+  <tr>
+    <th>Metody</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td>mnozina.<b>add</b>() </td>
+    <td>Přidá prvek do množiny</td>
+    
+  </tr>
+  <tr>
+    <td>mnozina.<b>clear</b>()</td>
+    <td>Smaže všechny prvky z množiny</td>
+    
+  </tr>
+  <tr>
+    <td>mnozina.<b>copy</b>()</td>
+    <td>Vrátí kopii dané množiny</td>
+  
+  </tr>
+  <tr>
+    <td>mnozina.<b>difference</b>()</td>
+    <td>Vrátí množinu s rozdílem dvou nebo více množin</td>
+  
+  </tr>
+  <tr>
+    <td>mnozina.<b>difference_update</b>()</td>
+    <td>Odstraní prvky z dané množiny, které jsou i v druhé množině</td>
+ 
+  </tr>
+  <tr>
+    <td>mnozina.<b>discard</b>()</td>
+    <td>Odstraní daný prvek z množiny</td>
+  
+  </tr>
+  <tr>
+    <td>mnozina.<b>intersection</b>()</td>
+    <td>Vrátí množinu, která je průnikem dvou množin</td>
+
+  </tr>
+  <tr>
+    <td>mnozina.<b>isdisjoint</b>()</td>
+    <td>Vráti, jestli dvě množiny mají průnik nebo ne</td>
+  
+  </tr>
+  <tr>
+    <td>mnozina.<b>issubset</b>()</td>
+    <td>Vrátí, jestli daná množina obsahuje tuto množinu nebo ne</td>
+ 
+  </tr>
+  <tr>
+    <td>mnozina.<b>issuperset</b>()</td>
+    <td>Vrátí jestli tato množina obsahuje další množinu nebo ne</td>
+  
+  </tr>
+  <tr>
+    <td>mnozina.<b>pop</b>()</td>
+    <td>Odstraní nějaký prvek z množiny</td>
+  
+  </tr>
+  <tr>
+    <td>mnozina.<b>remove</b>()</td>
+    <td>Odstraní daný prvek</td>
+  
+  </tr>
+
+</table>
+
+<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	1. Máte množinu <b class="barvaPromenne">hodnoty</b> = {"cervena", "zelena", "modra"} <br>
+Napište program, který na výstup vypíše jednotlivé prvky v množině. 
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  2. Máte prázdnou množinu. <br>
+Napište program, který zjistí, jestli množina je prázdná nebo obsahuje prvky. 
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Máte množinu <b class="barvaPromenne">hodnoty</b> = {"cervena", "zelena", "modra"} <br>
+Napište program, který odstraní všechny prvky z množiny. 
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  4. Máte dvě množiny <br>
+<b class="barvaPromenne">prvni</b> = {1, 10, 12, 20} <br>
+<b class="barvaPromenne">druhy</b> = {5, 2, 10, 20} <br>
+Napište program, který na výstup vypíše prvky, které jsou stejné v obou množinách.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Máte dvě množiny <br>
+<b class="barvaPromenne">prvni</b> = {1, 10, 12, 20} <br>
+<b class="barvaPromenne">druhy</b> = {5, 2, 10, 20} <br>
+Vytvořte novou množinu, která bude obsahovat všechny prvky z dvou uvedených množin. Nová množina nesmí obsahovat prvky, které se opakují. 
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  6. Máte množinu <b class="barvaPromenne">hodnoty</b> = {100, 200, 300, 400} <br>
+Napište program, který odstraní z množiny prvky 300 a 400. Výsledek napište na výstup.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  7. Máte množinu <b class="barvaPromenne">hodnoty</b> = {"cervena", "zelena", "modra"} <br>
+Napište program, který tuto množinu převede na n-tici. Výsledek vypište na výstup.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

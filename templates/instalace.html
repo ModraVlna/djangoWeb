@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instalace</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Instalace</h3>
+
+
+	<h4 class = "podKapitola">Windows</h4>
+
+
+	<p class="divText">
+	Otevřeme terminál. <br>
+	Pro používání frameworku Django musíme mít nainstalovaný Python. Musíme ověřit, že je Python nainstalovaný. 
+ 
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+	python3 -V
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pokud není nainstalovaný, tak lze ho stáhnout z oficiálních stránek. Je doporučeno stáhnout verzi Python 3.8+ <br> <br>
+	Na libovolném místě vytvoříme soubor, např. djangoprojekt <br>
+	Poté otevřeme terminál a budeme se nacházet uvnitř djnagoprojektu. <br>
+	Provedeme příkaz pro vytvoření virtuálního prostředí
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+	  python -m venv env
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Po vytvoření virtuálního prostředí, ho musíme aktivovat. 
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		env\Scripts\activate
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Nyní ve virtuálním prostředí nainstalujeme Django.  
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		pip install django
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Poté můžeme vytvořit náš vlastní Django projekt. Vybereme si libovolný název, např. django_aplikace
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		django-admin startproject django_aplikace
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Máme vytvořený Django projekt s názvem django_aplikace <br>
+	Přepneme se do toho projektu
+
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		cd django_aplikace
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">macOS</h4>
+
+	<p class="divText">
+	Otevřeme terminál, ve kterém budeme pracovat. <br>
+	Pro používání frameworku Django musíme mít nainstalovaný Python. Musíme ověřit, že je Python nainstalovaný. 
+ 
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python3 -V
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pokud není nainstalovaný, tak lze ho stáhnout z oficiálních stránek. Je doporučeno stáhnout verzi Python 3.8+ <br>
+	Poté se musí nainstalovat pip a také pipenv
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python3.8 -m pip install pip –upgrade <br>
+		python3.8 -m pip install pipenv
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro ověření, že se pipenv nainstalovalo, použijeme příkaz
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		pipenv
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pomocí pipenv vytvoříme virtuální prostředí. <br>
+	V terminálu si vytvořte nový adresář a pojmenujte ho např. dev
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		mkdir dev
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	V adresáři dev, vytvoříme nový adresář, který libovolně pojmenujeme, např. djangoprojekt.
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		mkdir djangoprojekt
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Nový vytvořený adresář djangoprojekt musí být na začátku prázdný. <br>
+	V tomto adresáři provedeme příkaz
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		virtualenv -p python3 .
+	</p>
+	</div>
+
+	<br>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		source bin/activate
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Nyní nainstalujeme Django. Pro nainstalovaní aktuální verze je příkaz
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		pip install django
+	</p>
+	</div>
+
+	<br>
+	
+	<p class="divText">
+	Konkrétní verze lze najít na oficiálních stránkách Django. Instalování určité verzi lze provést takto:
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		pip install django==3.0.4
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Po úspěšné instalaci zavřeme terminál.
+	</p>
+
+
+	<h4 class = "podKapitola">Linux</h4>
+
+
+	<p class="divText">
+	Otevřeme terminál. <br>
+	Pro používání frameworku Django musíme mít nainstalovaný Python. 
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		sudo apt-get install python3
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Poté nainstalujeme pip
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		sudo apt-get install python3-pip
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Nainstalujeme Django
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		pip3 install Django <br>
+		sudo apt-get install python3-django
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Vytvoříme adresář, ve kterém bude náš Django projekt, např. django_projekt
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		mkdir django_projekt
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Uvnitř tohoto adresáře se vytvoří náš Django projekt.
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		sudo django-admin startproject django_aplikace
+	</p>
+	</div>
+
+	<br>
+
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

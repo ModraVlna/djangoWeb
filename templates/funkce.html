@@ -1,0 +1,624 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funkce</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Funkce</h3>
+
+	
+	<p class="divText" >
+	Funkce je blok kódu, která slouží pro vykonání nějaké činnosti. Funkce umožňuje opakovaně použít blok kódu, aniž bychom ho museli pokaždé znovu opisovat. 
+	Funkce se skládá z hlavičky a z těla. Hlavička funkce obsahuje na začátku klíčové slovo def, poté následuje název funkce, závorky a dvojtečka. V závorce mohou a nemusí být parametry.
+	Za hlavičkou následuje tělo. Tělo obsahuje příkazy, které budou postupně vykonány pro zavolání funkce. Každý nový řádek je odsazen tabulátorem. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> moje_funkce():  # hlavicka <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;print("Ahoj") # telo
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Vytvoření a práce s vlastní funkcí</h4>
+
+
+	<p class="divText">
+	Bude funkce s názvem <b class="barvaPromenne">pozdrav</b>, které vypíše na výstup nějaký pozdrav. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdrav():  # hlavicka <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;print("Ahoj")   # telo
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Aby příkaz uvnitř funkce byl proveden, je potřeba funkci zavolat. Funkce se zavolá tak, že se napíše její název a závorky.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdrav(): <br>
+	    	&nbsp;&nbsp;&nbsp;&nbsp;print("Ahoj") <br>
+	    	<br>
+		pozdrav() # vypise: Ahoj
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Tato funkce <b class="barvaPromenne">pozdrav()</b>, má prázdné závorky, neobsahuje tedy žádné parametry. 
+	Parametr lze představit jako data, která bude daná funkce nějakým způsobem požívat. 
+	V naší funkci pozdrav, přidáme parametr s názvem <b class="barvaPromenne">jmeno</b>.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdrav(jmeno): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Ahoj")
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Uvnitř kulatých závorek je tedy parametr <b class="barvaPromenne">jmeno</b>.  Tato funkce nyní vypíše náš pozdrav a bude za ní následovat jméno uživatele. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdrav(jmeno): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Ahoj " + jmeno)
+	</p>
+	</div>
+
+
+
+	<p class="divText"> 
+	Zase je potřeba funkci zavolat. Jelikož funkce má definován parametr, tak při volání se musí do závorek přidat nějaká hodnota. Hodnota, které se přidává při volání funkce do závorek se označuje jako argument. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> pozdrav(jmeno): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Ahoj " + jmeno) <br>
+    	<br>
+		pozdrav("Gustav") # vypise: Ahoj Gustav
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Funkce může mít více parametrů. Při volání funkce a zadávání argumentů je potřeba, aby pořadí bylo zachováno. Počet parametrů a argumentů se musí vždy u dané funkci rovnat.
+	<br>
+	<br>
+	Vytvoříme funkci, která bude sčítat dvě hodnoty. Funkce bude mít dva parametry, které představují dvě hodnoty. Funkce výsledek vypíše na výstup.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> secti(a, b): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(a+b) <br>
+    	<br>
+		secti(6, 10) # vypise: 16
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Příkaz return</h4>
+
+
+
+	<p class="divText">
+	Příkaz <b class="barvaFunkce">return</b> se používá v rámci funkce pro vrácení nějaké hodnoty. Máme příklad, kde sčítáme dvě hodnoty. Výsledek sečtení můžeme vypsat na výstup nebo vrátit. Výpis hodnoty na výstup se dá provést pomocí <b class="barvaFunkce">print()</b>. Vrácení hodnoty je pomocí příkazu return. 
+	Příkaz <b class="barvaFunkce">return</b> se napíše uvnitř těla funkce před hodnotou, kterou chceme vypsat.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> secti(a, b): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> a+b <br>
+    	<br>
+		secti(6, 10)
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Častá je otázka, jaký je rozdíl mezi použitím <b class="barvaFunkce">print()</b> 
+	a <b class="barvaFunkce">return</b>. Return umožňuje uložit výsledek jako proměnnou a dále s ní pracovat. <br>
+	<br>
+
+	Ukážeme si to na příkladě. Vytvoříme dvě funkce, kde porovnáme použití 
+	<b class="barvaFunkce">print()</b> a <b class="barvaFunkce">return</b>.
+	První funkce se bude jmenovat 
+	<b class="barvaPromenne">return_vysledek()</b>. Druhá funkce se bude jmenovat <b class="barvaPromenne">print_vysledek()</b>
+	Funkce sečte dvě hodnoty. Zavoláme tuto funkci. Výsledek sečtení přiřadíme k proměnné s názvem vysledek a přičteme hodnotu 100. <br>
+	<br>
+	První funkce tedy vrací součet dvou hodnot a přiřadí je k proměnné a přičteme ještě hodnotu 100.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> return_vysledek(a, b): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> a+b # 6 + 10 <br>
+    	<br>
+		vysledek = return_vysledek(6, 10) + 100 # 16 + 100 <br>
+		<b class="ks">print</b>(vysledek) # vypise: 116
+	
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Druhá funkce bude stejná, ale místo klíčového slova <b class="barvaFunkce">return</b>, bude mít v těle <b class="barvaFunkce">print()</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> print_vysledek(a, b): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(a+b) <br>
+    	<br>
+		vysledek2 = print_vysledek(6, 10) + 100 # Vyhodi chybu!
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Použití druhé funkce vyhodí chybu. Protože proměnná <b class="barvaPromenne">vysledek2</b> je typu <b class="barvaFunkce">NoneType</b>. Print nevrací žádnou hodnotu, která by se dala ukládat. Z tohoto důvodu nelze k <b class="barvaPromenne">vysledek2</b> přičítat další hodnoty.
+	</p>
+
+	<h4 class = "podKapitola">Práce s funkcí</h4>
+
+	<p class="divText">
+	Vytvoříme funkci, která bude rozhodovat o tom, zda číslo je nebo není sudé. Pokud číslo je sudé, funkce vrátí 
+	<b class="barvaFunkce">True</b>. 
+	Pokud číslo není sudé, funkce vrátí <b class="barvaFunkce">False</b>. Funkce bude mít jeden parametr, který bude představovat zadané číslo. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> sude_cislo(cislo): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;vysledek = cislo % 2 == 0 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> vysledek <br>
+    	<br>
+		<b class="ks">print</b>(sude_cislo(10)) # vypise: True <br>
+		<b class="ks">print</b>(sude_cislo(11)) # vypise: False
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro kratší zápis, není potřeba použít proměnnou <b class="barvaPromenne">vysledek</b>, ale rovnou napsat příkaz <b class="barvaFunkce">return</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> sude_cislo(cislo): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> cislo % 2 == 0 <br>
+    	<br>
+		<b class="ks">print</b>(sude_cislo(10)) # vypise: True <br>
+		<b class="ks">print</b>(sude_cislo(11)) # vypise: False 
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Máme seznam obsahující čísla. Pomocí funkce chceme zjistit, jestli se v seznamu vyskytuje alespoň jedno sudé číslo. Pokud ano, tak se vrátí hodnota True. 
+	Uvnitř funkce musí být cyklus, který projde všechny prvky v seznamu. Pokud číslo není sudé, tak bude cyklus pokračovat dál na další prvek. 
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> sude_v_seznamu(cisla): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return True</b> <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+        <br>
+		sude_v_seznamu([1, 3, 5]) <br>
+		sude_v_seznamu([2, 3, 5]) # True 
+
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Uvedená funkce vrací pouze 
+	<b class="barvaFunkce">True</b>, ale nevrací 
+	<b class="barvaFunkce">False</b>, když tam není sudé číslo. Toto je potřeba vyřešit.
+	Chyba by byla, kdyby za <b class="barvaFunkce">else</b> místo příkazu <b class="barvaFunkce">pass</b> jsme přidali <b class="barvaFunkce">return False</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> sude_v_seznamu(cisla): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return True</b> <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">False</b> # Chyba!
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Toto je chyba protože, funkce najde lichý prvek, vrátí 
+	<b class="barvaFunkce">False</b> a cyklus skončí. Ale v seznamu může být stále nějaké sudé číslo, ke kterému se nedostalo, protože cyklus byl ukončen. Prohledávání tedy skončí hned na prvním lichém čísle a nejsou otestovány zbylé prvky v seznamu. <br>
+	<br>
+	Příkaz <b class="barvaFunkce">return False</b> musí být použit, pokud se celý seznam prošel a nenašlo se sudé číslo. V tomto případě se musí <b class="barvaFunkce">return False</b> umístit až po skončení cyklu, tedy na konec. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> sude_v_seznamu(cisla): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return True</b> <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+            <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return False</b> # nenaslo sude cislo, tak vrati False <br>
+    	<br>
+		sude_v_seznamu([1, 3, 5]) # False <br>
+		sude_v_seznamu([2, 3, 5]) # True <br>
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	
+	<p class="divText">
+	Minulý příklad vracel informaci o tom, zda je v seznamu sudé číslo. Upravíme program tak, aby vrátil seznam čísel, která jsou sudá. Pokud sudé číslo nebude v seznamu, tak se vrátí prázdný seznam. Uvnitř funkce vytvoříme prázdný seznam, do kterého postupně budeme vkládat sudá čísla. Jakmile cyklus skončí, tak pomocí příkazu <b class="barvaFunkce">return</b>, vrátíme vytvořený seznam.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> sude_v_seznamu(cisla): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;suda_cisla =  [] # seznam <br>
+    		<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suda_cisla.append(i) # prida do seznamu <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>:	<br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> suda_cisla <br>
+    		<br>
+		<b class="ks">print</b>(sude_v_seznamu([1, 2, 8, 4, 5])) # vypise: [2, 8, 4]
+
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  1. Napište funkci, která bude mít jeden parametr s názvem <b class="barvaPromenne">jmeno</b>. Tato funkce na výstup vypíše tento parametr.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  2. Napište funkci, ke které se předají dvě čísla. Funkce vypíše na výstup součet těchto dvou čísel. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Napište funkci, které se předá číslo a funkce vypíše informaci o tom, jestli je číslo sudé nebo liché. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  4. Napište funkci, které se předají dvě čísla. Funkce porovná tyto čísla. Pokud první číslo je větší, tak se vypíše True, v opačném případě se vypíše False.
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Napište funkci, které se předá seznam obsahující čísla. Tato funkce sečte všechny čísla v seznamu a na výstup vypíše výsledek.
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  6. Napište funkci, které se předá číslo. Funkce vypočítá faktoriál daného čísla.  Výsledek se vypíše na výstup. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  7. Napište funkci, které se předá dvě čísla. Tato funkce vypíše na výstup menší číslo, pokud jsou obě čísla sudá. Pokud jedno je sudé nebo žádné číslo není sudé, tak se vrátí větší číslo. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  8. Napište funkci, které se předá jeden řetězec obsahující dvě slova. Pokud počáteční písmena těchto dvou slov jsou stejná, tak se vypíše True. V opačném případě se vypíše False.
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  9. Napište funkci, které se předá řetězec. Tato funkce vypíše na výstup znaky v řetězci v opačném pořadí. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  10. Napište funkci, které se předá řetězec. Tato funkce bude vypisovat na výstup upravený řetězec. Pro každý znak v řetězci se znak napíše 4x. Např. takto:<br>
+	ahoj <br>
+	aaaahhhhoooojjjj 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+<br>	
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

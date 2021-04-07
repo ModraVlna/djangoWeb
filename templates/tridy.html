@@ -1,0 +1,650 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Třídy a objekty</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Třídy a objekty</h3>
+
+	
+	<p class="divText" >
+	Objektově orientované programovaní (anglicky Object Oriented Progamming) umožnujě vytvářet vlastní objekty, které mají metody a datové atributy. 
+	</p>
+
+
+	<h4 class = "podKapitola">Třída</h4>
+
+
+	<p class="divText">
+	Pro vytvoření vlastního objektu je potřeba definovat třídu. Uvnitř třídy definujeme atributy a metody (funkce). K vytvoření třídy se použije klíčové slovo <b class="barvaFunkce">class</b> a za ním, námi zvolaný název dané třídy začínající velkým počátečním písmenem.  Za názvem je dvojtečka.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	<b class="ks">class</b> TotoJeTrida:
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Vytvoříme třídu s názvem <b class="barvaPromenne">Pes</b>. Tato třída bude obsahovat metodu <b class="barvaPromenne">pozdrav()</b>, které po zavolání vypíše něco na výstup.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Pes: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> pozdrav(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Baf")
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Je tedy vytvořená jednoduchá třída, která obsahuje jednu metodu. Abychom mohli přistoupit k této metodě, tak musíme vytvořit objekt dané třídy. Objekty, které patří do dané třídy se také označují jako instance této třídy. <br>
+	Pro vytvoření objektu patřící do třídy <b class="barvaPromenne">Pes</b>, je potřeba zvolit jeho název a specifikovat danou třídu.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		muj_pes = Pes()
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Nyní lze přistoupit k metodě <b class="barvaPromenne">pozdrav</b> pomocí tečkové notace.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		muj_pes.pozdrav() # vypise: Baf
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Celý kod vypadá následovně:
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Pes: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> pozdrav(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Baf") <br>
+        <br>
+		muj_pes = Pes() <br>
+		muj_pes.pozdrav() # vypise: Baf
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Datové atributy a metody objektu</h4>
+
+	<p class="divText">
+	<b class="barvaPromenne">Pes</b> může mít nějaké vlastnosti, jako jsou např. věk, plemeno nebo barva. <br>
+	Vytvoříme třídu <b class="barvaPromenne">Pes</b>, která bude mít atributy <b class="barvaPromenne">vek</b> a <b class="barvaPromenne">plemeno</b>. <br>
+	Uvnitř třídy vytvoříme metodu s názvem <b class="kself">__init__</b> <br>
+	<b class="kself">__init__</b> je speciální metoda, která je zavolána, když je vytvořena instance dané třídy. U každé metody dané třídy je prvním parametrem 
+	<b class="kself">self</b>. Parametr <b class="kself">self</b> je odkaz na daný objekt dané třídy a používá se k přístupu proměnných, které patří třídě. 
+	Parametr <b class="kself">self</b> se může jmenovat i jinak, ale vždy musí být jako první parametr každé metody. <br>
+	<br>
+	Metoda <b class="kself">__init__</b> bude mít tedy parametr <b class="kself">self</b> a dále <b class="barvaPromenne">vek</b> a <b class="barvaPromenne">plemeno</b>.
+
+
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Pes: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, vek, plemeno):
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Tělo metody bude obsahovat: <b class="kself">self.vek = vek</b> a 
+	<b class="kself">self.plemeno = plemeno</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Pes: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def <b class="kself">__init__</b></b>(<b class="kself">self</b>, vek, plemeno): <br>
+       			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.vek = vek <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.plemeno = plemeno
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Metoda <b class="kself">__init__</b> je zavolána automaticky, když je vytvořena instance třídy. Klíčové slovo <b class="kself">self</b> představuje instanci objektu samotného. Potom se očekává, že zadáme věk a plemeno nějakého psa. Tento věk a toto plemeno přiřadíme k <b class="kself">self.vek</b>
+	a <b class="kself">self.plemeno</b> <br>
+	<br>
+	Poté se vytvoří objekt, kde specifikujeme daný věk a plemeno psa. Na výstup vypíšeme plemeno psa.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Pes: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def __init__</b>(<b class="kself">self</b>, vek, plemeno): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.vek = vek <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.plemeno = plemeno <br>
+        <br>
+		muj_pes = Pes(10, "Nemecky ovcak") <br>
+		<b class="ks">print</b>(muj_pes.plemeno) #vypise: Nemecky ovcak
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Na pořadí argumentů záleží. Kromě uvedeného způsobu lze argumenty zapsat takto:
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		muj_pes = Pes(vek = 10, plemeno = "Nemecky ovcak") <br>
+		<b class="ks">print</b>(muj_pes.plemeno) #vypise: Nemecky ovcak
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Vytvoříme třídu s názvem <b class="barvaPromenne">Clovek</b>. Tato třída bude mít atributy představující jméno, věk a informaci o tom, jestli pracuje. Zda pracuje bude rozhodnuto podle <b class="barvaFunkce">True</b> nebo <b class="barvaFunkce">False</b>.  
+	Dále bude uvnitř třídy metoda, které sdělí informace o cloveku. Na výstup vypíše jméno a věk. Pokud bude osoba pracovat, tak se vypíše, že pracuje. V opačném případě se vypíše, že nepracuje. Toto může provést pomocí <b class="barvaFunkce">if</b> a <b class="barvaFunkce">else</b>. 
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Clovek: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, jmeno, vek, prace): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.jmeno = jmeno <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.vek = vek <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.prace = prace <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> informace(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Jmenuji se " + <b class="kself">self</b>.jmeno) <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Je mi", <b class="kself">self</b>.vek, "let") <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> <b class="kself">self</b>.prace == <b class="ks">True</b>: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Pracuji") <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+            		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Nepracuji") <br>
+        <br>
+		osoba = Clovek("Gustav", 30, True) <br>
+		osoba.informace() <br>
+		#Jmenuji se Gustav <br>
+		#Je mi 30 let <br>
+		#Pracuji <br>
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Dědičnost</h4>
+
+	<p class="divText"> 
+	Dědičnost umožnuje vytvořit třídu, která bude dědit vlastnosti a metody z jiné třídy. Třída, z které se dědí je rodič. Třída, které dědí od rodiče se nazývá potomek. <br>
+	<br>
+	Budeme mít třídu <b class="barvaPromenne">Zvire</b>. Potomkem této třídy bude třída <b class="barvaPromenne">Pes</b> a třída <b class="barvaPromenne">Kocka</b>. Abychom mohli dědit vlastnosti ze třídy <b class="barvaPromenne">Zvire</b>, musíme její název uvézt v závorce za názvem potomka. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Zvire: <br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+		    <br>
+		<b class="ks">class</b> Pes(Zvire): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+    		<br>
+		<b class="ks">class</b> Kocka(Zvire): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b>
+
+	</p>
+	</div>
+
+	<br>
+
+	
+
+	<p class="divText">
+	Připravíme si tři třídy. <b class="barvaPromenne">Vozidlo</b>, který bude rodič a potomky <b class="barvaPromenne">Automobil</b> a <b class="barvaPromenne">NakladniAutomobil</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Vozidlo: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+		<b class="ks">class</b> Automobil(Vozidlo): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> <br>
+		<b class="ks">class</b> NakladniAutomobil(Vozidlo): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b>
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Třída <b class="barvaPromenne">Vozidlo</b> bude mít atributy <b class="barvaPromenne">palivo</b>, <b class="barvaPromenne">barva</b> a <b class="barvaPromenne">cena</b>. Dále bude mít tři metody, které vrátí atribut <b class="barvaPromenne">palivo</b>, <b class="barvaPromenne">barvu</b> nebo <b class="barvaPromenne">cenu</b>. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Vozidlo: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, palivo, barva, cena): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.palivo = palivo <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.barva = barva <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.cena = cena <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vrat_palivo(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.palivo <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vrat_barvu(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">return self</b>.barva <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vrat_cenu(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.cena 
+
+
+	</p>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Třída <b class="barvaPromenne">Automobil</b> bude mít další atribut <b class="barvaPromenne">rychlost</b>. V metodě
+	<b class="kself">__init__</b> bude použito klíčové slovo <b class="kself">super()</b> pro dědění z třídy <b class="barvaPromenne">Vozidlo</b>. Dále bude třída <b class="barvaPromenne">Automobil</b> mít metodu <b class="barvaPromenne">nastartuj()</b>, která vypíše na výstup, že se auto nastartovalo.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Automobil(Vozidlo): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, palivo, barva, cena, rychlost): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">super</b>().<b class="kself">__init__</b>(palivo, barva, cena) <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.rychlost = rychlost <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> nastartuj(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Auto nastartovano")
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Podobně bude i třída <b class="barvaPromenne">NakladniAutombil</b>. Ta nebude mít rychlost, místo toho bude mít atribut <b class="barvaPromenne">kola</b>, který představuje počet kol na nákladním automobilu. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		class NakladniAutomobil(Vozidlo): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, palivo, barva, cena, kola): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">super</b>().<b class="kself">__init__</b>(palivo, barva, cena) <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.kola = kola <br>
+
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> nastartuj(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Nakladni automobil nastartovan")
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Nyní vytvoříme dva objekty, s názvem <b class="barvaPromenne">skoda</b> a <b class="barvaPromenne">iveco</b>. <b class="barvaPromenne">skoda</b> bude instance třídy <b class="barvaPromenne">Automobil</b>, <b class="barvaPromenne">iveco</b> bude instance třídy <b class="barvaPromenne">NakladniAutomobil</b>. U obou instancí zavoláme metodu <b class="barvaPromenne">nastartuj()</b> a také metodu <b class="barvaPromenne">vrat_palivo()</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		skoda = Automobil(40, "bila", 400000, 200) <br>
+		iveco = NakladniAutomobil(150, "cerna", 1500000, 12) <br>
+		<br>
+		skoda.nastartuj() # vypise: Auto nastartovano <br>
+		<b class="ks">print</b>(skoda.vrat_palivo()) #vypise: 40 <br>
+		<br>
+		iveco.nastartuj() # vypise: Nakladni automobil nastartovan <br>
+		<b class="ks">print</b>(iveco.vrat_palivo()) # vypise: 150
+
+	</p>
+	</div>
+
+	<br>
+
+
+
+
+	<h4 class = "podKapitola">Polymorfismus</h4>
+
+
+	<p class="divText">
+	Dva objekty různých tříd mohou mít stejný název metody. Polymorfismus v Pythonu umožnuje metodu zavolat ze stejného místa pro různé objekty. 
+	Budeme mít třídu <b class="barvaPromenne">Pes</b> a <b class="barvaPromenne">Kocka</b>. Atributem bude <b class="barvaPromenne">jmeno</b>. Obě třídy budou mít metodu s názvem <b class="barvaPromenne">mluv</b>, která vrací jméno. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Pes: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, jmeno): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.jmeno = jmeno <br>
+        	<br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> mluv(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.jmeno + " rekl baf" <br>
+        <br>
+        <br>
+		<b class="ks">class</b> Kocka: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, jmeno): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.jmeno = jmeno <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> mluv(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.jmeno + " rekla mnau"
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Dále vytvoříme dvě instance
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		muj_pes = Pes("Rex") <br>
+		moje_kocka = Kocka("Minda")
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	U obou instancí můžeme zavolat metodu <b class="barvaPromenne">mluv()</b>. Jelikož název metod je stejný můžeme metodu zavolat pro obě instance zároveň. <br>
+	Toto lze provést pomocí <b class="barvaFunkce">for</b> cyklu, kde do hranatých závorek dáme dané instance. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> zvire <b class="ks">in</b> [muj_pes, moje_kocka]: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(zvire.mluv()) # vypise: Rex rekl baf Minda rekla mnau
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Také lze použít vlastní metodu, kde parametrem bude daná instance.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> mluveni(zvire): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(zvire.mluv()) <br>
+    	<br>
+		mluveni(muj_pes) # vypise: Rex rekl baf 
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Abstraktní třída</h4>
+
+
+	<p class="divText">
+		U abstraktní třídy se neočekává, že se bude vytvářet její instance. Je používána s dědičností. 
+	Budeme mít abstraktní třídu <b class="barvaPromenne">Zvire</b>. Potomkem této třídy bude třída <b class="barvaPromenne">Pes</b>. Pomocí metody <b class="barvaPromenne">mluv()</b> se vrátí jméno. <br>
+	Pokud by se vytvořila instance třídy <b class="barvaPromenne">Zvire</b> a použila by se metoda <b class="barvaPromenne">mluv</b>, tak se vyhodí chyba. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Zvire: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, jmeno): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.jmeno = jmeno <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> mluv(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError("Potomek neni implementovan") <br>
+        <br>
+		<b class="ks">class</b> Pes(Zvire): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> mluv(self): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.jmeno <br>
+        <br>
+		zviratko = Zvire("zvire") <br>
+		<b class="ks">print</b>(zviratko.mluv()) # vyhodi chybu <br>
+		<br>
+		muj_pes = Pes("Rex") <br>
+		<b class="ks">print</b>(muj_pes.mluv()) # vypise: Rex
+
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Speciální metody (Magic/Dunder)</h4>
+
+
+	<p class="divText">
+	Budeme mít třídu <b class="barvaPromenne">Kniha</b>, která má atributy <b class="barvaPromenne">nazev</b>, <b class="barvaPromenne">autor</b> a <b class="barvaPromenne">strany</b>.
+	Při použití funkce <b class="barvaFunkce">print()</b> pro výpis instance nedostaneme informace o atributech. Dostaneme pouze informaci o tom, kde v paměti je uložen daný objekt. <br> 
+	Toto lze vyřešit pomocí speciální metody s názvem <b class="kself">__str__</b>, která bude uvnitř třídy. <br>
+	Tato metoda vrátí informaci o názvu a autora dané knihy při její zavolání. 
+	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Kniha: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, nazev, autor, strany): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.nazev = nazev <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.autor = autor <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.strany = strany <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__str__</b>(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> f"{<b class="kself">self</b>.nazev} od {<b class="kself">self</b>.autor}" <br>
+        <br>
+		moje_kniha = Kniha("Pyhon knina", "Gustav", 200) <br>
+		<b class="ks">print</b>(moje_kniha) # vypise Python kniha od Gustav
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Těchto speciálních metod je více. Chceme zjistit počet stran knihy. K tomuto použijeme speciální metodu <b class="kself">__len__()</b>. Dále chceme mít nějakou informaci o tom, že jsme smazali objektu. K tomuto použijeme speciální metodu <b class="kself">__del__()</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">class</b> Kniha: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, nazev, autor, strany): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.nazev = nazev <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.autor = autor <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.strany = strany <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__str__</b>(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> f"{<b class="kself">self</b>.nazev} od {<b class="kself">self</b>.autor}" <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__len__</b>(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.strany <br>
+        	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__del__</b>(<b class="kself">self</b>): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Instance knihy byla smazana") <br>
+        <br>
+		moje_kniha = Kniha("Pyhon knina", "Gustav", 200) <br>
+		<b class="ks">print</b>(moje_kniha) # vypise Python kniha od Gustav <br>
+		<b class="ks">print</b>(<b class="ks">len</b>(moje_kniha)) # vypise: 200 <br>
+		<b class="ks">del</b> moje_kniha # vypise: Instance knihy byla smazana
+
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+   1. Napište třídu <b class="barvaPromenne">Auto</b>, které neobsahuje žádné metody a atributy. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+   2. Napište třídu <b class="barvaPromenne">Produkt</b>. Tato třídá bude mít atributy nazev a cena. <br>
+Třída bude mít metodu <b class="kself">__init__</b>() <br>
+Dále bude mít dvě metody. První metoda bude vracet atribut nazev. Druhá metoda bude vracet atribut cena. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Napište třídu <b class="barvaPromenne">Ucet</b>, která bude sloužit pro bankovní účet. <br>
+Tato třída bude mít atribut <b class="barvaPromenne">uzivatel</b> a <b class="barvaPromenne">penize</b>. <br>
+Dále budou zde dvě metody pro vklad a výběr peněz. <br>
+Uživatel nemůže vybrat z účtu víc peněz než má k dispozici. <br>
+	
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>	
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

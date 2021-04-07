@@ -1,0 +1,631 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slovník</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Slovník</h3>
+
+	
+	<p class="divText" >
+	Slovník (anglicky dictionary) v Pythonu je neuspořádaná kolekce. Data ve slovníků jsou ve formou klíč:hodnota (anglicky key:value). <br> 
+	K jednotlivým hodnotám přistupujeme pomocí klíče, protože nevíme pořadí hodnot. Slovníky jsou měnitelné, takže lze přidávat a odebírat prvky. Klíče ve slovníků musí být unikátní, hodnoty nemusí být unikátní. Klíč a hodnota jsou od sebe odděleny dvojtečkou a jsou v složených závorkách. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	muj_slovnik = {1: "pondeli", 2: "utery", 3: "streda"} <br>
+	print(muj_slovnik) # vypise: {1: 'pondeli', 2: 'utery', 3: 'streda'}
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Vytvoření slovníku</h4>
+
+
+	<p class="divText">
+	Jednou z možností, jak vytvořit slovník je, že se vytvoří prázdný slovník. Prázdný slovník se dá vytvořit pomocí složených závorek nebo pomocí funkce <b class="barvaFunkce">dict()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	slovnik_prvni = {} <br>
+	slovnik_druhy = <b class="ks">dict</b>()
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dále je možné vytvořit slovník, který obsahuje nějaké hodnoty. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+	<b class="ks">print</b>(auto) # vypise: {'znacka': 'Skoda', 'model': 'Octavia', 'rok': 2020}
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Přístup k slovníku</h4>
+
+
+	<p class="divText">
+	Každá hodnota ve slovníku má svůj klíč. Pomocí tohoto klíče můžeme přistupovat k hodnotám ve slovníku. Budeme mít slovník s názvem <b class="barvaPromenne">auto</b> a chceme vypsat značku auta. Uvedeme název slovníku, za ním budou hranaté závorky a v závorkách bude název klíče.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">print</b>(auto["znacka"]) # vypise: Skoda
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Také je možné použít metodu <b class="barvaFunkce">.get()</b> 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">print</b>(auto.get("rok")) # vypise: 2020
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Pro získání všech klíčů ve slovníku existuje metoda <b class="barvaFunkce">.keys()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">print</b>(auto.keys()) # vypise: dict_keys(['znacka', 'model', 'rok'])
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro získání všech hodnot ve slovníku existuje metoda <b class="barvaFunkce">.values()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">print</b>(auto.values()) # vypise: dict_values(['Skoda', 'Octavia', 2020])
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Metoda <b class="barvaFunkce">.items()</b> vrací všechny klíče a hodnoty ve slovníku jako n-tice v seznamu
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		# vypise: dict_items([('znacka', 'Skoda'), ('model', 'Octavia'), ('rok', 2020)]) <br>
+		<b class="ks">print</b>(auto.items())	
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Přidávání prvků do slovníku</h4>
+
+
+	<p class="divText">
+	Nový prvek so do slovníku vkládá tak, že se uvede název klíče a daná hodnota.
+	Budeme mít nákupní košík, kde klíč představuje produkt a hodnota je cena produktu. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		nakupni_kosik = {"chleba": 20 ,"cokolada": 35, "syr": 28}
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Do tohoto košíku přidáme další produkt.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		nakupni_kosik["jogurt"] = 15 <br>
+		# vypise: {'chleba': 20, 'cokolada': 35, 'syr': 28, 'jogurt': 15} <br>
+		<b class="ks">print</b>(nakupni_kosik)
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Odebírání prvků ze slovníku</h4>
+
+
+
+	<p class="divText">
+	Prvek ze slovníku lze odebrat při uvedení klíče pomocí metody <b class="barvaFunkce">.pop()</b>. Odstraníme tedy prvek z našeho nákupního seznamu.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		nakupni_kosik = {"chleba": 20 ,"cokolada": 35, "syr": 28} <br>
+		nakupni_kosik.pop("cokolada") <br>
+		<b class="ks">print</b>(nakupni_kosik)# vypise: {'chleba': 20, 'syr': 28} 
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Vyprázdnit celý slovník lze pomocí metody <b class="barvaFunkce">.clear()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		nakupni_kosik = {"chleba": 20 ,"cokolada": 35, "syr": 28} <br>
+		nakupni_kosik.clear()
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Smazat celý slovník lze pomocí klíčového slova <b class="barvaFunkce">del</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		nakupni_kosik = {"chleba": 20 ,"cokolada": 35, "syr": 28} <br>
+		<b class="ks">del</b> nakupni_kosik
+
+	</p>
+	</div>
+
+	<br>
+
+
+
+	<h4 class = "podKapitola">Průchod slovníkem</h4>
+
+	<p class="divText"> 
+	Průchod slovníkem se dá udělat přes <b class="barvaFunkce">for</b> cyklus. Máme na výběr, jestli chceme vypsat pouze klíče, hodnoty nebo oboje. <br>
+	Prvně si ukážeme dva způsoby, jak vypsat klíče slovníku.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> i <b class="ks">in</b> nakupni_kosik: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise chleba cokolada syr
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText"> 
+	Druhá možnost je pomocí metody <b class="barvaFunkce">.keys()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> i <b class="ks">in</b> nakupni_kosik.keys(): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print(i)</b> # vypise chleba cokolada syr
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Pro výpis hodnot ve slovníku musíme použít název slovníku a v hranatých závorkách napsat prvek.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> i <b class="ks">in</b> nakupni_kosik: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(nakupni_kosik[i]) # vypise 20 35 28
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Také můžeme použít metodu <b class="barvaFunkce">.values()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> i <b class="ks">in</b> nakupni_kosik.values(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise 20 35 28
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText"> 
+	Pro výpis všech klíčů a hodnot použijeme metodu <b class="barvaFunkce">.items()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> i, j <b class="ks">in</b> nakupni_kosik.items(): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i, j) # vypise chleba 20 cokolada 35 syr 28
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Typické metody slovníku</h4>
+
+
+<table id="metody">
+  <tr>
+    <th>Metody</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td>slovnik.<b>clear</b>() </td>
+    <td>Odstraní všechny prvky ve slovníku</td>
+    
+  </tr>
+  <tr>
+    <td>slovnik.<b>copy</b>()</td>
+    <td>Vrátí kopii daného slovníku</td>
+    
+  </tr>
+  <tr>
+    <td>slovnik.<b>get</b>()</td>
+    <td>Vrátí hodnotu ke danému klíči</td>
+  
+  </tr>
+  <tr>
+    <td>slovnik.<b>items</b>()</td>
+    <td>Vrátí seznam obsahující n-tici klíčů a hodnot</td>
+  
+  </tr>
+  <tr>
+    <td>slovnik.<b>keys</b>()</td>
+    <td>Vrátí seznam obsahující klíče</td>
+ 
+  </tr>
+  <tr>
+    <td>slovnik.<b>pop</b>()</td>
+    <td>Odstraní daný prvek podle klíče</td>
+  
+  </tr>
+  <tr>
+    <td>slovnik.<b>setdefault</b>()</td>
+    <td>Vrátí danou hodnotu klíče. Pokud klíč není, tak se vytvoří.</td>
+
+  </tr>
+  <tr>
+    <td>slovnik.<b>update</b>()</td>
+    <td>Přidá do daného slovníku klíč a hodnotu</td>
+  
+  </tr>
+  <tr>
+    <td>slovnik.<b>values</b>()</td>
+    <td>Vrátí seznam obsahující hodnoty ze slovníku</td>
+ 
+  </tr>
+</table>
+
+<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  1. Máte slovník <b class="barvaPromenne">auto</b> = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+Napište program, který vypíše na výstup všechny klíče slovníku.
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  2.Máte slovník <b class="barvaPromenne">auto</b> = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+Napište program, který vypíše na výstup všechny hodnoty v slovníku.
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Máte slovník <b class="barvaPromenne">auto</b> = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+Napište program, který vypíše na výstup celý slovník.
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  4. Máte slovník <b class="barvaPromenne">nakupni_kosik</b> = {"chleba": 20,"cokolada": 35, "syr": 28} <br>
+Napište program, který přidá do slovníku produkt jogurt s cennou 15. Výsledný slovník vypište na výstup. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Máte slovník <b class="barvaPromenne">nakupni_kosik</b> = {"chleba": 20,"cokolada": 35, "syr": 28} <br>
+Napište program, který odstraní klíč cokolada a syr a k němu i jejich hodnoty. Výsledný slovník vypište na výstup. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	6. Máte slovník <b class="barvaPromenne">hodnoty</b> = {"a": 1 ,"b": 2, "c": 3} <br>
+Napište program, který zjistí, jestli se ve slovníku vyskytuje hodnota 2.
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  7. Máte slovník <b class="barvaPromenne">auto</b> = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+Napište program, který změní hodnotu Octavia na hodnotu Superb.
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  8. Máte slovník <b class="barvaPromenne">hodnoty</b> = {"a": 1,"b": 2, "c": 3} <br>
+Napište program, který změní klíč a na hodnotu klíč s názvem prvni.
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  9. Máte slovník <b class="barvaPromenne">hodnoty</b> = {"a": 10,"b": 20, "c": 30} <br>
+Napište program, který sečte všechny hodnoty ve slovníku. Výsledek vypište na výstup. 
+
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  10. Máte dva slovníky. <br>
+<b class="barvaPromenne">prvni</b> = {"a": 10,"b": 20} <br>
+<b class="barvaPromenne">druhy</b> = {"c": 30, "d": 40} <br>
+Napište program, který vytvoří nový slovník spojením dvou uvedených slovníků. Výsledný slovník vypište na výstup. 
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

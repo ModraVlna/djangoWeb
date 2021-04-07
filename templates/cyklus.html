@@ -1,0 +1,586 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cyklus</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Podmíněný příkaz</h3>
+
+	
+	<p class="divText" >
+	Podmíněný příkaz se používá, když máme program, který vykoná daný příkaz v závislosti na nějaké podmínce. Při práci s podmíněním příkazem využíváme klíčová slova 
+	<b class="barvaFunkce">if</b>, 
+	<b class="barvaFunkce">elif</b> a 
+	<b class="barvaFunkce">else</b>.
+	</p>
+
+
+	<h4 class = "podKapitola">If, elif, else</h4>
+
+
+	<p class="divText">
+	Při vytvoření jednoduchého podmíněné příkazu použijeme <b class="barvaFunkce">if</b>. Poté je podmínka, kterou uvedeme, následuje dvojtečka. Příkazy na novém řádku jsou odsazeny. Odsazení se dělá pomocí tabulátoru (na klávesnici tab). 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">if</b> nejaka_podminka: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;# proved prikaz
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Máme číslo a chceme zjistit, jestli toto číslo je vetší než hodnota 10. Pokud ano, tak se vypíše zpráva. Porovnávají se tedy dvě hodnoty.
+	Nejprve se napíše klíčové slovo <b class="barvaFunkce">if</b>. Poté bude podmínka. Podmínka je, že naše číslo je větší než 10. Na konci bude dvojtečka. Na dalším řádku bude příkaz, který vypíše informace. Tento příkaz na novém řádku musí být odsazen pomocí tabulátoru. 
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 50 <br>
+		<b class="ks">if</b> cislo > 10: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je vetsi nez 10") # vypise: 50 je vetsi nez 10
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Změníme naše číslo z hodnoty 50, na hodnotu 3. Porovná se tedy, jestli hodnota 3 je větší než 10. Uvedený podmíněný příkaz vypíše informaci pouze tehdy, pokud je číslo větší. Chceme, ale aby vypsalo zprávu, že hodnota je menší. Proto se použije klíčové slovo 
+	<b class="barvaFunkce">else</b>. Číslo je tedy buď větší nebo  menší než 10.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 3 <br>
+		<b class="ks">if</b> cislo > 10: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je vetsi nez 10") <br>
+		<b class="ks">else</b>:	<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je mensi nez 10") # vypise: 3 je mensi nez 10
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Máme tedy program, který dokáže rozpoznat, zda nějaké číslo je vetší nebo menší. Ale může se vyskytnout situace, že čísla jsou si rovna. Pokud je potřeba mít více podmínek, tak lze přidat další podmínku pomocí klíčového slova 
+		<b class="barvaFunkce">elif</b>. Použijeme elif pro porovnání, zda naše číslo je rovno 10.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 10 <br>
+		<b class="ks">if</b> cislo > 10: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je vetsi nez 10") <br>
+		<b class="ks">elif</b> cislo == 10: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je rovno 10") # vypise: 10 je rovno 10 <br>
+		<b class="ks">else</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je mensi nez 10")
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Vytvoříme program, který podle zadaného místa budovy vypíše její adresu. Vytvoří se proměnná s názvem <b class="barvaPromenne">misto</b>, která bude obsahovat název budovy. 
+	Pomocí 
+	<b class="barvaFunkce">if</b>, 
+	<b class="barvaFunkce">elif</b> a 
+	<b class="barvaFunkce">else</b> se bude místo porovnávat s hodnotou v podmínce. Když bude proměnná obsahovat budovu Obchod, tak program vypíše adresu budovy. Pokud se místo nebude shodovat z žádnou z uvedených možnosti, tak bude vypsáno, že adresa je není známa. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		misto = "Obchod" <br> <br>
+
+		<b class="ks">if</b> misto == "Banka": <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Banka je na adrese Nova 20") <br>
+		<b class="ks">elif</b> misto == "Obchod": <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Obchod je na adrese Hlavni 5") <br>
+		<b class="ks">elif</b> misto == "Restaurace": <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Restaurace je na adrese Nadrazni 12") <br>
+		<b class="ks">else</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(misto, "nema znamou adresu")
+
+	</p>
+	</div>
+
+	<br>
+
+	<h3 class="myHeader">Cyklus</h3>
+
+	<p class="divText">
+		Cyklus se používá, když chceme část kódu provést několikrát. Máme tedy nějakou činnost, která se bude opakovat.  
+		Cyklus umožní vykonat příkazy vícekrát. 
+		Python poskytuje <b class="barvaFunkce">for</b> cyklus a <b class="barvaFunkce">while</b> cyklus. 
+	</p>
+
+	<h4 class = "podKapitola">Cyklus for</h4>
+
+	<p class="divText">
+		U mnoha objektů v Pythonu lze iterovat. Např. se dá iterovat každý znak v řetězci, každý prvek v seznamu atd. 
+		Připravíme si seznam, který bude obsahovat čísla. Tyto čísla pomocí 
+		<b class="barvaFunkce">for</b> cyklu vypíšeme.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cisla = [1, 2, 3, 4, 5]
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro každý prvek v seznamu, vypíšeme daný prvek. 
+	Použijeme k tomu klíčové slovo <b class="barvaFunkce">for</b> a <b class="barvaFunkce">in</b>. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">for</b> prvek <b class="ks">in</b> cisla: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(prvek) # vypise: 1 2 3 4 5
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Podobně se dá vypsat jednotlivé znaky nějakého řetězce. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		retezec = "automobil" <br>
+		<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: a u t o m o b i l
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Máme seznam obsahující čísla a chceme vypsat jejich druhou mocninu. Mocnina se zapisuje v Pythonu pomocí dvou hvězdiček.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cisla = [5, 2, 4] <br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i**2) # vypise: 25 4 16
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Uvnitř for cyklu můžeme provádět další operace. Např. chceme vypsat pouze čísla, které jsou sudá.
+	Číslo je sudé, jestliže jeho zbytek po dělení je rovno nule. Pro zjištění zbytku je k dispozici mod, který se označuje symbolem <b>%</b>.  Pokud zbytek po dělení čísla je rovno nule, tak to znamená, že číslo je sudé a vypíšeme ho. 
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cisla = [1, 2, 3, 4, 5, 6] <br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 2 4 6
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">range()</h4>
+
+	<p class="divText"> 
+	Funkce <b class="barvaFunkce">range()</b> vytvoří posloupnost hodnot. Počet hodnot se vkládá do závorky. Posloupnost začíná číslem 0 a zvyšuje se o jedničku.
+	Použijeme funkci <b class="barvaFunkce">range()</b> a vypíšeme hodnoty na výstup
+	pomocí <b class="barvaFunkce">for</b> cyklu.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		hodnoty = <b class="ks">range</b>(3) <br>
+		<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 0 1 2 
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Lze stanovit od jakého čísla má posloupnost začínat. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		hodnoty = <b class="ks">range</b>(3, 6) <br>
+		<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 3 4 5
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Třetím nepovinným parametrem je o kolik se mají čísla zvyšovat. Např. místo jedničky to bude o dva. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		hodnoty = <b class="ks">range</b>(3, 10, 2) <br>
+		<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 3 5 7 9
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Cyklus while</h4>
+	
+	<p class="divText">
+	While je druh cyklu, který provádí nějaké příkazy, když je podmínka pravdivá. Např. zatímco můj bazén není plný, tak ho napouštěj vodou. 
+	Pro použití while cyklu se musí uvést klíčové slovo <b class="barvaFunkce">while</b>, potom následuje podmínka a poté nějaké činnost. <br>
+	<br>
+	Budeme mít číslo, které budeme vypisovat a zvyšovat jeho hodnotu o jedničku. Zastavíme výpis a přičítání, když bude naše číslo menší jak 5.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 1 <br>
+		<b class="ks">while</b> cislo < 5: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo) # vypise: 1 2 3 4 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cislo = cislo + 1 # pricte k cislu jednicku 
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	<b class="barvaPromenne">cislo</b> představuje proměnnou s hodnotou jedna na začátku. Podmínka je <b class="barvaPromenne">cislo < 5</b>. Poté následuje dvojtečka, za ní je tělo cyklu. <br>
+	<br>
+	<b class="barvaFunkce">while</b> cyklem lze použít příkaz 
+	<b class="barvaFunkce">else</b>. 
+	Kód uvnitř <b class="barvaFunkce">else</b> se provede, když bude podmínka nepravdivá.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 1 <br>
+		<b class="ks">while</b> cislo < 5: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo) # vypise: 1 2 3 4 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cislo = cislo + 1 # pricte k cislu jednicku <br>
+		<b class="ks">else</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Cyklus skoncil")  
+ 
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Break, continue, pass</h4>
+
+	<p class="divText">
+	S cyklem lze také použít tři příkazy, tím je 
+	<b class="barvaFunkce">break</b>, 
+	<b class="barvaFunkce">continue</b> a 
+	<b class="barvaFunkce">pass</b>. <br>
+	<br>
+	Příkaz 
+	<b class="barvaFunkce">break</b> (zastavit) umožnuje zastavit cyklus, i když je podmínka stále pravdivá. 
+	Provedeme příkazy v těle pouze jednou. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 1 <br>
+		<b class="ks">while</b> cislo < 5: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo) # vypise: 1 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cislo = cislo + 1 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">break</b>
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Zastavíme cyklus, když číslo bude rovno hodnotě 3. 
+	</p>
+
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		cislo = 1 <br>
+		<b class="ks">while</b> cislo < 5: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo) # vypise: 1 2 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;cislo = cislo + 1 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> cislo == 3: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">break</b>
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	<b class="barvaFunkce">continue</b> je příkaz, který se používá pro zastavení aktuální iterace a pokračování v další. 
+	Budeme mít řetězec, máme za úkol vypsat tento řetězec, ale vynechat písmena o, která se vyskytují v řetězci. K tomuto použijeme příkaz <b class="barvaFunkce">continue</b>.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		retezec = "automobil" <br>
+		<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i == "o": <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">continue</b> <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print(i)</b> # vypise: a u t m b i l
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	<b class="barvaFunkce">pass</b> je příkaz, který se používá, když je nějaký cyklus, ale tělo tohoto cyklu je prázdný. Pokud se v Pythonu vytvoří cyklus, který nic neobsahuje, tak to vyhodí syntaktickou chybu. Proto se použije příkaz <b class="barvaFunkce">pass</b>, aby nedošlo k žádné chybě. Příkaz <b class="barvaFunkce">pass</b> se např. používá, když si chceme připravit cyklus na budoucí použití. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		retezec = "automobil" <br>
+		<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;# vyhodi to syntaktickou chybu
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Použití příkazu <b class="barvaFunkce">pass</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		retezec = "automobil" <br>
+		<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> # bez chyby 
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Cyklus obsahující další cyklus</h4>
+
+	<p class="divText">
+	Python umožnuje použít cyklus, který obsahuje další cyklus.
+	Budeme mít dva seznamy. První seznam obsahuje barvy a druhý seznam obsahuje ovoce.
+	Úkolem je vypsat každou barvu s každým ovocem společně. 
+	K tomuto použijeme dva <b class="barvaFunkce">for</b> cykly.
+	První <b class="barvaFunkce">for</b> cyklus bude procházet prvky v seznamu barvy. Druhý cyklus bude procházet prvky v seznamu ovoce. Potom se tyto prvky vypíší na výstup.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		barva = ["cervena", "zluta"] <br>
+		ovoce = ["jablko", "hruska"] <br>
+		<br>
+		<b class="ks">for</b> i <b class="ks">in</b> barva: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> j <b class="ks">in</b> ovoce: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i, j) # i obsahuje prvek z barvy, j obsahuje prvek z ovoce 
+        		<br>
+		# cervena jablko, cervena hruska, zluta jablko, zluta hruska
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  1. Napište program, který porovná dvě čísla a vypíše na výstup číslo, které je větší.
+
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  2. Napište program, který vypíše na výstup informaci o tom, jestli řetězec má více, jak 5 znaků. 
+  
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Napište program, který vypíše na výstup informaci o tom, jestli řetězec obsahuje znak <b class="barvaPromenne">a</b>. Pokud nemá, tak napíše původní řetězec.
+  
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  4. Napište program, který vypíše na výstup pomocí cyklu čísla od 1 do 10.
+  
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Napište program, který pomocí cyklu vypíše mocniny čísel od 1 do 10.
+  
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

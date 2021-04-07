@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Projekt</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">První projekt</h3>
+
+	
+	<p class="divText" >
+	Při práci na projektu v Django, si nejprve aktivujeme virtuální prostředí v terminálu. Najdeme si, kde se nachází daný adresář pro projekt a aktivujeme virtuální prostředí. <br>
+	<br>
+	Uvnitř tohoto adresáře, vytvoříme nový adresář s názvem <b class="barvaPromenne">src</b> <br>
+	Uvnitř <b class="barvaPromenne">src</b> budou veškeré soubory, které bude naše aplikace používat. <br>
+	V src vytvoříme náš Django projekt 
+
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+	django-admin startproject django_aplikace .
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Nyní máme vytvořený projekt. 
+	</p>
+
+
+	<h4 class = "podKapitola">Webový prohlížeč</h4>
+
+
+	<p class="divText">
+	Pro spuštění projektu ke shlédnutí v prohlížeči použijeme v terminálu následující příkaz
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+	python manage.py runserver
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dostaneme adresu, kterou zkopírujeme a vložíme do prohlížeče. <br>
+	Adresa může vypadat např. takto: <b>127.0.0.1:8000</b>
+ 	<br><br>
+	Když zadáme adresu do prohlížeče, zobrazí se nám následující stránka:
+	<img src="{% static 'images/dum.png' %}" width="1000" height="600">
+	</p>
+
+
+
+	<h4 class = "podKapitola">Textový editor, vývojové prostředí</h4>
+
+	<p class="divText">
+	Pro psaní našeho kódu, stačí použít textový editor např. Sublime Text. Tento editor lze stáhnout z oficiálních stránek Sublime Text. Psaní v takovém editoru je efektivnější a přehlednější než psát dlouhý kód v terminálu.  Kromě Sublime Text, je populární používat např. vývojové prostředí PyCharm. <br> 
+	Oba nabízí zdarma varianty ke stažení. 
+
+	<br> <br>
+
+	Při úspěšné instalaci si spustíme vybraný program (např. Sublime nebo Pycharm).
+	Poté v tomto editoru otevřeme/přidáme náš vytvořený projekt. 
+	Po přidaní našeho projektu do editoru, se nám zobrazí soubory, které máme v projektu (lib, src, bin…)  <br>
+	Provedeme uložení celého projektu. 
+	</p>
+
+
+	<h4 class = "podKapitola">settings.py</h4>
+
+	<p class="divText"> 
+	V settings.py máme již napsaný nějaký kód. <br>
+	</p>
+
+
+<table id="metody">
+  <tr>
+    <th>Název</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td><b class="ks">BASE_DIR</b></td>
+    <td>Informace o tom, kde se náš projekt nachází.</td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">SECRET_KEY</b></td>
+    <td>Unikátní klíč, který má každý Django projekt. </td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">DEBUG</b></td>
+    <td>Je nastaven na True, když vyvíjíme a testujeme aplikaci. Při spuštění aplikace do světa, se musí nastavit na False.</td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">INSTALLED_APPS</b></td>
+    <td>Vkládají se sem vlastní komponenty, které vytváříme.</td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">MIDDLEWARE</b></td>
+    <td>Slouží ke způsobu zpracování request a bezpečnosti.</td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">ROOT_URLCONF</b></td>
+    <td>Slouží ke správnému směřování stránek. </td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">TEMPLATES</b></td>
+    <td>Jakým způsobem se zpracovávají a ukládají šablony, které vytvoříme. </td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">WSGI_APPLICATION</b></td>
+    <td>Jakým způsobem pracuje daný server. </td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">DATABASES</b></td>
+    <td>Nastavování databáze. Výchozí databáze je sqlite3. </td>
+  </tr>
+
+  <tr>
+    <td><b class="ks">STATIC_URL</b></td>
+    <td>Ukládání obrázků, CSS, JS souborů.</td>
+  </tr>
+
+
+  
+</table>
+	
+<br>
+<br>	
+
+	<h4 class = "podKapitola">Databáze</h4>
+
+	<p class="divText">
+	Pro spuštění databáze se musí v terminálu napsat příkaz
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText"> 	
+		python manage.py migrate
+	</p>
+	</div>
+
+	<br>
+
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

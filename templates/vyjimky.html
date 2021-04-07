@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Výjimky</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Výjimky</h3>
+
+	
+	<p class="divText" >
+	Výjimky (anglicky exceptions) se používají, když očekáváme nějakou chybu, která může nastat. Při práci s výjimkami se používají klíčová slova 
+	<b class="barvaFunkce">try</b>, <b class="barvaFunkce">except</b> a <b class="barvaFunkce">finally</b>. <br>
+	<br>
+	Uvnitř bloku <b class="barvaFunkce">try</b> bude kód, který může vyhodit chybu. <br>
+	Uvnitř bloku <b class="barvaFunkce">except</b> bude kód, který se provede, jestliže uvnitř bloku try byla chyba. <br>
+	Uvnitř bloku <b class="barvaFunkce">finally</b> bude kód, který se provede bez ohledu na to, jestli došlo k nějaké chybě. <br>
+
+	</p>
+
+	<h4 class = "podKapitola">Zachycení a ošetření výjimky</h4>
+
+
+	<p class="divText">
+	Budeme mít příklad, kde sečteme dvě čísla.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	vysledek = 10 + 10 <br>
+	<b class="ks">print</b>(vysledek) # vypise: 20 <br>
+	<b class="ks">print</b>("Dalsi text") # vypise: Dalsi text
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Může se stát, že došlo k chybě a místo čísla, sčítáme řetězec 10. Toto vyhodí chybu a další kód, který následuje již není proveden. To znamená, že na výstup se nevypíše "Dalsi text" 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	vysledek = 10 + "10" <br>
+	<b class="ks">print</b>(vysledek) # vypise: TypeError <br>
+	<b class="ks">print</b>("Dalsi text") # neprovede se
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Nyní naše sčítání budeme mít uvnitř bloku <b class="barvaFunkce">try</b>. V bloku <b class="barvaFunkce">except</b> napíšeme zprávu na výstup, jestliže se vyskytne chyba.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">try</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;vysledek = 10 + 10 <br>
+		<b class="ks">except</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Spatne scitas hodnoty")
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		V tomto případě program proběhl v pořádku. Při změně čísla na řetězec, se na výstup vypíše zpráva, která bude informovat uživatele, že špatně sčítá hodnoty. Poté bude následovat další kód. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">try</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek = 10 + "10" <br>
+		<b class="ks">except</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Spatne scitas hodnoty") # vypise: Spatne scitas hodnoty <br>
+    	<br>
+		<b class="ks">print</b>("Dalsi text") # vypise: Dalsi text
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Bez použití bloku <b class="barvaFunkce">try</b> a <b class="barvaFunkce">except</b> se program zastavil a další kód již nebyl proveden. Nyní pomocí <b class="barvaFunkce">try</b>a <b class="barvaFunkce">except</b>, i přes chybu, se spouští další kód. <br>
+	<br>
+	Budeme mít soubor, který otevřeme v módu pro čtení, ale zkusíme do něho zapisovat. Toto samozřejmě vyhodí chybu, konkrétně <b class="barvaFunkce">OSError</b>. Pomocí klíčového slova <b class="barvaFunkce">except</b> lze definovat, co vypsat při určitém typu chyby.  Na konci použijeme i klíčové slovo <b class="barvaFunkce">finally</b>. Uvnitř <b class="barvaFunkce">finally</b> bude kód, který bude proveden vždy.
+
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">try</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;f = <b class="ks">open</b>("test.txt", "r") <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;f.write("text") <br>
+		<b class="ks">except</b> TypeError: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Doslo k type erroru") <br>
+		<b class="ks">except</b> OSError: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Doslo k OS erroru") # vypise: Doslo k OS erroru <br>
+		<b class="ks">finally</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Spusteno vzdy") # vypise: Spusteno vzdy
+
+	</p>
+	</div>
+
+		<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	Zpracujte výjimku. K dispozici je následující kód. Použijte <b class="ks">try</b> a <b class="ks">except</b>. <br>
+	<b class="ks">for</b> i <b class="ks">in</b> ["1" ,"2", "3"] <br>
+		<b class="ks">&nbsp;&nbsp;&nbsp;&nbsp;print</b>(i**2)
+
+
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  K dispozici je následující kód. Zpracujte výjimku a použijte <b class="ks">try</b>, <b class="ks">except</b> a <b class="ks">finally</b>. Blok <b class="ks">finally</b> vypíše na výstup libovolný řetězec. <br>
+  a = 5 <br>
+  b = 0 <br>
+  c = a/b
+  
+	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

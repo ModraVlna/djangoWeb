@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+ 
+{% load static %}
+
+
+
+{% block content %}
+
+	<br>
+  <br>
+
+<!-- "{% static 'images/pythonlogo1.png' %}" -->
+
+
+
+<div class="divKarty">
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  
+  <div class="col">
+    <div class="card">
+      <img src="{% static 'images/pythonlogo1.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Python</h5>
+        <p class="card-text">Python je jazyk, který byl představen v roce 1991 a vyvinul ho Guildo van Rossum. Podporuje strukturální a objektové programování. Má využití v různých oblastech. Používá se např. při vývoji desktopových nebo webových aplikací. <br></p> 
+
+
+      	<a href="/zaklady" class="btn btn-success">Python</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card">
+      <img src="{% static 'images/djangologo3.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Django</h5>
+        <p class="card-text">Django je framework, který slouží k vytváření webových aplikací. Django je k dispozici zdarma a byl vytvořen v roce 2005. Dnes Django udržuje a spravuje společnost Django Software Foundation.</p>
+
+
+      	<a href="/instalace" class="btn btn-success">Django</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group"> 
+  <li class="list-group-item">
+  Autorem je Denis Dagidir. <br>
+  Vytvořeno v rámci Diplomové práce pro Provozně ekonomickou fakultu na Mendelově univerzitě v Brně.
+  
+  
+  </li>  
+</ul>
+</div>
+</div>
+
+
+{% endblock %}

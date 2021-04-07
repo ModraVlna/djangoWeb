@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generátory</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Generátory</h3>
+
+	
+	<p class="divText" >
+	V Pythonu generátory (anglicky generators) umožňují generovat posloupnost hodnot během nějakého času. Celá posloupnost hodnot tedy není vytvořena v jednom okamžiku. Což je efektivní, protože není kladena taková zátěž na paměť. 
+	Pro práci s generátory se používá klíčové slovo <b class="barvaFunkce">yield</b>. Funkce, která obsahuje <b class="barvaFunkce">yield</b>, se nazývá generátorová funkce. 
+
+	</p>
+
+	<h4 class = "podKapitola">Generátová funkce</h4>
+
+
+	<p class="divText">
+	Budeme mít dva příklady, u obou příkladů bude posloupnost čísel a chceme zjistit např. jejich třetí mocninu. 
+	První příklad bude řešen bez generátoru. Vytvoří se funkce, definuje se prázdný seznam do kterého přidáme hodnoty pomocí <b class="barvaFunkce">for</b> cyklu. Funkce bude potom vracet výsledek.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> treti_mocnina(n): <br>
+	    	&nbsp;&nbsp;&nbsp;&nbsp;vysledek = [] <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(n): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek.append(i**3) <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> vysledek <br>
+    	<br>
+		<b class="ks">for</b> i <b class="ks">in</b> treti_mocnina(10): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Druhý příklad bude řešen pomocí klíčového slova <b class="barvaFunkce">yield</b>. Budeme tedy mít generátorovou funkci. Nebudeme používat seznam. Smažeme <b class="barvaFunkce">return</b> a použijeme <b class="barvaFunkce">yield</b>. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> treti_mocnina(n): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(n): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">yield</b> i**3 <br>
+
+		<b class="ks">for</b> i <b class="ks">in</b> treti_mocnina(10): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Na příkladech se zvolilo pouze 10 hodnot, ale můžeme těch hodnot mít např. 10 000. V prvním příkladě by v paměti musel být seznam, který obsahuje tolik hodnot. Pomocí generátoru jsou ty hodnoty generovány, jak jsou potřeba.  
+	</p>
+
+
+	<h4 class = "podKapitola">Další využití generálovou funkce</h4>
+
+	<p class="divText"> 
+	Dalším typickým příkladem může být Fibonacciho posloupnost. U této posloupnosti je každé číslo součtem dvou předchozích čísel. 
+	Uvnitř funkce budou dvě proměnné s počáteční hodnotou 1.  <br>
+	Použijeme <b class="barvaFunkce">for</b> cyklus. 
+	Na konci cyklu bude <b class="barvaPromenne">a,b = b, a+b</b> <br>
+	První <b class="barvaPromenne">a</b> na levé straně bude rovno
+	<b class="barvaPromenne">b</b> na pravé straně. <br>
+	První <b class="barvaPromenne">b</b> na levé straně bude rovno 
+	součtem předchozích <b class="barvaPromenne">a b</b>
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> fibonnaci(n): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;a = 1 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;b = 1 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(n): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">yield</b> a <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a,b = b, a+b <br>
+        <br>
+		<b class="ks">for</b> i <b class="ks">in</b> fibonnaci(10): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
+
+	</p>
+	</div>
+
+	<br>
+
+	
+	<h4 class = "podKapitola">Funkce next() a iter()</h4>
+
+
+
+	<p class="divText" >
+	Pomocí funkce <b class="barvaFunkce">next()</b>, můžeme např. na výstup vypisovat postupně hodnoty. Funkce si pouze pamatuje předchozí hodnotu a vypíše následující. 
+	Vytvoříme jednoduchou generátorovou funkci, kde budeme mít posloupnost o třech čísel. Poté pomocí <b class="barvaFunkce">print()</b> a <b class="barvaFunkce">next()</b> vypíšeme na výstup hodnoty.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> posloupnost(): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> x <b class="ks">in range</b>(3): <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">yield</b> x <br>
+        <br>
+		<b class="ks">for</b> i <b class="ks">in</b> posloupnost(): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 0 1 2 <br>
+    	<br>
+		g = posloupnost() <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 0 <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 1 <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 2
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pokud by se znovu zavolalo <b class="barvaFunkce">next()</b> a už nebyla další hodnota k dispozici, tak to vyhodí chybu. <br>
+	<br>
+	Funkce <b class="barvaFunkce">iter()</b> umožňuje iterovat přes nějaký objekt.
+	Představme si, že mamě řetězec. Tento řetězec můžeme iterovat pomocí <b class="barvaFunkce">for</b> cyklu. Kdybychom chtěli použít funkci <b class="barvaFunkce">next()</b>, tak to vyhodí chybu. Toto lze vyřešit pomocí funkce <b class="barvaFunkce">iter()</b>, ke které se předá daný řetězec.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		retezec = "ahoj" <br>
+		<br>
+		g = <b class="ks">iter</b>(retezec) <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # a <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # h <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # o <br>
+		<b class="ks">print</b>(<b class="ks">next</b>(g)) # j <br>
+
+
+	</p>
+	</div>
+
+
+<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  Vytvořte generátor, kterému se předá číslo. Generátor vypíše mocninu od 0 až po dané číslo.
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  	Pomocí funkce <b class="ks">iter()</b> převedete řetězec na iterátor. 
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+	<br>
+
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

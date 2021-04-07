@@ -1,0 +1,447 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Šablony</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Šablony</h3>
+
+	
+	<p class="divText" >
+	Django umožňuje rozdělit Python a HTML kód od sebe. Při práci se stránkami jsme použili views, kde byl Python. HTML se bude nacházet uvnitř šablon (anglicky templates).
+	<br><br>
+	Když zadáme určitou URL adresu, tak posíláme požadavek (request), že chceme zobrazit obsah dané stránky. Django nám vrátí odpověď (response).
+	V souboru <b>views.py</b> jsme vraceli HttpResponse, kde byl nějaký HTML odstavec. 
+	Pomocí šablony, nebudeme předávat nějaký HTML kód, ale předáme celý HTML soubor. 
+
+	</p>
+
+
+
+	<h4 class = "podKapitola">Vytvoření šablony</h4>
+
+
+	<p class="divText">
+	Uvnitř projektu, vytvoříme nový adresář s názvem <b>templates</b>. Tento adresář bude obsahovat všechny naše šablony, které budeme používat. <br>
+	Uvnitř templates, vytvoříme tedy novou šablonu (soubor), který nazveme např. <b>home.html</b>
+	Pro testování napíšeme nějaký nadpis a odstavec v <b>home.html</b>
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		&lt;h1>Sablona&lt;/h1> <br>
+ 		&lt;p>Moje prvni sablona&lt;/p>
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Šablona je připravena. Otevřeme <b>views.py</b> a musíme specifikovat název šablony ve funkci home_view
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	<b class="ks">def</b> home_view(request, *args, **kwargs): <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> render(request, "home.html", {})
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dále musíme v nastavení Django v settings.py specifikovat, kde se nachází naše šablony. 
+	Zde najdeme <b class="ks">TEMPLATES</b>. Do <b class="ks">DIRS: []</b>, můžeme přidat cestu k templates. <br>
+	Pokud na projektu pracují lidé z různých zařízení, tak každý z nich bude mít nejspíš jinou cestu k templates, takže by to nefungovalo. Chceme tedy, aby to nebylo závislé na operačním systému zařízení. Toto vyřešíme následovně:
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		DIRS: [os.path.join(BASE_DIR, templates)],
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Všechny soubory, které jsme upravovali musíme uložit. <br>
+		Takto můžeme vytvářet šablony (HTML soubory) v templates, pro různé stránky. <br>
+		Zakončení .html se nebude ukazovat v URL adrese v prohlížeči. <br>
+		Když vytvoříme další šablonu, např. uzivatel.html, tak v URL adrese v prohlížeči se zobrazí pouze /uzivatel
+
+	</p>
+
+
+
+	<h4 class = "podKapitola">Dědičnost a šablony</h4>
+
+	<p class="divText"> 
+	Na naší webové aplikaci můžeme mít nějakou věc, kterou chceme zobrazovat na každé stránce. Např. to může být Menu. Chceme, aby menu bylo stále dostupné ze všech stránek. Mohli bychom v každé šabloně zkopírovat kód pro menu, ale toto by nebylo efektivní a zbytečně bychom měli kus kódu, který se stále dokola opakuje. <br>
+Jednodušší je napsat kód pro menu pouze jednou v určité šabloně. Pomocí dědičnosti budou ostatní šablony moc používat menu podle potřeby a nemusí se kopírovat celý kód. <br> <br>
+
+Vytvoříme základní šablonu, kterou budou využívat ostatní šablony. Nazveme tuto základní šablonu <b>base.html</b> <br>
+Šablona <b>base.html</b> se bude nacházet uvnitř adresáře templates. <br>
+V <b>base.html</b> vytvoříme zakládání HTML strukturu.
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		&lt;!DOCTYPE html> <br>
+		&lt;html> <br>
+		&lt;head> <br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Aplikace&lt;/title> <br>
+		&lt;/head> <br>
+		&lt;body> <br>
+		<br>
+		&lt;/body> <br>
+		&lt;/html>
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Chceme, aby každá šablona obsahovala to stejné jako <b>base.html</b>. Druhá šablona, s kterou budeme pracovat bude např. <b>home.html</b> <br>
+	To znamená, že <b>home.html</b> bude obsahovat stejný &lt;title&gt; jako <b>base.html</b> <br>
+	K tomuto budeme využívat bloky, náš první blok pojmenujeme <b class="barvaPromenne">content</b>. <br>
+	Tento blok se bude nacházet v <b>base.html</b> uvnitř &lt;body&gt; <br>
+	Co bude uvnitř bloku, bude nahrazeno.
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		{&percnt; block content &percnt;} <br>
+		bude nahrazeno <br>
+		{&percnt; endblock &percnt;}
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Šablona <b>base.html</b> bude tedy vypadat takto:
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		
+		&lt;!DOCTYPE html> <br>
+		&lt;html> <br>
+		&lt;head> <br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Aplikace&lt;/title> <br>
+		&lt;/head> <br>
+		&lt;body> <br>
+		<br>
+		{&percnt; block content &percnt;} <br>
+		bude nahrazeno <br>
+		{&percnt; endblock &percnt;} <br>
+		<br>
+		&lt;/body> <br>
+		&lt;/html>
+	
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Máme připravený <b>base.html</b>. Chceme aby na naší domovské stránce byl zobrazen &lt;title&gt; z <b>base.html</b> <br> 
+	Musime tedy v <b>home.html</b> specifikovat název <b>base.html</b> a ostatní tagy dát do bloku se stejným názvem jako v <b>base.html</b>
+ 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		{&percnt; extends 'base.html' &percnt;} <br>
+		<br>
+		{&percnt; block content &percnt;} <br>
+		&lt;h1>Seznam zbozi&lt;/h1> <br>
+		&lt;p>Toto je domovska stranka&lt;/p> <br>
+		{&percnt; endblock &percnt;}
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Tímto způsobem můžeme upravit ostatní šablony. Kromě uvedeného bloku content, můžeme mít více bloků, ale každý musí mít jiný název.  
+	</p>
+
+	<h4 class = "podKapitola">Include a šablony</h4>
+
+	<p class="divText">
+	Na naší webové aplikace chceme nějaké navigační menu, pomocí kterého se může uživatel pohybovat po jednotlivých stránkách. Toto menu bude dostupné ze všech stránkách. Pomocí dědičnosti můžeme toto napsat v <b>base.html</b>. Jelikož takové menu může být časem dlouhé, tak je lepší mít menu v samostatné šabloně pro větší přehlednost. <br>
+	V templates vytvoříme šablonu, která se bude jmenovat např. <b>navbar.html</b> <br>
+	Pro testování vytvoříme nějaké jednoduché menu.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	 
+		&lt;nav> <br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul> <br>
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>Zbozi&lt;/li> <br>
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>O nas&lt;/li> <br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>Kontakt&lt;/li> <br>
+  		&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul> <br>
+ 		&lt;/nav>
+		
+		</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Soubor uložíme. V <b>base.html</b> pomocí klíčového slova <b class="ks">include</b> přidáme naši šablonu s menu. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		{&percnt; <b class="ks">include</b> 'navbar.html' &percnt;}
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText"> 
+	Celý <b>base.html</b> bude vypadat takto:
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		
+		&lt;!DOCTYPE html> <br>
+		&lt;html> <br>
+		&lt;head> <br>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title>Aplikace&lt;/title> <br>
+		&lt;/head> <br>
+		&lt;body> <br>
+		{&percnt; <b class="ks">include</b> 'navbar.html' &percnt;} <br>
+		<br>
+		{&percnt; block content &percnt;} <br>
+		bude nahrazeno <br>
+		{&percnt; endblock &percnt;} <br>
+		<br>
+		&lt;/body> <br>
+		&lt;/html>
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText"> 
+	Toto menu se bude zobrazovat na všech stránkách, které dědí od šablony <b>base.html</b>
+	</p>
+
+	
+	<h4 class = "podKapitola">Přístup k Python přes šablony</h4>
+
+	<p class="divText">
+	Budeme mít v Pythonu napsaný seznam, ve kterém jsou nějaké konkrétní výrobky. Chceme tento seznam zobrazit v naší šabloně pomocí nějakých HTML tagů. <br>
+	Nejprve si ukážeme, jak přistupovat ze šablony k Python kódu. <br><br>
+	Budeme pracovat se šablonou např. <b>novinky.html</b> <br>
+	Tato šablona bude informovat uživatele o nově přidaných výrobků a také slevy na výrobky. 
+	<br><br>
+	Otevřeme views.py a budeme tam mít funkci pro <b>novinky.html</b>. Ve funkci budeme mít slovník obsahující nějaké klíče a hodnoty. 
+
+
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;vyrobky = { <br>
+        	&nbsp;&nbsp;&nbsp;&nbsp;"muj_text": "Tady jsou novinky", <br>
+        	&nbsp;&nbsp;&nbsp;&nbsp;"sleva": 100 <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;}
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Také musíme upravit cestu k této stránce, pokud ještě není v <b>settings.py</b> <br>
+	Bude to vypadat např. takto:
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">from</b> stranky.views <b class="ks">import</b> home_view, uzivatel_view, novinky_view
+		<br> <br>
+urlpatterns = [ <br>
+    path('', home_view, name='home'), <br>
+    path('admin/', admin.site.urls), <br>
+    path('uzivatel/', uzivatel_view), <br>
+    path('novinky/', novinky_view) <br>
+]
+
+	</p>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Máme připravený tedy slovník ve views.py <br>
+	Vytvoříme/otevřeme šablonu s názvem <b>novinky.html</b> <br>
+	Tato šablona bude dědit z <b>base.html</b> a bude zobrazovat náš slovník z <b>views.py</b> <br>
+	Abychom mohli přistoupit k tomuto slovníku v šabloně, musíme použít klíče slovníku. <br>
+	Tyto klíče budou v šabloně uzavřeny ve dvou složených závorkách. 
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		{&percnt; extends "base.html &percnt;} <br>
+		{&percnt; block content &percnt;} <br>
+		<br>
+		&lt;h1> Tydenni novinky&lt;/h1> <br>
+		&lt;p> 
+		<br>
+    	{&lcub; muj_text &rcub;}, {&lcub; sleva &rcub;} <br>
+		&lt;/p> <br>
+		<br>
+		{&percnt; endblock content &percnt;}
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Python uvnitř šablon</h4>
+
+	<p class="divText">
+	Budeme mít v Pythonu napsaný seznam, ve kterém jsou ceny nějakých výrobků. Chceme tento seznam zobrazit v naší šabloně pomocí nějakých HTML tagů.
+	<br><br>
+	Ve <b>views.py</b> v <b class="barvaPromenne">novinky_view</b>, jsme vytvořili slovník. Uvnitř tohoto slovníku budeme mít seznam, který obsahuje ceny výrobků. 
+ 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
+	    	&nbsp;&nbsp;&nbsp;&nbsp;vyrobky = { <br>
+        	&nbsp;&nbsp;&nbsp;&nbsp;"muj_text": "Tady jsou novinky", <br>
+        	&nbsp;&nbsp;&nbsp;&nbsp;"sleva": 100 <br>
+        	&nbsp;&nbsp;&nbsp;&nbsp;"ceny": [190, 350, 90] <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;}
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Otevřeme šablonu <b>novinky.html</b>
+	V minulém kroku jsme napsali název klíče a dostali jsme hodnoty. Kdybychom toto znovu udělali, tak se nám vrátí celý seznam i s hranatými závorkami.
+	Lepší by bylo ceny zobrazit bez závorek a např. v nějakém HTML seznamu. K tomuto použijeme for cyklus uvnitř šablony. <br> <br>
+
+	Celý cyklus bude uvnitř &lt;ul&gt; <br>
+	Ve složených závorkách bude <b class="ks">for</b> cyklus. Jednotlivé prvky budou uvnitř &lt;li&gt; <br>
+	V dalších složených závorkách bude konec cyklu. 
+
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+			
+		&lt;ul> <br>
+		{&percnt; <b class="ks">for</b> moje_cena <b class="ks">in</b> ceny &percnt;} <br>
+		<br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;&lt;li>{&lcub; moje_cena &rcub;}&lt;/li> <br>
+		<br>
+		{&percnt; <b class="ks">endfor</b> &percnt;} <br>
+		&lt;/ul>
+
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Celá šablona bude vypadat takto:
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		
+		{&percnt; extends "base.html &percnt;} <br>
+		{&percnt; block content &percnt;} <br>
+		<br>
+		&lt;h1> Tydenni novinky&lt;/h1> <br>
+		&lt;p> <br>
+    	{&lcub; muj_text &rcub;}, {&lcub; sleva &rcub;} <br>
+		&lt;/p> <br>
+		<br>
+		&lt;ul> <br>
+		{&percnt; <b class="ks">for</b> moje_cena <b class="ks">in</b> ceny &percnt;} <br>
+    	&lt;li>{&lcub; moje_cena &rcub;}&lt;/li>  <br>
+		{&percnt; <b class="ks">endfor</b> &percnt;} <br>
+		&lt;/ul> <br>
+		<br>
+		{&percnt; endblock content &percnt;}
+
+
+	</p>
+	</div>
+
+	<br>
+
+	
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

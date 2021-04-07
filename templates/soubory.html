@@ -1,0 +1,532 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soubory</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Soubory</h3>
+
+	
+	<p class="divText" >
+	Python umožňuje pracovat se soubory. Lze se souboru číst jeho obsah a zapisovat nová data.
+	</p>
+
+
+	<h4 class = "podKapitola">Práce se souborem</h4>
+
+
+	<p class="divText">
+	Budeme pracovat se souborem, který nazveme <b class="barvaPromenne">test.txt</b>. Tento textový soubor bude obsahovat libovolný text. Abychom mohli pracovat s tímto souborem, musíme použít funkci <b class="barvaFunkce">open()</b>.
+	Tato funkce má dva parametry. Prvním parametrem je název souboru. Druhým parametrem je, jakým způsobem se bude soubor otevírat. <br>
+	Pro čtení ze souboru se použije jako druhý parametr písmeno <b class="barvaFunkce">r</b>. Celé to uložíme do proměnné s názvem <b class="barvaPromenne">soubor</b>.
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	soubor = <b class="ks">open</b>("test.txt", "r")
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro přečtení obsahu souboru, použijeme funkci <b class="barvaFunkce">read()</b>. Jakmile dokončíme práci se souborem a nebudeme ho dále používat, tak se musí soubor zavřít. Zavření souboru je pomocí funkce <b class="barvaFunkce">close()</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		soubor = <b class="ks">open</b>("test.txt", "r") <br>
+		<b class="ks">print</b>(soubor.read()) # vypise obsah souboru <br>
+		soubor.close()
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Kromě uvedeného způsobu, lze pracovat se souborem i jiným způsobem. Na začátku se použije klíčové slovo <b class="barvaFunkce">with</b>, následuje funkce <b class="barvaFunkce">open()</b> a název proměnné se dá až na konec. 
+	Tento způsob má výhodu v tom, že se nemusíme starat o zavírání souboru, protože je to provedeno automaticky. 
+ 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">with open</b>("test.txt", "r") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(soubor.read()) # vypise obsah souboru
+	</p>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Se souborem se potom dá dělat různé operace uvnitř bloku <b class="barvaFunkce">with</b>. Také můžeme ověřit mimo blok, zda je soubor opravdu zavřený. 
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">with open</b>("test.txt", "r") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(soubor.read()) # vypise obsah souboru <br>
+    	<br>
+		<b class="ks">print</b>(soubor.closed) # vypise: True
+
+	</p>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Způsoby otevírání souborů</h4>
+
+
+	<table id="metody">
+  <tr>
+    <th>Symboly</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>r</b></td>
+    <td>Otevře soubor pro čtení. Čtecí hlava je na začátku souboru. Vyhodí error, pokud soubor neexistuje.</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>r+</b></td>
+    <td>Otevře soubor pro čtení a zápis. Čtecí hlava je na začátku souboru. Vyhodí error, pokud soubor neexistuje.</td>
+    
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>w</b></td>
+    <td>Otevře soubor pro zápis. Smaže obsah souboru. Čtecí hlava je na začátku souboru. Vytvoří nový soubor, pokud již neexistuje.</td>
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>w+</b></td>
+    <td>Otevře soubor pro čtení a zápis. Smaže obsah souboru. Čtecí hlava je na začátku souboru. Vytvoří nový soubor, pokud již neexistuje.</td>
+  
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>a</b></td>
+    <td>Otevře soubor pro zápis.  Čtecí hlava je na konci souboru. Vytvoří nový soubor, pokud již neexistuje.</td>
+ 
+  </tr>
+  <tr>
+    <td style="text-align: center; vertical-align: middle;"><b>a+</b></td>
+    <td>Otevře soubor pro čtení a zápis.  Čtecí hlava je na konci souboru. Vytvoří nový soubor, pokud již neexistuje.</td>
+  </tr>
+</table>
+	
+<br>
+<br>
+
+	<h4 class = "podKapitola">Procházení souborem</h4>
+
+
+	<p class="divText" >
+	Máme soubor, který obsahuje např. tisíce řádku. Tímto souborem můžeme iterovat pomocí <b class="barvaFunkce">for</b> cyklu. Tento způsobem nenačte celý obsah souboru najednou, takže se nemusíme obávat s problémem s pamětí. Postupně se vezme jeden řádek za druhým v souboru. Může se stát, že na výstupu budou prázdné řádky mezi textem, to lze vyřešit pomocí <b class="barvaFunkce">end=''</b>
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">with open</b>("test.txt", "r") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> radek <b class="ks">in</b> soubor: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(radek, <b class="ks">end</b>='') 
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pokud chceme mít větší kontrolu nad čtením z velkého souboru, lze specifikovat počet znaků, které se smí přečíst. Za parametr funkci <b class="barvaFunkce">read()</b> bude hodnota, které představuje počet znaků. Např. pouze prvních 10 znaků.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">with open</b>("test.txt", "r") <b class="ks">as</b> soubor: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(soubor.read(10)) 
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Tento způsob můžeme i použít v cyklu, kde budeme číst postupně data o <b>n</b> znacích. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">with open</b>("test.txt", "r") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;velikost = 10 # znaky <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;obsah = soubor.read(velikost) <br>
+
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">while len</b>(obsah) > 0: <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(obsah, <b class="ks">end</b>='') <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obsah = soubor.read(velikost) # dalsich 10 znaku
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Abychom viděli, že se opravdu čte po 10 znacích, lze do <b class="barvaFunkce">end=''</b> přidat nějaký symbol pro kontrolu, např. pomlčku. 
+	</p>
+
+
+
+	<h4 class = "podKapitola">Smazání souboru</h4>
+
+	<p class="divText">
+	Pro smazání souboru (není myšleno pouze jeho obsahu) se musí importovat modul <b class="barvaFunkce">os</b>.
+	Poté použít <b class="barvaFunkce">os.remove()</b>, kde paremetrem bude název souboru.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">import os</b> <br>
+		<b class="ks">os</b>.remove("test.txt")
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro ověření, zda soubor existuje se použije <b class="barvaFunkce">os.path.exists()</b> 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">import os</b> <br>
+		<b class="ks">if os</b>.path.exists("test.txt"): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">os</b>.remove("test.txt") <br>
+		<b class="ks">else</b>: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Soubor neexistuje")
+
+	</p>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Typické metody při práci se souborem</h4>
+
+
+<table id="metody">
+  <tr>
+    <th>Metody</th>
+    <th>Popis</th>
+  </tr>
+  <tr>
+    <td>.<b>close</b>() </td>
+    <td>Zavře soubor</td>
+    
+  </tr>
+  <tr>
+    <td>.<b>read</b>()</td>
+    <td>Vrátí obsah souboru</td>
+    
+  </tr>
+  <tr>
+    <td>.<b>readline</b>()</td>
+    <td>Vrátí jeden řádek</td>
+  
+  </tr>
+  <tr>
+    <td>.<b>readlines</b>()</td>
+    <td>Vrátí seznam řádků</td>
+  
+  </tr>
+  <tr>
+    <td>.<b>seek</b>()</td>
+    <td>Změní pozici čtecí hlavy</td>
+ 
+  </tr>
+  <tr>
+    <td>.<b>write</b>()</td>
+    <td>Zapíše řetězec do souboru</td>
+  
+  </tr>
+  <tr>
+    <td>.<b>writelines</b>()</td>
+    <td>Zapíše seznam řádků do souboru</td>
+
+  </tr>
+  
+</table>
+
+<br>
+
+	<h4 class = "podKapitola">Příklady</h4>
+
+
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  1. Napište program, který přečte obsah celého souboru a na vypíše ho na výstup.
+
+
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  2. Napište program, který přečte prvních 10 řádků souboru a vypíše je na výstup. 
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  3. Napište program, která vloží do textového souboru řetězec na konec souboru. Pokud soubor neexistuje, tak se vytvoří. 
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  4. Napište program, který smaže obsah souboru a napíše do něho řetězec.
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  5. Napište program, který uloží každý řádek v souboru do seznamu.
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  6. Napište program, který přečte soubor a najde v něm nejdelší slovo. Toto se vypíše na výstup.
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  7. Napište program, který zjistí počet řádků v souboru a hodnotu vypíše na výstup.
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  8. Napište program, který zjistí kolikrát se určité slovo vyskytuje v souboru.
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  9. Napište program, který zkopíruje obsah jednoho souboru a vytvoří nový soubor se stejným obsahem. 
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+<br>
+<br>
+
+<div class="divPriklady">
+<div class="border border-light">
+<ul class="list-group">	
+  <li class="list-group-item">
+  10. Napište program, který ze souboru vezme prvních 10 slov a vypíše je na výstup.
+  	
+  	
+  </li>  
+</ul>
+</div>
+</div>
+
+<br>
+
+<div class="divBox">
+		<p class="codeText"> 	
+		Reseni
+	</p>
+</div>
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Views</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Views</h3>
+
+	
+	<p class="divText" >
+	Vytvoříme novou komponentu, kterou nazveme <b>stranky</b>. <br>
+Uvnitř komponenty stranky se nachází soubor <b>views.py</b> <br>
+Webová aplikace se skládá z různých stránek. Soubor <b>views.py</b> pracuje s těmito stránky. <br> 
+views.py se zpracovává jednotlivé stránky, které máme na naší webové aplikace. <br>
+Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu. 
+
+	</p>
+
+
+	<h4 class = "podKapitola">Domovská stránka</h4>
+
+
+	<p class="divText">
+	Vytvoříme funkci, která bude sloužit pro domovskou stránku na naší webové aplikace. Funkci nazveme <b class="ks">home_view</b> <br>
+	Pro otestování bude domovská stránka obsahovat nějaký text. Použijeme tedy HTML.
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">from</b> django.http <b class="ks">import</b> HttpResponse <br>
+		<b class="ks">from</b> dajngo.shortcuts <b class="ks">import</b> render <br>
+		<br>
+		<b class="ks">def</b> home_view(request, *args, **kwargs): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Toto je muj prvni nadpis&lt;/h1&gt;") # HTML kod 
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Máme tedy připravenou stránku, ale musíme specifikovat URL adresu této stránky. <br>
+	V adresáři, kde se nachází settings.py, je soubor <b>urls.py</b>. <br>
+	V tomto souboru je již jedna výchozí adresa na stránku <b>admin/</b>. <br>
+	<br>
+	Přidáme sem import naší stránky
+
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+	<b class="ks">from</b> stranky <b class="ks">import</b> views
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Do <b class="ks">urlpatterns</b> dáme cestu/adresu k naší stránce. Jelikož se jedná o domovskou stránku, tak cesta bude prázdný řetězec.  
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">path</b>('', views.home_view, name='home')
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Celkově bude soubor <b>urls.py</b> vypadat takto:
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">from</b> django.contrib <b class="ks">import</b> admin <br>
+		<b class="ks">from</b> django.urls <b class="ks">import</b> path <br>
+		<br>
+		<b class="ks">from</b> stranky.views <b class="ks">import</b> home_view <br>
+		<br>
+		urlpatterns = [ <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">path</b>('', home_view, name='home'), <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">path</b>('admin/', admin.site.urls) <br>
+		]
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Soubor uložíme. <br>
+	Nyní otevřeme prohlížeč a na úvodní stránce uvidíme text: Toto je muj prvni nadpis
+	</p>
+
+
+	<h4 class = "podKapitola">Vytvoření dalších stránek pomocí views</h4>
+
+
+
+	<p class="divText">
+	Podobně jako u domovské stránky, vytvoříme další funkce pro stránku o uživatelích a stránku o novinkách. Otevřeme tedy soubor <b>views.py</b> a přidáme sem další dvě funkce.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText"> 	
+		<b class="ks">def</b> uzivetel_view(request, *args, **kwargs): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Stranka pro uzivetele&lt;/h1&gt;") # HTML kod
+    	<br>
+		<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Stranka o novinkach&lt;/h1&gt;") # HTML kod
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Soubor uložíme. <br><br>
+	URL adresu na tyto dvě nové stránky přidáme do souboru <b>url.py</b>
+	</p>
+
+
+
+	<div class="divBox">
+		<p class="codeText"> 
+		<b class="ks">from</b> stranky.views <b class="ks">import</b> home_view, uzivatel_view, novinky_view <br>
+		<br>
+		urlpatterns = [ <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">path</b>('', home_view, name='home'), <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">path</b>('admin/', admin.site.urls), <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">path</b>('uzivatel/', uzivatel_view), <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">path</b>('novinky/', novinky_view) <br>
+		]
+
+
+	</p>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Soubor uložíme. Tyto dvě nově vytvořené stránky si můžeme zobrazit v prohlížeči. 
+	</p>
+
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}
