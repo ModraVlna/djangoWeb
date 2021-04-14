@@ -577,7 +577,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">class</b> Auto: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> 
+
 	</p>
 </div>
 
@@ -603,7 +605,17 @@ Dále bude mít dvě metody. První metoda bude vracet atribut nazev. Druhá met
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">class</b> Produkt: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(self, nazev, cena): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nazev = nazev <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.cena = cena <br>
+ 			<br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dej_nazev(self): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.nazev <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dej_cenu(self): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.cena
+
 	</p>
 </div>
 
@@ -630,7 +642,24 @@ Uživatel nemůže vybrat z účtu víc peněz než má k dispozici. <br>
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">class</b> Ucet: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(self, uzivatel, penize): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;self.uzivatel = uzivatel <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;self.penize = penize <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vklad(self, mnozstvi): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;self.penize += mnozstvi <br>
+		        <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.penize <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vyber(self, mnozstvi): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> self.penize >= mnozstvi: <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.penize -= mnozstvi <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Nedostatek penez na uctu") <br>
+		        <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.penize
+
 	</p>
 </div>
 

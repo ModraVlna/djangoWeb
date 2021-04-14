@@ -143,7 +143,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  	Zpracujte výjimku. K dispozici je následující kód. Použijte <b class="ks">try</b> a <b class="ks">except</b>. <br>
+  	1. Zpracujte výjimku. K dispozici je následující kód. Použijte <b class="ks">try</b> a <b class="ks">except</b>. <br>
 	<b class="ks">for</b> i <b class="ks">in</b> ["1" ,"2", "3"] <br>
 		<b class="ks">&nbsp;&nbsp;&nbsp;&nbsp;print</b>(i**2)
 
@@ -158,7 +158,12 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">try</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> ["1","2","3"]: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i**2) <br>
+		<b class="ks">except</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Spatne nasobeni")
+
 	</p>
 </div>
 
@@ -169,7 +174,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  K dispozici je následující kód. Zpracujte výjimku a použijte <b class="ks">try</b>, <b class="ks">except</b> a <b class="ks">finally</b>. Blok <b class="ks">finally</b> vypíše na výstup libovolný řetězec. <br>
+  2. K dispozici je následující kód. Zpracujte výjimku a použijte <b class="ks">try</b>, <b class="ks">except</b> a <b class="ks">finally</b>. Blok <b class="ks">finally</b> vypíše na výstup libovolný řetězec. <br>
   a = 5 <br>
   b = 0 <br>
   c = a/b
@@ -184,7 +189,15 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		a = 5 <br>
+		b = 0 <br>
+		<b class="ks">try</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;c = a/b <br>
+		<b class="ks">except ZeroDivisionError</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Nelze delit nulou") <br>
+		<b class="ks">finally</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>('Dokonceno') <br>
+
 	</p>
 </div>
 

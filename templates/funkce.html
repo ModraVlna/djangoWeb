@@ -386,7 +386,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> autor(jmeno): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(jmeno)
+
 	</p>
 </div>
 
@@ -409,7 +411,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> soucet(x, y): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(x + y)
+
 	</p>
 </div>
 
@@ -433,7 +437,12 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> cislo(x): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> x % 2 == 0: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Sude cislo") <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Liche cislo") 
+
 	</p>
 </div>
 
@@ -457,7 +466,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> porovnej(x, y): <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(x>y)
+
 	</p>
 </div>
 
@@ -481,7 +492,12 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> soucet(seznam): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek = 0 <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> seznam: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek += i <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(vysledek)
+
 	</p>
 </div>
 
@@ -505,9 +521,21 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> faktorial(cislo): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek = 1 <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> cislo < 0: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Zaporne cislo") <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">elif</b> cislo == 0: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("1") <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(1, cislo + 1): <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek = vysledek * i <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(vysledek)
+
 	</p>
 </div>
+
 
 
 <br>
@@ -517,7 +545,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  7. Napište funkci, které se předá dvě čísla. Tato funkce vypíše na výstup menší číslo, pokud jsou obě čísla sudá. Pokud jedno je sudé nebo žádné číslo není sudé, tak se vrátí větší číslo. 
+  7. Napište funkci, které se předá jeden řetězec obsahující dvě slova. Pokud počáteční písmena těchto dvou slov jsou stejná, tak se vypíše True. V opačném případě se vypíše False.
   
 	
   </li>  
@@ -529,7 +557,17 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> slova(ret): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek = "" <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;temp = True <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(<b class="ks">len</b>(ret)): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> (ret[i] == ' '): <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp = <b class="ks">True</b> <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">elif</b> (ret[i] != ' ' <b class="ks">and</b> temp == <b class="ks">True</b>): <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek += (ret[i]) <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp = <b class="ks">False</b> <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(vysledek[0] == vysledek[1]) <br>
+
 	</p>
 </div>
 
@@ -541,7 +579,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  8. Napište funkci, které se předá jeden řetězec obsahující dvě slova. Pokud počáteční písmena těchto dvou slov jsou stejná, tak se vypíše True. V opačném případě se vypíše False.
+  8. Napište funkci, které se předá řetězec. Tato funkce vypíše na výstup znaky v řetězci v opačném pořadí. 
   
 	
   </li>  
@@ -553,7 +591,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> slovo(ret): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(ret[::-1])
+
 	</p>
 </div>
 
@@ -565,31 +605,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  9. Napište funkci, které se předá řetězec. Tato funkce vypíše na výstup znaky v řetězci v opačném pořadí. 
-  
-	
-  </li>  
-</ul>
-</div>
-</div>
-
-<br>
-
-<div class="divBox">
-		<p class="codeText"> 	
-		Reseni
-	</p>
-</div>
-
-
-<br>
-<br>
-
-<div class="divPriklady">
-<div class="border border-light">
-<ul class="list-group">	
-  <li class="list-group-item">
-  10. Napište funkci, které se předá řetězec. Tato funkce bude vypisovat na výstup upravený řetězec. Pro každý znak v řetězci se znak napíše 4x. Např. takto:<br>
+  9. Napište funkci, které se předá řetězec. Tato funkce bude vypisovat na výstup upravený řetězec. Pro každý znak v řetězci se znak napíše 4x. Např. takto:<br>
 	ahoj <br>
 	aaaahhhhoooojjjj 
   
@@ -603,7 +619,13 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> slovo(ret): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek = "" <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(<b class="ks">len</b>(ret)): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;temp = ret[i] * 4 <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek += temp <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(vysledek)
+
 	</p>
 </div>
 

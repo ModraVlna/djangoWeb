@@ -412,7 +412,13 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [5, 10, 15, 20] <br>
+		vysledek = 0 <br>
+		<br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek += i <br>
+		<b class="ks">print</b>(vysledek) 
+
 	</p>
 </div>
 
@@ -436,7 +442,10 @@ Napište program, který vypíše na výstup největší číslo v seznamu.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [20, 100, 6, 14] <br>
+		cisla.sort() <br>
+		<b class="ks">print</b>(cisla[-1])
+
 	</p>
 </div>
 
@@ -461,7 +470,10 @@ Napište program, který vypíše na výstup nejmenší číslo v seznamu.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [20, 100, 6, 14] <br>
+		cisla.sort() <br>
+		<b class="ks">print</b>(cisla[0])
+
 	</p>
 </div>
 
@@ -484,8 +496,11 @@ Napište program, který uspořádá čísla v seznamu od nejmenší po největ�
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
-		Reseni
+		<p class="codeText"> 	 
+		cisla = [12, 6, 8, 2, 25, 3, 9] <br>
+		cisla.sort() <br>
+		<b class="ks">print</b>(cisla)
+
 	</p>
 </div>
 
@@ -509,7 +524,14 @@ Napište program, který odstraní opakující se hodnoty uvnitř seznamu. Výsl
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [1, 5, 8, 5, 4, 5, 10] <br>
+		vysledek = [] <br>
+		<br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i <b class="ks">not in</b> vysledek: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek.append(i) <br>
+		<b class="ks">print</b>(vysledek) 
+
 	</p>
 </div>
 
@@ -535,7 +557,14 @@ Napište program, který vypíše na výstup informace o tom, jestli je seznam p
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = [1, 2, 3] <br>
+		prazdny = [] <br>
+		<br>
+		<b class="ks">if len</b>(prazdny) == 0: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Prazdny") <br>
+		<b class="ks">else</b>: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Obsahuje prvky") 
+
 	</p>
 </div>
 
@@ -560,7 +589,11 @@ Napište program, který odstraní sudá čísla ze seznamu. Výsledný seznam v
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [6, 2, 3, 8, 10] <br>
+		<br>
+		vysledek = [x <b class="ks">for</b> x <b class="ks">in</b> cisla <b class="ks">if</b> x % 2 != 0] <br>
+		<b class="ks">print</b>(vysledek)
+
 	</p>
 </div>
 
@@ -584,7 +617,14 @@ Vytvořte nový seznam, který obsahuje druhou mocninu čísel v prvním seznamu
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [1, 2, 3, 4, 5] <br>
+		vysledek = [] <br>
+		<br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;vysledek.append(i**2) <br>
+		<br>
+		<b class="ks">print</b>(vysledek)
+
 	</p>
 </div>
 
@@ -609,7 +649,10 @@ Napište program, který nahradí v seznamu číslo 100 číslem 5. Výsledek vy
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [1, 100, 8] <br>
+		cisla[1] = 5 <br>
+		<b class="ks">print</b>(cisla)
+
 	</p>
 </div>
 
@@ -634,7 +677,9 @@ Napište program, který vypíše na výstup počet prvků v seznamu.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] <br>
+		<b class="ks">print</b>(<b class="ks">len</b>(cisla))
+
 	</p>
 </div>
 
@@ -659,7 +704,9 @@ Napište program, který vypíše na výstup každý druhý prvek v seznamu.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] <br>
+		<b class="ks">print</b>(cisla[::2])
+
 	</p>
 </div>
 
@@ -684,7 +731,20 @@ Napište program, který spočítá počet sudých a počet lichých čísel v s
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		cisla = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] <br>
+		<br>
+		sudy = 0 <br>
+		lichy = 0 <br>
+		<br>
+		<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sudy += 1 <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lichy += 1 <br>
+		<br>
+		<b class="ks">print</b>(sudy) <br>
+		<b class="ks">print</b>(lichy)
+
 	</p>
 </div>
 

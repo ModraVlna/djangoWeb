@@ -382,7 +382,11 @@ Napište program, který na výstup vypíše jednotlivé prvky v množině.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {"cervena", "zelena", "modra"} <br>
+		<br>
+		<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
+
 	</p>
 </div>
 
@@ -405,7 +409,9 @@ Napište program, který zjistí, jestli množina je prázdná nebo obsahuje prv
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {} <br>
+		<b class="ks">print</b>(<b class="ks">len</b>(hodnoty) == 0)
+
 	</p>
 </div>
 
@@ -428,7 +434,9 @@ Napište program, který odstraní všechny prvky z množiny.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {"cervena", "zelena", "modra"} <br>
+		hodnoty.clear()
+
 	</p>
 </div>
 
@@ -454,7 +462,10 @@ Napište program, který na výstup vypíše prvky, které jsou stejné v obou m
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		prvni = {1, 10, 12, 20} <br>
+		druhy = {5, 2, 10, 20} <br>
+		<b class="ks">print</b>(prvni.intersection(druhy))
+
 	</p>
 </div>
 
@@ -480,7 +491,11 @@ Vytvořte novou množinu, která bude obsahovat všechny prvky z dvou uvedených
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		prvni = {1, 10, 12, 20} <br>
+		druhy = {5, 2, 10, 20} <br>
+		nova = prvni.union(druhy) <br>
+		<b class="ks">print</b>(nova)
+
 	</p>
 </div>
 
@@ -504,7 +519,10 @@ Napište program, který odstraní z množiny prvky 300 a 400. Výsledek napišt
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {100, 200, 300, 400} <br>
+		hodnoty.difference_update({300, 400}) <br>
+		<b class="ks">print</b>(hodnoty)
+
 	</p>
 </div>
 
@@ -528,7 +546,10 @@ Napište program, který tuto množinu převede na n-tici. Výsledek vypište na
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {"cervena", "zelena", "modra"} <br>
+		ntice = tuple(hodnoty) <br>
+		<b class="ks">print</b>(ntice) 
+
 	</p>
 </div>
 

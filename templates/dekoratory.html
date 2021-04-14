@@ -193,7 +193,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  Vytvořte funkci, která obsahuje další dvě funkce. Hlavní funkci bude předáno číslo. Pokud číslo je sudé, tak se použije funkce, která informuje, že číslo je sudé. Pokud číslo je liché, tak se použije druhá funkce, která informuje, že číslo je liché.
+  1. Vytvořte funkci, která obsahuje další dvě funkce. Hlavní funkci bude předáno číslo. Pokud číslo je sudé, tak se použije funkce, která informuje, že číslo je sudé. Pokud číslo je liché, tak se použije druhá funkce, která informuje, že číslo je liché.
   	
   </li>  
 </ul>
@@ -205,7 +205,21 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> hlavni(cislo): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> sude(): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> "Sude cislo" <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> liche(): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> "Liche cislo" <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> cislo % 2 == 0: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> sude <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> liche <br>
+		    <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;moje_funkce = hlavni(2) <br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(moje_funkce())
+
 	</p>
 </div>
 
@@ -216,7 +230,7 @@
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-  Vytvořte vlastní dekorátor a použijte operátor <b>@</b>.
+  2. Vytvořte vlastní dekorátor a použijte operátor <b>@</b>.
   	
   </li>  
 </ul>
@@ -227,7 +241,20 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">def</b> schuzka(originalni_funkce): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> obal_funkci(): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Dobry den") <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;originalni_funkce() <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Jake je vase prani?") <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> obal_funkci <br>
+		<br>
+		<b class="zavinac">@schuzka</b> <br>
+		<b class="ks">def</b> dekorator_schuzka(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Mate dens schuzku") <br>
+		<br>
+		dekorator_schuzka()
+
 	</p>
 </div>
 

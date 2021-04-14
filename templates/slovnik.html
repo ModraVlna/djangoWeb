@@ -385,7 +385,10 @@ Napište program, který vypíše na výstup všechny klíče slovníku.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">for</b> klic <b class="ks">in</b> auto.keys(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(klic)
+
 	</p>
 </div>
 
@@ -410,7 +413,10 @@ Napište program, který vypíše na výstup všechny hodnoty v slovníku.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">for</b> i <b class="ks">in</b> auto.values(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
+
 	</p>
 </div>
 
@@ -435,7 +441,10 @@ Napište program, který vypíše na výstup celý slovník.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		<b class="ks">for</b> i <b class="ks">in</b> auto.items(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) 
+
 	</p>
 </div>
 
@@ -459,7 +468,11 @@ Napište program, který přidá do slovníku produkt jogurt s cennou 15. Výsle
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		nakupni_kosik = {"chleba": 20,"cokolada": 35, "syr": 28} <br>
+		nakupni_kosik["jogurt"] = 15 <br>
+		<br>
+		<b class="ks">print</b>(nakupni_kosik)
+
 	</p>
 </div>
 
@@ -483,7 +496,11 @@ Napište program, který odstraní klíč cokolada a syr a k němu i jejich hodn
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		nakupni_kosik = {"chleba": 20,"cokolada": 35, "syr": 28} <br>
+		nakupni_kosik.pop("chleba") <br>
+		nakupni_kosik.pop("syr") <br>
+		<b class="ks">print</b>(nakupni_kosik) 
+
 	</p>
 </div>
 
@@ -508,7 +525,9 @@ Napište program, který zjistí, jestli se ve slovníku vyskytuje hodnota 2.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {"a": 1 ,"b": 2, "c": 3} <br>
+		<b class="ks">print</b>(2 <b class="ks">in</b> hodnoty.values())
+
 	</p>
 </div>
 
@@ -533,7 +552,10 @@ Napište program, který změní hodnotu Octavia na hodnotu Superb.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		auto = {"znacka": "Skoda", "model": "Octavia", "rok": 2020} <br>
+		auto["model"] = "Superb" <br>
+		<b class="ks">print</b>(auto)
+
 	</p>
 </div>
 
@@ -558,7 +580,10 @@ Napište program, který změní klíč a na hodnotu klíč s názvem prvni.
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {"a": 1,"b": 2, "c": 3} <br>
+		hodnoty["prvni"] = hodnoty.pop("a") <br>
+		<b class="ks">print</b>(hodnoty)
+
 	</p>
 </div>
 
@@ -583,7 +608,13 @@ Napište program, který sečte všechny hodnoty ve slovníku. Výsledek vypišt
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		hodnoty = {"a": 10,"b": 20, "c": 30} <br>
+		soucet = 0 <br>
+		<b class="ks">for</b> i <b class="ks">in</b> hodnoty.values(): <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;soucet += i <br>
+		<br>
+		<b class="ks">print</b>(soucet)
+
 	</p>
 </div>
 
@@ -609,11 +640,14 @@ Napište program, který vytvoří nový slovník spojením dvou uvedených slov
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		prvni = {"a": 10,"b": 20} <br> 
+		druhy = {"c": 30, "d": 40} <br>
+		<br>
+		vysledek = {**prvni, **druhy} <br>
+		<b class="ks">print</b>(vysledek)
+
 	</p>
 </div>
-
-
 
 
 <br>

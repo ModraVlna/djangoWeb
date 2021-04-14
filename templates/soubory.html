@@ -304,7 +304,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>("test.txt", "r") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(soubor.read())
+
 	</p>
 </div>
 
@@ -327,7 +329,10 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>("test.txt") <b class="ks">as</b> soubor: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;obsah = [<b class="ks">next</b>(soubor) <b class="ks">for</b> x <b class="ks">in range</b>(10)] <br>
+		<b class="ks">print</b>(obsah)
+
 	</p>
 </div>
 
@@ -350,7 +355,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>("test.txt", "a+") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;soubor.write("dalsi retezec")
+
 	</p>
 </div>
 
@@ -373,7 +380,9 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>("test.txt", "w") <b class="ks">as</b> soubor: <br>
+    		&nbsp;&nbsp;&nbsp;&nbsp;soubor.write("novy obsah")
+
 	</p>
 </div>
 
@@ -396,7 +405,11 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>("test.txt") <b class="ks">as</b> soubor: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;radek = [] <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> soubor: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radek.append(i)
+
 	</p>
 </div>
 
@@ -419,7 +432,13 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>("test.txt") <b class="ks">as</b> soubor: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;radek = [] <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> soubor: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;radek.append(i) <br>
+		    <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(<b class="ks">max</b>(radek, key=len))
+
 	</p>
 </div>
 
@@ -442,7 +461,13 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>('test.txt') <b class="ks">as</b> soubor: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;pocet = 0 <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> soubor: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pocet += 1 <br>
+		<br>
+		<b class="ks">print</b>(pocet) 
+
 	</p>
 </div>
 
@@ -465,7 +490,11 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>('test.txt') <b class="ks">as</b> soubor: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;pocet = 0 <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> soubor: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pocet += i.count("auto")
+
 	</p>
 </div>
 
@@ -488,32 +517,14 @@
 
 <div class="divBox">
 		<p class="codeText"> 	
-		Reseni
+		<b class="ks">with open</b>('test.txt', 'r') <b class="ks">as</b> prvni, open('novy.txt', 'a') <b class="ks">as</b> druhy: <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in</b> prvni: <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;druhy.write(i)
+
 	</p>
 </div>
 
-<br>
-<br>
 
-<div class="divPriklady">
-<div class="border border-light">
-<ul class="list-group">	
-  <li class="list-group-item">
-  10. Napište program, který ze souboru vezme prvních 10 slov a vypíše je na výstup.
-  	
-  	
-  </li>  
-</ul>
-</div>
-</div>
-
-<br>
-
-<div class="divBox">
-		<p class="codeText"> 	
-		Reseni
-	</p>
-</div>
 
 
 
