@@ -553,8 +553,50 @@ Napište program, který tuto množinu převede na n-tici. Výsledek vypište na
 	</p>
 </div>
 
+<br>
+<br>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<p class="divText">
+	Testovani pro kopirovani kodu
+	</p>
+
+
+<div class="divBox">
+
+<p class="codeText"> 	
+cisla = [5, 2, 4] <br>
+<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i**2) # vypise: 25 4 16
+
+</p>
+
+<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+
+</div>
+   
+
+
+<p id="p1" hidden="True">
+cisla = [5, 2, 411111] <br>
+<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+&#09;<b class="ks">print</b>(i**2) # vypise: 25 4 16
+</p>
+
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
 
 
 <br>
