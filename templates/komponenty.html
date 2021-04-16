@@ -44,9 +44,11 @@
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p1"> 	
 	127.0.0.1:8000/admin
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -58,10 +60,12 @@ Pro používaní administrátorských práv musíme vytvořit nový účet v ter
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p2"> 	
 	python manage.py migrate <br>
 	python manage.py createsuperuser
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -74,7 +78,7 @@ Pro používaní administrátorských práv musíme vytvořit nový účet v ter
 	</p>
 
 
-	<h4 class = "podKapitola">Vlastní aplikace/komponenta</h4>
+	<h4 class = "podKapitola">Vlastní komponenta/aplikace</h4>
 
 	<p class="divText">
 		V terminálu ve virtuálním prostředí, tam kde se nachází soubor <b>manage.py</b>, vytvoříme vlastní komponenty. Komponeny se budou jmenovat např. 
@@ -85,12 +89,14 @@ Pro používaní administrátorských práv musíme vytvořit nový účet v ter
 
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p3"> 	
 		python manage.py startapp zbozi <br>
 		python manage.py startapp profil <br>
 		python manage.py startapp kosik
 
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -115,7 +121,20 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
     		&nbsp;&nbsp;&nbsp;&nbsp;cena = models.TextField()
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
+<p id="p4" hidden="True">
+<b class="ks">class</b> Zbozi(models.Model): <br>
+&#09;jmeno = models.TextField() <br>
+&#09;popis = models.TextField() <br>
+&#09;cena = models.TextField()
+</p>	
+
+
+
 
 	<br>
 
@@ -125,9 +144,11 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p5"> 	
 		'zbozi',
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -139,10 +160,12 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p6"> 	
 		python manage.py makemigrations <br>
 		python manage.py migrate
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -157,11 +180,13 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p7"> 	
 		<b class="ks">from</b> .models <b class="ks">import</b> Zbozi <br>
 		admin.site.register(Zbozi)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -202,7 +227,18 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
     		&nbsp;&nbsp;&nbsp;&nbsp;popis = models.TextField(blank=True, null=True) <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;cena = models.DecimalField(decimal_places=2, max_digits=10000)
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p8')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p8" hidden="True">
+<b class="ks">class</b> Zbozi(models.Model): <br>
+&#09;jmeno = models.CharField(max_length=120) <br>
+&#09;popis = models.TextField(blank=True, null=True) <br>
+&#09;cena = models.DecimalField(decimal_places=2, max_digits=10000)
+</p>	
+
+
 
 	<br>
 
@@ -212,10 +248,12 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p9"> 	
 		python manage.py makemigrations <br>
 		python manage.py migrate
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p9')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -238,7 +276,19 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
     		&nbsp;&nbsp;&nbsp;&nbsp;skladem = models.BooleanField()
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p10')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p10" hidden="True">
+<b class="ks">class</b> Zbozi(models.Model): <br>
+&#09;jmeno = models.CharField(max_length=120) <br>
+&#09;popis = models.TextField(blank=True, null=True) <br>
+&#09;cena = models.DecimalField(decimal_places=2, max_digits=10000) <br>
+&#09;skladem = models.BooleanField()
+</p>	
+
+
 
 	<br>
 
@@ -253,9 +303,11 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p11"> 	
 		python manage.py makemigrations
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p11')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -272,9 +324,11 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p12"> 	
 		python manage.py migrate
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p12')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -282,6 +336,22 @@ Naše třída <b class="barvaPromenne">Zbozi</b>, musí dědit ze třídy <b cla
 	<p class="divText">
 	Nyní mají všechna zboží informaci o tom, zda jsou skladem.
 	</p>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
+
 
 <br>
 <br>	

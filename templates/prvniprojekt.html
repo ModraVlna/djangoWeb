@@ -40,9 +40,11 @@
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p1"> 	
 	django-admin startproject django_aplikace .
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -60,9 +62,11 @@
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p2"> 	
 	python manage.py runserver
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -168,10 +172,26 @@
 	</p>
 
 	<div class="divBlackBox">
-		<p class="codeWhiteText"> 	
+		<p class="codeWhiteText" id="p3"> 	
 		python manage.py migrate
 	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
+
 
 	<br>
 

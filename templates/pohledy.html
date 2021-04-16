@@ -52,13 +52,26 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 	<div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">from</b> django.http <b class="ks">import</b> HttpResponse <br>
-		<b class="ks">from</b> dajngo.shortcuts <b class="ks">import</b> render <br>
+		<b class="ks">from</b> django.shortcuts <b class="ks">import</b> render <br>
 		<br>
 		<b class="ks">def</b> home_view(request, *args, **kwargs): <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Toto je muj prvni nadpis&lt;/h1&gt;") # HTML kod 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
+<p id="p1" hidden="True">
+<b class="ks">from</b> django.http <b class="ks">import</b> HttpResponse <br>
+<b class="ks">from</b> django.shortcuts <b class="ks">import</b> render <br>
+<br>
+<b class="ks">def</b> home_view(request, *args, **kwargs): <br>
+&#09;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Toto je muj prvni nadpis&lt;/h1&gt;") # HTML kod 
+</p>
+
+
 
 	<br>
 
@@ -75,7 +88,15 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 		<p class="codeText"> 	
 	<b class="ks">from</b> stranky <b class="ks">import</b> views
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p2" hidden="True">
+<b class="ks">from</b> stranky <b class="ks">import</b> views
+</p>
+
+
 
 	<br>
 
@@ -88,7 +109,15 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 		<b class="ks">path</b>('', views.home_view, name='home')
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p3" hidden="True">
+<b class="ks">path</b>('', views.home_view, name='home')
+</p>
+
+
 
 	<br>
 
@@ -109,7 +138,23 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 		]
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p4" hidden="True">
+<b class="ks">from</b> django.contrib <b class="ks">import</b> admin <br>
+<b class="ks">from</b> django.urls <b class="ks">import</b> path <br>
+<br>
+<b class="ks">from</b> stranky.views <b class="ks">import</b> home_view <br>
+<br>
+urlpatterns = [ <br>
+&#09;<b class="ks">path</b>('', home_view, name='home'), <br>
+&#09;<b class="ks">path</b>('admin/', admin.site.urls) <br>
+]
+</p>
+
+
 
 	<br>
 
@@ -137,7 +182,19 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p5" hidden="True">
+<b class="ks">def</b> uzivetel_view(request, *args, **kwargs): <br>
+&#09;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Stranka pro uzivetele&lt;/h1&gt;") # HTML kod
+<br>
+<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
+&#09;<b class="ks">return</b> HttpResponse("&lt;h1&gt;Stranka o novinkach&lt;/h1&gt;") # HTML kod
+</p>
+
+
 
 	<br>
 
@@ -161,7 +218,21 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p6" hidden="True">
+<b class="ks">from</b> stranky.views <b class="ks">import</b> home_view, uzivatel_view, novinky_view <br>
+<br>
+urlpatterns = [ <br>
+&#09;<b class="ks">path</b>('', home_view, name='home'), <br>
+&#09;<b class="ks">path</b>('admin/', admin.site.urls), <br>
+&#09;<b class="ks">path</b>('uzivatel/', uzivatel_view), <br>
+&#09;<b class="ks">path</b>('novinky/', novinky_view) <br>
+]
+</p>
+
 
 	<br>
 
@@ -169,7 +240,18 @@ Zpracování je pomocí funkcí nebo tříd napsaných v Pythonu.
 	Soubor uložíme. Tyto dvě nově vytvořené stránky si můžeme zobrazit v prohlížeči. 
 	</p>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
 
 <br>
 <br>	

@@ -52,10 +52,12 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p1"> 	
 		&lt;h1>Sablona&lt;/h1> <br>
  		&lt;p>Moje prvni sablona&lt;/p>
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -69,7 +71,16 @@
 	<b class="ks">def</b> home_view(request, *args, **kwargs): <br>
     &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> render(request, "home.html", {})
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
+<p id="p2" hidden="True">
+<b class="ks">def</b> home_view(request, *args, **kwargs): <br>
+&#09;<b class="ks">return</b> render(request, "home.html", {})
+</p>
+
 
 	<br>
 
@@ -81,9 +92,11 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p3"> 	
 		DIRS: [os.path.join(BASE_DIR, templates)],
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -111,7 +124,7 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p4"> 	
 		&lt;!DOCTYPE html> <br>
 		&lt;html> <br>
 		&lt;head> <br>
@@ -123,6 +136,8 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 		&lt;/html>
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -137,11 +152,13 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p5"> 	
 		{&percnt; block content &percnt;} <br>
 		bude nahrazeno <br>
 		{&percnt; endblock &percnt;}
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -151,7 +168,7 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p6"> 	
 		
 		&lt;!DOCTYPE html> <br>
 		&lt;html> <br>
@@ -169,6 +186,8 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 	
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -181,7 +200,7 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p7"> 	
 		{&percnt; extends 'base.html' &percnt;} <br>
 		<br>
 		{&percnt; block content &percnt;} <br>
@@ -190,6 +209,8 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 		{&percnt; endblock &percnt;}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -208,7 +229,7 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p8"> 	
 	 
 		&lt;nav> <br>
   		&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul> <br>
@@ -219,6 +240,8 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
  		&lt;/nav>
 		
 		</p>
+		<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p8')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -228,10 +251,12 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p9"> 	
 		{&percnt; <b class="ks">include</b> 'navbar.html' &percnt;}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p9')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -241,7 +266,7 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p10"> 	
 		
 		&lt;!DOCTYPE html> <br>
 		&lt;html> <br>
@@ -258,6 +283,8 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 		&lt;/body> <br>
 		&lt;/html>
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p10')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -291,7 +318,18 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
     		&nbsp;&nbsp;&nbsp;&nbsp;}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p11')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p11" hidden="True">
+<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
+&#09;vyrobky = { <br>
+&#09;"muj_text": "Tady jsou novinky", <br>
+&#09;"sleva": 100 <br>
+&#09;}
+</p>
+
 
 	<br>
 
@@ -304,7 +342,7 @@ V <b>base.html</b> vytvoříme zakládání HTML strukturu.
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p12"> 	
 		<b class="ks">from</b> stranky.views <b class="ks">import</b> home_view, uzivatel_view, novinky_view
 		<br> <br>
 urlpatterns = [ <br>
@@ -315,6 +353,8 @@ urlpatterns = [ <br>
 ]
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p12')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -330,7 +370,7 @@ urlpatterns = [ <br>
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p13"> 	
 		{&percnt; extends "base.html &percnt;} <br>
 		{&percnt; block content &percnt;} <br>
 		<br>
@@ -343,6 +383,8 @@ urlpatterns = [ <br>
 		{&percnt; endblock content &percnt;}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p13')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -358,7 +400,7 @@ urlpatterns = [ <br>
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p14"> 	
 		<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
 	    	&nbsp;&nbsp;&nbsp;&nbsp;vyrobky = { <br>
         	&nbsp;&nbsp;&nbsp;&nbsp;"muj_text": "Tady jsou novinky", <br>
@@ -367,7 +409,20 @@ urlpatterns = [ <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p14')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p11" hidden="True">
+<b class="ks">def</b> novinky_view(request, *args, **kwargs): <br>
+&#09;vyrobky = { <br>
+&#09;"muj_text": "Tady jsou novinky", <br>
+&#09;"sleva": 100 <br>
+&#09;"ceny": [190, 350, 90] <br>
+&#09;}
+</p>
+
+
 
 	<br>
 
@@ -385,7 +440,7 @@ urlpatterns = [ <br>
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p15"> 	
 			
 		&lt;ul> <br>
 		{&percnt; <b class="ks">for</b> moje_cena <b class="ks">in</b> ceny &percnt;} <br>
@@ -397,6 +452,8 @@ urlpatterns = [ <br>
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p15')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -408,7 +465,7 @@ urlpatterns = [ <br>
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p16"> 	
 		
 		{&percnt; extends "base.html &percnt;} <br>
 		{&percnt; block content &percnt;} <br>
@@ -428,7 +485,23 @@ urlpatterns = [ <br>
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p16')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
+
 
 	<br>
 
