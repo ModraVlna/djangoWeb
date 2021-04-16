@@ -51,7 +51,17 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;# proved prikaz
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
+<p id="p1" hidden="True">
+<b class="ks">if</b> nejaka_podminka: <br>
+&#09;# proved prikaz
+</p>
+
+
 
 	<br>
 
@@ -68,7 +78,18 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je vetsi nez 10") # vypise: 50 je vetsi nez 10
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
+<p id="p2" hidden="True">
+cislo = 50 <br>
+<b class="ks">if</b> cislo > 10: <br>
+&#09;<b class="ks">print</b>(cislo, "je vetsi nez 10") # vypise: 50 je vetsi nez 10
+</p>
+
+
 
 	<br>
 
@@ -85,7 +106,19 @@
 		<b class="ks">else</b>:	<br>
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je mensi nez 10") # vypise: 3 je mensi nez 10
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p3" hidden="True">
+cislo = 3 <br>
+<b class="ks">if</b> cislo > 10: <br>
+&#09;<b class="ks">print</b>(cislo, "je vetsi nez 10") <br>
+<b class="ks">else</b>:	<br>
+&#09;<b class="ks">print</b>(cislo, "je mensi nez 10") # vypise: 3 je mensi nez 10
+</p>
+
+
 
 	<br>
 
@@ -105,7 +138,21 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo, "je mensi nez 10")
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p4" hidden="True">
+cislo = 10 <br>
+<b class="ks">if</b> cislo > 10: <br>
+&#09;<b class="ks">print</b>(cislo, "je vetsi nez 10") <br>
+<b class="ks">elif</b> cislo == 10: <br>
+&#09;<b class="ks">print</b>(cislo, "je rovno 10") # vypise: 10 je rovno 10 <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>(cislo, "je mensi nez 10")
+</p>
+
+
 
 	<br>
 
@@ -131,7 +178,24 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(misto, "nema znamou adresu")
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p5" hidden="True">
+misto = "Obchod" <br> <br>
+
+<b class="ks">if</b> misto == "Banka": <br>
+&#09;<b class="ks">print</b>("Banka je na adrese Nova 20") <br>
+<b class="ks">elif</b> misto == "Obchod": <br>
+&#09;<b class="ks">print</b>("Obchod je na adrese Hlavni 5") <br>
+<b class="ks">elif</b> misto == "Restaurace": <br>
+&#09;<b class="ks">print</b>("Restaurace je na adrese Nadrazni 12") <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>(misto, "nema znamou adresu")
+</p>
+
+
 
 	<br>
 
@@ -156,7 +220,15 @@
 		<p class="codeText"> 	
 		cisla = [1, 2, 3, 4, 5]
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p6" hidden="True">
+cisla = [1, 2, 3, 4, 5]
+</p>
+
+
 
 	<br>
 
@@ -171,7 +243,16 @@
 		<b class="ks">for</b> prvek <b class="ks">in</b> cisla: <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(prvek) # vypise: 1 2 3 4 5
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p7" hidden="True">
+<b class="ks">for</b> prvek <b class="ks">in</b> cisla: <br>
+&#09;<b class="ks">print</b>(prvek) # vypise: 1 2 3 4 5
+</p>
+
+
 
 	<br>
 
@@ -188,7 +269,17 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p8')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p8" hidden="True">
+retezec = "automobil" <br>
+<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+&#09;<b class="ks">print</b>(i) # vypise: a u t o m o b i l
+</p>
+
+
 
 	<br>
 
@@ -204,7 +295,17 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i**2) # vypise: 25 4 16
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p9')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p9" hidden="True">
+cisla = [5, 2, 4] <br>
+<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+&#09;<b class="ks">print</b>(i**2) # vypise: 25 4 16
+</p>
+
+
 
 	<br>
 
@@ -221,7 +322,17 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> i % 2 == 0: <br>
         		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 2 4 6
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p10')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p10" hidden="True">
+cisla = [1, 2, 3, 4, 5, 6] <br>
+<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
+&#09;<b class="ks">if</b> i % 2 == 0: <br>
+&#09;&#09;<b class="ks">print</b>(i) # vypise: 2 4 6
+</p>
+
 
 	<br>
 
@@ -241,7 +352,17 @@
 		<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
     	&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 0 1 2 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p11')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p11" hidden="True">
+hodnoty = <b class="ks">range</b>(3) <br>
+<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+&#09;<b class="ks">print</b>(i) # vypise: 0 1 2 
+</p>
+
+
 
 	<br>
 
@@ -257,7 +378,17 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: 3 4 5
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p12')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p12" hidden="True">
+hodnoty = <b class="ks">range</b>(3, 6) <br>
+<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+&#09;<b class="ks">print</b>(i) # vypise: 3 4 5
+</p>
+
+
 
 	<br>
 
@@ -275,7 +406,17 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p13')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p13" hidden="True">
+hodnoty = <b class="ks">range</b>(3, 10, 2) <br>
+<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+&#09;<b class="ks">print</b>(i) # vypise: 3 5 7 9
+</p>
+
+
 
 	<br>
 
@@ -297,7 +438,18 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(cislo) # vypise: 1 2 3 4 <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;cislo = cislo + 1 # pricte k cislu jednicku 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p14')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p14" hidden="True">
+cislo = 1 <br>
+<b class="ks">while</b> cislo < 5: <br>
+&#09;<b class="ks">print</b>(cislo) # vypise: 1 2 3 4 <br>
+&#09;cislo = cislo + 1 # pricte k cislu jednicku 
+</p>
+
+
 
 	<br>
 
@@ -320,7 +472,20 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Cyklus skoncil")  
  
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p15')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p15" hidden="True">
+cislo = 1 <br>
+<b class="ks">while</b> cislo < 5: <br>
+&#09;<b class="ks">print</b>(cislo) # vypise: 1 2 3 4 <br>
+&#09;cislo = cislo + 1 # pricte k cislu jednicku <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>("Cyklus skoncil") 
+</p>
+
+
 
 	<br>
 
@@ -346,7 +511,19 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;cislo = cislo + 1 <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">break</b>
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p16')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p16" hidden="True">
+cislo = 1 <br>
+<b class="ks">while</b> cislo < 5: <br>
+&#09;<b class="ks">print</b>(cislo) # vypise: 1 <br>
+&#09;cislo = cislo + 1 <br>
+&#09;<b class="ks">break</b>
+</p>
+
+
 
 	<br>
 
@@ -366,7 +543,20 @@
         		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">break</b>
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p17')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p17" hidden="True">
+cislo = 1 <br>
+<b class="ks">while</b> cislo < 5: <br>
+&#09;<b class="ks">print</b>(cislo) # vypise: 1 2 <br>
+&#09;cislo = cislo + 1 <br>
+&#09;<b class="ks">if</b> cislo == 3: <br>
+&#09;&#09;<b class="ks">break</b>
+</p>
+
+
 
 	<br>
 
@@ -385,7 +575,19 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p18')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p18" hidden="True">
+retezec = "automobil" <br>
+<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+&#09;<b class="ks">if</b> i == "o": <br>
+&#09;&#09;<b class="ks">continue</b> <br>
+&#09;<b class="ks">print(i)</b> # vypise: a u t m b i l
+</p>
+
+
 
 	<br>
 
@@ -401,7 +603,17 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;# vyhodi to syntaktickou chybu
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p19')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p19" hidden="True">
+retezec = "automobil" <br>
+<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+&#09;# vyhodi to syntaktickou chybu
+</p>
+
+
 
 	<br>
 
@@ -417,7 +629,17 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">pass</b> # bez chyby 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p20')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p20" hidden="True">
+retezec = "automobil" <br>
+<b class="ks">for</b> i <b class="ks">in</b> retezec: <br>
+&#09;<b class="ks">pass</b> # bez chyby
+</p>
+
+
 
 	<br>
 
@@ -446,7 +668,22 @@
 		# cervena jablko, cervena hruska, zluta jablko, zluta hruska
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p21')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p21" hidden="True">
+barva = ["cervena", "zluta"] <br>
+ovoce = ["jablko", "hruska"] <br>
+<br>
+<b class="ks">for</b> i <b class="ks">in</b> barva: <br>
+&#09;<b class="ks">for</b> j <b class="ks">in</b> ovoce: <br>
+&#09;&#09;<b class="ks">print</b>(i, j) # i obsahuje prvek z barvy, j obsahuje prvek z ovoce 
+<br>
+# cervena jablko, cervena hruska, zluta jablko, zluta hruska
+</p>
+
+
 
 	<br>
 
@@ -480,7 +717,21 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(y) <br>
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p22')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
+
+<p id="p22" hidden="True">
+x = 5 <br>
+y = 2 <br>
+<br>
+<b class="ks">if</b> x > y: <br>
+&#09;<b class="ks">print</b>(x) <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>(y) <br>
+</p>
+
+
 
 <br>
 <br>
@@ -509,7 +760,20 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("")
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p23')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
+
+<p id="p23" hidden="True">
+ret = "autobus" <br>
+<br>
+<b class="ks">if</b> <b class="ks">len</b>(ret) > 5: <br>
+&#09;<b class="ks">print</b>("Vice jak 5 znaku") <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>("")
+</p>
+
+
 
 <br>
 <br>
@@ -538,7 +802,20 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(ret)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p24')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
+
+<p id="p24" hidden="True">
+ret = "jaro" <br>
+<br>
+<b class="ks">if</b> ret.find('a') > 0: <br>
+&#09;<b class="ks">print</b>("Obsahuje a") <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>(ret)
+</p>
+
+
 
 <br>
 <br>
@@ -563,7 +840,16 @@
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p25')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
+
+<p id="p25" hidden="True">
+<b class="ks">for</b> i <b class="ks">in</b> <b class="ks">range</b>(1, 11): <br>
+&#09;<b class="ks">print</b>(i)
+</p>
+
+
 
 <br>
 <br>
@@ -586,9 +872,29 @@
 		<b class="ks">for</b> i <b class="ks">in</b> <b class="ks">range</b>(1, 11): <br>
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i**2)
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p26')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
+<p id="p26" hidden="True">
+<b class="ks">for</b> i <b class="ks">in</b> <b class="ks">range</b>(1, 11): <br>
+&#09;<b class="ks">print</b>(i**2)
+</p>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
 
 
 

@@ -38,9 +38,11 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p1"> 	
 	moje_ntice = (“auto”, 10, 3.2)
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -54,9 +56,11 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p2"> 	
 	nakup = ("chleba","cokolada","banan","jahoda","jogurt", "syr")
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -66,9 +70,11 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p3"> 	
 	<b class="ks">print</b>(nakup[0]) # vypise: chleba
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -81,12 +87,14 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p4"> 	
 		<b class="ks">print</b>(nakup[0:3]) # vypise: [chleba, cokolada, banan] <br>
 		<b class="ks">print</b>(nakup[:3]) # vypise: [chleba, cokolada, banan]
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -105,13 +113,15 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p5"> 	
 		predmet = ("matematika", "zemepis", "dejepis") <br>
 		pocet =  (20, 15, 60) <br>
 		informace = predmet + pocet <br>
 		<b class="ks">print</b>(informace) # vypise: ('matematika', 'zemepis', 'dejepis', 20, 15, 60) 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -121,12 +131,14 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p6"> 	
 		hodnota = (10, 20) <br>
 		data = hodnota * 3 <br>
 		<b class="ks">print</b>(data) # vypise: (10, 20, 10, 20, 10, 20) 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -136,11 +148,13 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p7"> 	
 		hodnota = (10, 20) <br>
 		<b class="ks">del</b> hodnota
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -150,7 +164,7 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p8"> 	
 		ovoce = ("jahoda", "pomeranc") <br>
 		muj_seznam = <b class="ks">list</b>(ovoce) <br>
 		muj_seznam.append("jablko") <br>
@@ -159,6 +173,8 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p8')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -179,7 +195,17 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p9')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p9" hidden="True">
+cisla = (5, 10, 15, 20) <br>
+<b class="ks">for</b> i <b class="ks">in</b> cisla:    <br>
+&#09;<b class="ks">print</b>(i) #vypise: 5 10 15 20
+</p>
+
+
 
 	<br>
 
@@ -198,7 +224,18 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p10')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p10" hidden="True">
+cisla = (5, 10, 15, 20) <br>
+i = 0 <br>
+<b class="ks">while</b> i < <b class="ks">len</b>(cisla): <br>
+&#09;<b class="ks">print</b>(cisla[i]) # vypise: 5 10 15 20 <br>
+&#09;i = i+1 
+</p>
+
 
 	<br>
 
@@ -250,7 +287,16 @@
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p11')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
+
+<p id="p11" hidden="True">
+hodnoty = (10, "jaro", 6.3) <br>
+<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
+&#09;<b class="ks">print</b>(i)
+</p>
+
 
 <br>
 <br>
@@ -269,11 +315,13 @@ Napište program, který vypíše na výstup počet prvků v n-tici.
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p12"> 	
 		hodnoty = (10, "jaro", 6.3) <br>
 		<b class="ks">print</b>(<b class="ks">len</b>(hodnoty))
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p12')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -293,11 +341,13 @@ Napište program, který vypíše na výstup třetí prvek v n-tici.
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p13"> 	
 		hodnoty = (10, 6, 8, 20) <br>
 		<b class="ks">print</b>(hodnoty[2])
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p13')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -317,7 +367,7 @@ Napište na výstup nejmenší a největší číslo v n-tici.
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p14"> 	
 		hodnoty = (10, 6, 8, 20, 4, 1) <br>
 		<br>
 		hodnoty = <b class="ks">list</b>(hodnoty) <br>
@@ -326,6 +376,8 @@ Napište na výstup nejmenší a největší číslo v n-tici.
 		<b class="ks">print</b>(seznam[-1])
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p14')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -348,7 +400,7 @@ Napište program, který zamění tyto dvě n-tice. Výslednou n-tici napište n
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p15"> 	
 		cisla = ("jaro", "leto",) <br>
 		retezec = (1, 2) <br>
 		<br>
@@ -359,6 +411,8 @@ Napište program, který zamění tyto dvě n-tice. Výslednou n-tici napište n
 		<b class="ks">print</b>(retezec) # ('jaro', 'leto')
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p15')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -378,7 +432,7 @@ Vytvořte dvě proměnné, kde každá proměnná bude obsahovat jedno číslo z
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p16"> 	
 		hodnoty = (1, 2) <br>
 		a = hodnoty[0] <br>
 		b = hodnoty[1] <br>
@@ -386,6 +440,8 @@ Vytvořte dvě proměnné, kde každá proměnná bude obsahovat jedno číslo z
 		<b class="ks">print</b>(b) <br>
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p16')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -406,11 +462,13 @@ Napište program, který spočítá počet výskytů čísla 5 v n-tici. Výsled
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p17"> 	
 		hodnoty = (1, 5, 6, 5, 9, 5, 2) <br>
 		<b class="ks">print</b>(hodnoty.count(5))
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p17')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -431,11 +489,13 @@ Z n-tice vyberte hodnotu 5 a napište ji na výstup.
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p18"> 	
 		hodnoty = (10, "jaro", [2, 5, 8], 6.3) <br>
 		<b class="ks">print</b>(hodnoty[2][1])
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p18')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -455,7 +515,7 @@ Napište program, přehodí prvky v n-tici od největšího po nejmenší. Výsl
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p19"> 	
 		hodnoty = (1, 2, 3, 4, 5) <br>
 		<br>
 		seznam = <b class="ks">list</b>(hodnoty) <br>
@@ -464,6 +524,8 @@ Napište program, přehodí prvky v n-tici od největšího po nejmenší. Výsl
 		<b class="ks">print</b>(<b class="ks">tuple</b>(seznam)) 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p19')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -495,8 +557,35 @@ Napište program, který zkontroluje, jestli jsou všechny hodnoty v n-tici stej
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Jine")
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p20')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
+<p id="p20" hidden="True">
+hodnoty = (1, 1, 1, 1) <br>
+<br>
+pocet = <b class="ks">len</b>(hodnoty) <br>
+cislo = hodnoty[0] <br>
+<b class="ks">if</b> hodnoty.count(cislo) == pocet: <br>
+&#09;<b class="ks">print</b>("Stejne") <br>
+<b class="ks">else</b>: <br>
+&#09;<b class="ks">print</b>("Jine")
+</p>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
 
 
 <br>

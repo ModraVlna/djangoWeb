@@ -57,7 +57,23 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
+<p id="p1" hidden="True">
+<b class="ks">def</b> treti_mocnina(n): <br>
+&#09;vysledek = [] <br>
+&#09;<b class="ks">for</b> i <b class="ks">in range</b>(n): <br>
+&#09;&#09;vysledek.append(i**3) <br>
+&#09;<b class="ks">return</b> vysledek <br>
+<br>
+<b class="ks">for</b> i <b class="ks">in</b> treti_mocnina(10): <br>
+&#09;<b class="ks">print</b>(i)
+</p>
+
+
 
 	<br>
 
@@ -75,7 +91,19 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p2" hidden="True">
+<b class="ks">def</b> treti_mocnina(n): <br>
+&#09;<b class="ks">for</b> i <b class="ks">in range</b>(n): <br>
+&#09;&#09;<b class="ks">yield</b> i**3 <br>
+<b class="ks">for</b> i <b class="ks">in</b> treti_mocnina(10): <br>
+&#09;&#09;<b class="ks">print</b>(i)
+</p>
+
+
 
 	<br>
 
@@ -111,7 +139,22 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p3" hidden="True">
+<b class="ks">def</b> fibonnaci(n): <br>
+&#09;a = 1 <br>
+&#09;b = 1 <br>
+&#09;<b class="ks">for</b> i <b class="ks">in range</b>(n): <br>
+&#09;&#09;<b class="ks">yield</b> a <br>
+&#09;&#09;a,b = b, a+b <br>
+<br>
+<b class="ks">for</b> i <b class="ks">in</b> fibonnaci(10): <br>
+&#09;<b class="ks">print</b>(i)
+</p>
+
 
 	<br>
 
@@ -141,7 +184,25 @@
 		<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 2
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p4" hidden="True">
+<b class="ks">def</b> posloupnost(): <br>
+&#09;<b class="ks">for</b> x <b class="ks">in range</b>(3): <br>
+&#09;&#09;<b class="ks">yield</b> x <br>
+<br>
+<b class="ks">for</b> i <b class="ks">in</b> posloupnost(): <br>
+&#09;<b class="ks">print</b>(i) # vypise: 0 1 2 <br>
+<br>
+g = posloupnost() <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 0 <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 1 <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # vypise: 2
+</p>
+
+
 
 	<br>
 
@@ -165,7 +226,21 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p5" hidden="True">
+retezec = "ahoj" <br>
+<br>
+g = <b class="ks">iter</b>(retezec) <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # a <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # h <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # o <br>
+<b class="ks">print</b>(<b class="ks">next</b>(g)) # j <br>
+</p>
+
+
 
 
 <br>
@@ -198,7 +273,19 @@
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(x)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
+
+<p id="p6" hidden="True">
+<b class="ks">def</b> mocnina(cislo): <br>
+&#09;<b class="ks">for</b> i <b class="ks">in range</b>(cislo): <br>
+&#09;&#09;<b class="ks">yield</b> i**2 <br>
+<br>
+<b class="ks">for</b> x <b class="ks">in</b> mocnina(10): <br>
+&#09;<b class="ks">print</b>(x)
+</p>
+
 
 <br>
 <br>
@@ -223,9 +310,32 @@
 		<b class="ks">print</b>(<b class="ks">type</b>(ret))
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
+<p id="p7" hidden="True">
+ret = "cokolada" <br>
+ret = <b class="ks">iter</b>(ret) <br>
+<b class="ks">print</b>(<b class="ks">type</b>(ret))
+</p>
 
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
 
 	<br>
 

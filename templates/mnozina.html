@@ -43,10 +43,15 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p1"> 	
 	prazdna_mnozina = <b class="ks">set</b>()
 	</p>
+
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+
 	</div>
+
 
 	<br>
 
@@ -55,9 +60,11 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p2"> 	
 	moje_mnozina = {1, "auto", 3.2}
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 
@@ -76,7 +83,16 @@
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i) # vypise: brokolice, mrkev, salat
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+<p id="p3" hidden="True">
+zelenina = {"salat", "mrkev", "brokolice"} <br>
+<b class="ks">for</b> i <b class="ks">in</b> zelenina: <br>
+&#09;<b class="ks">print</b>(i) # vypise: brokolice, mrkev, salat
+</p>
+
 
 	<br>
 
@@ -85,12 +101,15 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p4"> 	
 		zelenina = {"salat", "mrkev", "brokolice"} <br>
 		<b class="ks">print</b>("mrkev" <b class="ks">in</b> zelenina) # vypise: True
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -101,12 +120,15 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p5"> 	
 		zelenina = {"salat", "mrkev", "brokolice"} <br>
 		zelenina.add("paprika") <br>
 		<b class="ks">print</b>(zelenina) # vypise: {'paprika', 'brokolice', 'mrkev', 'salat'}
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -116,7 +138,7 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p6"> 	
 		jidlo = {"salat", "mrkev"} <br>
 		ovoce = {"jablko", "hruska"} <br>
 		jidlo.update(ovoce) <br>
@@ -124,7 +146,11 @@
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
 
 	<br>
 
@@ -134,14 +160,17 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p7"> 	
 		jidlo = {"salat", "mrkev"} <br>
 		ovoce = ["jablko", "hruska"] # seznam <br>
 		jidlo.update(ovoce) <br>
 		<b class="ks">print</b>(jidlo) # vypise: {'salat', 'hruska', 'jablko', 'mrkev'}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -159,25 +188,30 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p8"> 	
 		barvy = {"cervena", "zelena", "modra"} <br>
 		barvy.remove("zelena") <br>
 		<b class="ks">print</b>(barvy) # vypise: {'cervena', 'modra'} 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p8')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p9"> 	
 		barvy = {"cervena", "zelena", "modra"} <br>
 		barvy.discard("zelena") <br>
 		<b class="ks">print</b>(barvy) # vypise: {'cervena', 'modra'}
 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p9')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
 
 	<br>
@@ -191,13 +225,16 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p10"> 	
 		barvy = {"cervena", "zelena", "modra"} <br>
 		barvy.clear() <br>
 		<b class="ks">print</b>(barvy) # vypise: set()
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p10')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -206,12 +243,15 @@
 	</p>
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p11"> 	
 		barvy = {"cervena", "zelena", "modra"} <br>
 		<b class="ks">del</b> barvy 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p11')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -223,14 +263,17 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p12"> 	
 		prvni = {1,2,3} <br>
 		druhy = {4,5,6} <br>
 		hodnoty = prvni.union(druhy) <br>
 		<b class="ks">print</b>(hodnoty) # vypise: {1, 2, 3, 4, 5, 6}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p12')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -241,14 +284,17 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p13"> 	
 		prvni = {10, 20, 30} <br>
 		druhy = {4, 5, 20} <br>
 		prvni.intersection_update(druhy) <br>
 		<b class="ks">print</b>(prvni) # vypise: {20}
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p13')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -258,13 +304,17 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p14"> 	
 		prvni = {10, 20, 30} <br>
 		druhy = {4, 5, 20} <br>
 		hodnoty  = prvni.intersection(druhy) <br>
 		<b class="ks">print</b>(hodnoty) # vypise: {20}
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p14')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
+
 
 	<br>
 
@@ -274,14 +324,17 @@
 
 
 	<div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p15"> 	
 		prvni = {1, 2, 3} <br>
 		druhy = {4, 1, 2} <br>
 		hodnoty  = prvni.symmetric_difference(druhy) <br>
 		<b class="ks">print</b>(hodnoty) # vypise: {3, 4} 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p15')" style="margin-left: auto; display: block;" >Uložit
+</button>
 	</div>
+
 
 	<br>
 
@@ -381,13 +434,15 @@ Napište program, který na výstup vypíše jednotlivé prvky v množině.
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p16"> 	
 		hodnoty = {"cervena", "zelena", "modra"} <br>
 		<br>
 		<b class="ks">for</b> i <b class="ks">in</b> hodnoty: <br>
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p16')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -408,11 +463,13 @@ Napište program, který zjistí, jestli množina je prázdná nebo obsahuje prv
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p17"> 	
 		hodnoty = {} <br>
 		<b class="ks">print</b>(<b class="ks">len</b>(hodnoty) == 0)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p17')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -433,11 +490,13 @@ Napište program, který odstraní všechny prvky z množiny.
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p18"> 	
 		hodnoty = {"cervena", "zelena", "modra"} <br>
 		hodnoty.clear()
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p18')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -461,12 +520,14 @@ Napište program, který na výstup vypíše prvky, které jsou stejné v obou m
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p19"> 	
 		prvni = {1, 10, 12, 20} <br>
 		druhy = {5, 2, 10, 20} <br>
 		<b class="ks">print</b>(prvni.intersection(druhy))
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p19')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -490,13 +551,15 @@ Vytvořte novou množinu, která bude obsahovat všechny prvky z dvou uvedených
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p20"> 	
 		prvni = {1, 10, 12, 20} <br>
 		druhy = {5, 2, 10, 20} <br>
 		nova = prvni.union(druhy) <br>
 		<b class="ks">print</b>(nova)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p20')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -518,12 +581,14 @@ Napište program, který odstraní z množiny prvky 300 a 400. Výsledek napišt
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p21"> 	
 		hodnoty = {100, 200, 300, 400} <br>
 		hodnoty.difference_update({300, 400}) <br>
 		<b class="ks">print</b>(hodnoty)
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p21')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
 <br>
@@ -545,47 +610,19 @@ Napište program, který tuto množinu převede na n-tici. Výsledek vypište na
 <br>
 
 <div class="divBox">
-		<p class="codeText"> 	
+		<p class="codeText" id="p22"> 	
 		hodnoty = {"cervena", "zelena", "modra"} <br>
 		ntice = tuple(hodnoty) <br>
 		<b class="ks">print</b>(ntice) 
 
 	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p22')" style="margin-left: auto; display: block;" >Uložit
+</button>
 </div>
 
-<br>
-<br>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-	<p class="divText">
-	Testovani pro kopirovani kodu
-	</p>
-
-
-<div class="divBox">
-
-<p class="codeText"> 	
-cisla = [5, 2, 4] <br>
-<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
- &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>(i**2) # vypise: 25 4 16
-
-</p>
-
-<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
-</button>
-
-</div>
-   
-
-
-<p id="p1" hidden="True">
-cisla = [5, 2, 411111] <br>
-<b class="ks">for</b> i <b class="ks">in</b> cisla: <br>
-&#09;<b class="ks">print</b>(i**2) # vypise: 25 4 16
-</p>
-
 
 <script>
 function copyToClipboard(element) {
