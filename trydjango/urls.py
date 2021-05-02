@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 
-from pages.views import home_view, contact_view, about_view, social_view, chapter_view, seznam_view, ntice_view, mnozina_view, cyklus_view, slovnik_view, funkce_view, generatory_view, dekoratory_view, vyjimky_view, soubory_view, tridy_view, zaklady_view, sablony_view, pohledy_view, bootstrap_view, prvniprojekt_view, komponenty_view, instalace_view
+from pages.views import home_view, contact_view, about_view, social_view, chapter_view, seznam_view, ntice_view, mnozina_view, cyklus_view, slovnik_view, funkce_view, generatory_view, dekoratory_view, vyjimky_view, soubory_view, tridy_view, zaklady_view, sablony_view, pohledy_view, bootstrap_view, prvniprojekt_view, komponenty_view, instalace_view, nasazeni_view, knihovny_view
 from products.views import product_detail_view, product_create_view
 
 urlpatterns = [
@@ -46,7 +46,11 @@ urlpatterns = [
     path('bootstrap/', bootstrap_view),
     path('prvniprojekt/', prvniprojekt_view),
     path('komponenty/', komponenty_view),
-    path('instalace/', instalace_view)
+    path('instalace/', instalace_view),
+    path('nasazeni/', nasazeni_view),
+    path('knihovny/', knihovny_view)
+
+
 
 
 ]

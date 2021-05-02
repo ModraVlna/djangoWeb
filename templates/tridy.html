@@ -122,14 +122,14 @@ muj_pes.pozdrav() # vypise: Baf
 	<br>
 
 	<p class="divText" >
-	Celý kod vypadá následovně:
+	Celý kód vypadá následovně:
 	</p>
 
 	<div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">class</b> Pes: <br>
     		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> pozdrav(<b class="kself">self</b>): <br>
-        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Baf") <br>
+        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Baf") <br>
         <br>
 		muj_pes = Pes() <br>
 		muj_pes.pozdrav() # vypise: Baf
@@ -282,7 +282,7 @@ muj_pes = Pes(vek = 10, plemeno = "Nemecky ovcak") <br>
 
 	<p class="divText">
 	Vytvoříme třídu s názvem <b class="barvaPromenne">Clovek</b>. Tato třída bude mít atributy představující jméno, věk a informaci o tom, jestli pracuje. Zda pracuje bude rozhodnuto podle <b class="barvaFunkce">True</b> nebo <b class="barvaFunkce">False</b>.  
-	Dále bude uvnitř třídy metoda, které sdělí informace o cloveku. Na výstup vypíše jméno a věk. Pokud bude osoba pracovat, tak se vypíše, že pracuje. V opačném případě se vypíše, že nepracuje. Toto může provést pomocí <b class="barvaFunkce">if</b> a <b class="barvaFunkce">else</b>. 
+	Dále bude uvnitř třídy metoda, která sdělí informace o člověku. Na výstup vypíše jméno a věk. Pokud bude osoba pracovat, tak se vypíše, že pracuje. V opačném případě se vypíše, že nepracuje. Toto se může provést pomocí <b class="barvaFunkce">if</b> a <b class="barvaFunkce">else</b>. 
 
 	</p>
 
@@ -345,7 +345,7 @@ osoba.informace() <br>
 	<p class="divText"> 
 	Dědičnost umožnuje vytvořit třídu, která bude dědit vlastnosti a metody z jiné třídy. Třída, z které se dědí je rodič. Třída, které dědí od rodiče se nazývá potomek. <br>
 	<br>
-	Budeme mít třídu <b class="barvaPromenne">Zvire</b>. Potomkem této třídy bude třída <b class="barvaPromenne">Pes</b> a třída <b class="barvaPromenne">Kocka</b>. Abychom mohli dědit vlastnosti ze třídy <b class="barvaPromenne">Zvire</b>, musíme její název uvézt v závorce za názvem potomka. 
+	Budeme mít třídu <b class="barvaPromenne">Zvire</b>. Potomkem této třídy bude třída <b class="barvaPromenne">Pes</b> a třída <b class="barvaPromenne">Kocka</b>. Abychom mohli dědit vlastnosti ze třídy <b class="barvaPromenne">Zvire</b>, musíme její název uvést v závorce za názvem potomka. 
 	</p>
 
 	<div class="divBox">
@@ -884,7 +884,7 @@ moje_kniha = Kniha("Pyhon knina", "Gustav", 200) <br>
 <div class="border border-light">
 <ul class="list-group">	
   <li class="list-group-item">
-   1. Napište třídu <b class="barvaPromenne">Auto</b>, které neobsahuje žádné metody a atributy. 
+   1. Napište třídu <b class="barvaPromenne">Auto</b>, která neobsahuje žádné metody a atributy. 
   
 	
   </li>  
@@ -934,15 +934,15 @@ Dále bude mít dvě metody. První metoda bude vracet atribut nazev. Druhá met
 <div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">class</b> Produkt: <br>
-		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(self, nazev, cena): <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nazev = nazev <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.cena = cena <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, nazev, cena): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.nazev = nazev <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.cena = cena <br>
  			<br>
-		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dej_nazev(self): <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.nazev <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dej_nazev(<b class="kself">self</b>): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.nazev <br>
 		    <br>
-		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dej_cenu(self): <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.cena
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> dej_cenu(<b class="kself">self</b>): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.cena
 
 	</p>
 	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p25')" style="margin-left: auto; display: block;" >Uložit
@@ -988,22 +988,22 @@ Uživatel nemůže vybrat z účtu víc peněz než má k dispozici. <br>
 <div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">class</b> Ucet: <br>
-		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(self, uzivatel, penize): <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.uzivatel = uzivatel <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.penize = penize <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> <b class="kself">__init__</b>(<b class="kself">self</b>, uzivatel, penize): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.uzivatel = uzivatel <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.penize = penize <br>
 		    <br>
-		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vklad(self, mnozstvi): <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.penize += mnozstvi <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vklad(<b class="kself">self</b>, mnozstvi): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.penize += mnozstvi <br>
 		        <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.penize <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.penize <br>
 		    <br>
-		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vyber(self, mnozstvi): <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> self.penize >= mnozstvi: <br>
-		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.penize -= mnozstvi <br>
+		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">def</b> vyber(<b class="kself">self</b>, mnozstvi): <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> <b class="kself">self</b>.penize >= mnozstvi: <br>
+		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="kself">self</b>.penize -= mnozstvi <br>
 		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
 		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Nedostatek penez na uctu") <br>
 		        <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> self.penize
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">return</b> <b class="kself">self</b>.penize
 
 	</p>
 	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p26')" style="margin-left: auto; display: block;" >Uložit

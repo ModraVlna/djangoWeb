@@ -35,7 +35,7 @@
 	<b class="barvaFunkce">try</b>, <b class="barvaFunkce">except</b> a <b class="barvaFunkce">finally</b>. <br>
 	<br>
 	Uvnitř bloku <b class="barvaFunkce">try</b> bude kód, který může vyhodit chybu. <br>
-	Uvnitř bloku <b class="barvaFunkce">except</b> bude kód, který se provede, jestliže uvnitř bloku try byla chyba. <br>
+	Uvnitř bloku <b class="barvaFunkce">except</b> bude kód, který se provede, jestliže uvnitř bloku <b class="barvaFunkce">try</b> byla chyba. <br>
 	Uvnitř bloku <b class="barvaFunkce">finally</b> bude kód, který se provede bez ohledu na to, jestli došlo k nějaké chybě. <br>
 
 	</p>
@@ -140,7 +140,7 @@
 	<br>
 
 	<p class="divText" >
-	Bez použití bloku <b class="barvaFunkce">try</b> a <b class="barvaFunkce">except</b> se program zastavil a další kód již nebyl proveden. Nyní pomocí <b class="barvaFunkce">try</b>a <b class="barvaFunkce">except</b>, i přes chybu, se spouští další kód. <br>
+	Bez použití bloku <b class="barvaFunkce">try</b> a <b class="barvaFunkce">except</b> se program zastavil a další kód již nebyl proveden. Nyní pomocí <b class="barvaFunkce">try</b> a <b class="barvaFunkce">except</b>, i přes chybu, se spouští další kód. <br>
 	<br>
 	Budeme mít soubor, který otevřeme v módu pro čtení, ale zkusíme do něho zapisovat. Toto samozřejmě vyhodí chybu, konkrétně <b class="barvaFunkce">OSError</b>. Pomocí klíčového slova <b class="barvaFunkce">except</b> lze definovat, co vypsat při určitém typu chyby.  Na konci použijeme i klíčové slovo <b class="barvaFunkce">finally</b>. Uvnitř <b class="barvaFunkce">finally</b> bude kód, který bude proveden vždy.
 

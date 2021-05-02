@@ -1,0 +1,1153 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Seznam</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+
+		
+
+	<h3 class="myHeader">NumPy</h3>
+
+	<p class="divText">
+	NumPy je Python knihovna. NumPy se používá hlavně při práci s arrays (pole).
+Pomocí NumPy lze ukládat různá data např. v 1D, 2D, 3D… array.
+Největší rozdíl mezi klasickým seznam a array od NumPy je rychlost. NumPy je podstatně rychlejší než klasický seznam v Pythonu. 
+
+	</p>
+
+	<h4 class = "podKapitola">Základy v NumPy</h4>
+
+	<p class="divText">
+	Nejprve je zapotřebí importovat knihovnu uvnitř projektu. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n1"> 	
+<b class="ks">import</b> numpy <b class="ks">as</b> np		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Dále je potřeba provést instalaci v příkazovém řádku
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="n2"> 	
+		pip install numpy
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#n2')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Provedeme inicializaci array a proměnnou nazveme např. <b class="barvaPromenne">x</b> <br>
+Uvnitř kulatých závorek předáme seznam obsahující čísla. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n3"> 	
+x = <b class="ks">np</b>.array([1, 2, 3]) <br>
+<b class="ks">print</b>(x) # [1 2 3]
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n3')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Vytvoříme 2D array, kde hodnoty budou desetinná čísla. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n4"> 	
+y = <b class="ks">np</b>.array([[2.1, 4.5, 1.4], [6.2, 8.0, 2.7]]) <br>
+<b class="ks">print</b>(y) 
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n4')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Dimenzi array získáme pomocí klíčového slova <b class="ks">ndim</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n5"> 	
+x = <b class="ks">np</b>.array([1, 2, 3]) <br>
+<b class="ks">print</b>(x.ndim) # 1 <br>
+<br>
+y = <b class="ks">np</b>.array([[2.1, 4.5, 1.4], [6.2, 8.0, 2.7]]) <br>
+<b class="ks">print</b>(y.ndim) # 2
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n5')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Velikost array získaméme pomocí klíčového slova <b class="ks">shape</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n6"> 	
+x = <b class="ks">np</b>.array([1, 2, 3]) <br>
+<b class="ks">print</b>(x.shape) # (3,) <br>
+<br>
+y = <b class="ks">np</b>.array([[2.1, 4.5, 1.4], [6.2, 8.0, 2.7]])
+<b class="ks">print</b>(y.shape) # (2, 3)
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n6')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+Hodnota (2, 3) představuje 2 řádky a 3 sloupce. <br>
+<br>
+Pomocí klíčového slova <b class="ks">dtype</b>, zjistíme o jaký datový typ se jedná.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n7"> 	
+x = <b class="ks">np</b>.array([1, 2, 3]) <br>
+<b class="ks">print</b>(x.shape) # (3,) <br>
+<br>
+y = <b class="ks">np</b>.array([[2.1, 4.5, 1.4], [6.2, 8.0, 2.7]]) <br>
+<b class="ks">print</b>(y.shape) # (2, 3) 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n7')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+Pokud víme, že pracujeme pouze s několakati hodnot, můžeme si definovat datový typ sami.
+Toto provedeme pomocí klíčového slova <b class="ks">dtype</b> a zvolíme datový typ <b class="ks">int16</b>
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n8"> 	
+x = <b class="ks">np</b>.array([1, 2, 3], dtype='int16') <br>
+<b class="ks">print</b>(x.dtype) # int16
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n8')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Tímto zmenšíme velikost. Pro kontrolu porovnáme velikost použítím int16 a int32 <br>
+Klíčové slovo <b class="ks">itemsize</b> nám vrátí informaci o velikosti v Bytes.
+	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n9"> 	
+x = <b class="ks">np</b>.array([1, 2, 3], dtype='int16') <br>
+<b class="ks">print</b>(x.itemsize) # 2 <br>
+<br>
+x = <b class="ks">np</b>.array([1, 2, 3]) <br>
+<b class="ks">print</b>(x.itemsize) # 4
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n9')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	V prvním případě se jedná pouze o 2B, v druhém případě se jedná o 4B.
+	</p>
+
+
+	<h4 class = "podKapitola">Přístup k array</h4>
+
+	
+	<p class="divText">
+	NumPy umožnuje přistupovat ke konkrétním prvkům, řádkům a sloupcům. 
+	Připravíme si 2D array. Array bude obsahovat čísla a bude 2x7
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n10"> 	
+a = <b class="ks">np</b>.array([[1,2,3,4,5,6,7], [8,9,10,11,12,13,14]])		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n10')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+Abychom přistoupili ke konkrétnímu prvku, musíme úvest jeho pozici. Pozice je definována pomocí řádku a sloupce. Musíme brát na vědomí, že počítání začíná od nuly. V uvedeném array jsou tedy dva řádky a hodnota je 0, 1. <br>
+Budeme chtít přistoupit k číslu 10. Řádek bude tedy reprezentovat hodnotu 1. Sloupec bude reprezentovat hodnotu 2.
+	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n11"> 	
+a = <b class="ks">np</b>.array([[1,2,3,4,5,6,7], [8,9,10,11,12,13,14]]) <br>
+<b class="ks">print</b>(a[1, 2]) # 10
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n11')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Podobně jako u seznamu, lze použít záporné indexování. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n12"> 	
+a = <b class="ks">np</b>.array([[1,2,3,4,5,6,7], [8,9,10,11,12,13,14]]) <br>
+<b class="ks">print</b>(a[1, -5]) # 10
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n12')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+Dále budeme chtít získat celý první řádek. Uvedeme tedy hodnotu řádku a dvojtečku pro získání celého obsahu	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n13"> 	
+a = <b class="ks">np</b>.array([[1,2,3,4,5,6,7], [8,9,10,11,12,13,14]]) <br>
+<b class="ks">print</b>(a[0, :]) # [1 2 3 4 5 6 7]		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n13')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+Podobným způsobem lze získat i sloupec. Vybereme např. sloupec, kde jsou hodnoty 2, 9	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n14"> 	
+a = <b class="ks">np</b>.array([[1,2,3,4,5,6,7], [8,9,10,11,12,13,14]])
+<b class="ks">print</b>(a[:, 1]) # [2 9] <br>
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n14')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Vytvoření vlastních matic</h4>
+	
+	<p class="divText">
+	NumPy umožnuje vytvářet vlastní matice, které obsahují vybrané hodnoty a dané velikosti. 
+	<br> <br>
+Pro vytvoření matici, která obsahuje samé nuly existuje funkce <b class="ks">zeros()</b>.
+Do závorek se vloží čísla, která reprezentují velikost matice. 
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n15"> 	
+a = <b class="ks">np</b>.zeros((2,3)) <br>
+<b class="ks">print</b>(a) <br>
+# [[0. 0. 0.] <br>
+# [0. 0. 0.]] 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n15')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	
+	<p class="divText">
+	Podobně lze použít funkci <b class="ks">ones()</b>, kde budou samé jedničky. Lze také uvádět datový typ při vytváření matice. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n16"> 	
+a = <b class="ks">np</b>.ones((2,3), dtype="int32")		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n16')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Funkce <b class="ks">full()</b> se použije, když chceme konkrétní číslo, aby bylo v matici. Např. chceme, aby všude byla hodnota 22.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n17"> 	
+a = <b class="ks">np</b>.full((2,3), 22 ) <br>
+<b class="ks">print</b>(a) <br>
+# [[22 22 22] <br>
+# [22 22 22]] 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n17')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+Pokud chceme náhodná čísla v matice, tak provedeme následující	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n18"> 	
+a = <b class="ks">np</b>.random.rand(2,4) <br>
+<b class="ks">print</b>(a) <br>
+# [[0.89425603 0.47938402 0.9654024  0.62979854] <br>
+# [0.78916851 0.99788197 0.7784115  0.30762726]] 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n18')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Matematické operace</h4>
+
+
+	<p class="divText">
+	NumPy umožňuje snadně provádět matematické operace s hodnotami v array.
+Budeme mít array, obsahující hodnoty. Ke všem hodnotám přičteme číslo 3. Poté odečteme číslo 5.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n19"> 	
+a = <b class="ks">np</b>.array([1,2,3,4,5]) <br>
+<br>
+a = a + 2 <br>
+<b class="ks">print</b>(a) # [3 4 5 6 7] <br>
+<br>
+a = a - 5 <br>
+<b class="ks">print</b>(a) # [-2 -1  0  1  2]
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n19')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+Podobně lze provádět operace jako násobení a dělení. Je možné také provádět operace jako např. sčítaní dvou arrays. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n20"> 	
+a = <b class="ks">np</b>.array([1,2,3,4,5]) <br>
+b = <b class="ks">np</b>.array([1,1,1,1,1]) <br>
+a = a + b <br>
+<b class="ks">print</b>(a) # [2 3 4 5 6] 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n20')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	NumPy také umožnuje pracovat s goniometrickými funkcemi. Použijeme např. sinus a cosinus. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n21"> 	
+a = <b class="ks">np</b>.array([1,2,3]) <br>
+<b class="ks">print</b>(<b class="ks">np</b>.sin(a)) # [0.84147098 0.90929743 0.14112001] <br>
+<b class="ks">print</b>(<b class="ks">np</b>.cos(a)) # [ 0.54030231 -0.41614684 -0.9899925 ] 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n21')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+Budeme mít dvě matice a chceme tyto matice vynásobit podle pravidel násobení matic. Počet sloupců první matice se musí rovnat počtu řádku druhé matice. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n22"> 	
+a = <b class="ks">np</b>.ones((2,3)) <br>
+b = <b class="ks">np</b>.full((3,2), 2) <br>
+c = <b class="ks">np</b>.matmul(a, b) <br>
+c = <b class="ks">print</b>(c) <br>
+# [[6. 6.] <br>
+# [6. 6.]] 
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n22')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+Další operací může být např. hledání determinanta.	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n23"> 	
+x = <b class="ks">np</b>.identity(3) <br>
+y = <b class="ks">np</b>.linalg.det(x) <br>
+<b class="ks">print</b>(y)
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n23')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+Hledání nejmenší a největší hodnoty v matici je pomocí funkcí <b class="ks">min()</b> a <b class="ks">max()</b>.	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n24"> 	
+hodnoty = <b class="ks">np</b>.array([[1,2], [3,4]]) <br>
+<b class="ks">print</b>(<b class="ks">np</b>.min(hodnoty)) # 1 <br>
+<b class="ks">print</b>(<b class="ks">np</b>.max(hodnoty)) # 4
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n24')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Součet všech hodnot v matici je pomocí funkce <b class="ks">sum()</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n25"> 	
+hodnoty = <b class="ks">np</b>.array([[1,2], [3,4]]) <br>
+<b class="ks">print</b>(<b class="ks">np</b>.sum(hodnoty)) # 10
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n25')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<h4 class = "podKapitola">Změna struktury matice</h4>
+
+	<p class="divText">
+	Máme matici 2x4. Tato matice tedy obsahuje 8 hodnot. Strukturu matice můžeme změnit pomocí funkce <b class="ks">reshape()</b>. Musíme zachovat počet hodnot, nová matice tedy musí stále obsahovat 8 hodnot. Matici změníme na 4x2
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n26"> 	
+puvodni = <b class="ks">np</b>.array([[1,2,3,4],[5,6,7,8]]) # 2x4 = 8 <br>
+novy = puvodni.reshape((4,2)) # 4x2 = 8
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n26')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Načítaní data ze souboru</h4>
+
+	<p class="divText">
+	Připravíme si textový soubor, který bude obsahovat čísla. Tato čísla budou od sebe oddělená čárkou. 
+Na každém řádku bude stejný počet čísel. 
+Pro čtení dat z textu je připravena funkce <b class="ks">genfromtxt()</b>. Musíme uvést název souboru a jaký je oddělovač mezi čísly. V tomto případě je oddělovačem čárka.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="n27"> 	
+data = <b class="ks">np</b>.genfromtxt("test.txt", delimiter=',') <br>
+<b class="ks">print</b>(data)
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#n27')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<h3 class="myHeader">Pandas</h3>
+
+
+
+	<p class="divText">
+	Pandas je Python knihovna, která se používá při práci s daty. 
+Pro používání knihovny Pandas musíme v příkazovém řádku provést instalaci.
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="pa1"> 	
+		pip install pandas
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#pa1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Dále musíme provést <b class="ks">import</b> uvnitř projektu.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa2"> 	
+<b class="ks">import</b> pandas <b class="ks">as</b> pd
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa2')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Přístup k souboru</h4>
+
+	<p class="divText">
+	Připravíme si csv soubor, který bude obsahovat data. S tímto souborem budeme pracovat. Nejprve přečteme obsah souboru. Pro čtení souboru je funkce <b class="ks">read_csv()</b>.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa3"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<b class="ks">print</b>(df) # vypise obsah souboru
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa3')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Uvedený zápis vypíše na výstup obsah celého souboru. Můžeme specifikovat počet řádku, které chceme zobrazit od začátku nebo od konce. 
+Funkce <b class="ks">head</b>(x) vypíše prvních x řádků. Funkce <b class="ks">tail</b>(x) vypíše posledních x řádků.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa4"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<br>
+<b class="ks">print</b>(df.head(3)) # zacatek <br>
+<b class="ks">print</b>(df.tail(5)) # konec
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa4')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Podobným způsobem lze číst i excel soubor. Pro čtení excel souboru je připravena funkce <b class="ks">read_excel()</b>
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa5"> 	
+df_excel = <b class="ks">pd</b>.read_excel('data.xlsx') <br>
+<b class="ks">print</b>(df_excel.head(3))
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa5')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Při čtení textového souboru je potřeba uvést oddělovač. V tomto případě bude oddělovač tabulátor.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa6"> 	
+df_text = <b class="ks">pd</b>.read_csv('data.txt', delimiter='\t') <br>
+<b class="ks">print</b>(df_text.head(3))
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa6')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Práce se souborem</h4>
+
+	<p class="divText">
+	Při práci s csv souborem, máme hodnoty rozdělené do sloupců. Pomocí Pandas můžeme tyto sloupce vypsat na výstup.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa7"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<b class="ks">print</b>(df.columns)
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa7')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Obsah celého sloupce získáme, když uvedeme název daného sloupce. Název bude v uvozovkách, v hranatých závorkách. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa8"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<b class="ks">print</b>(df["Jmeno"])
+	
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa8')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+	Pomocí klíčového slova <b class="ks">iloc</b>, můžeme získat konkrétní hodnotu. Např. chceme hodnotu na desátém řádku a na první pozici.	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa9"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<b class="ks">print</b>(df.iloc[10, 1])
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa9')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+	Třídit hodnoty podle sloupců můžeme pomocí funkce <b class="ks">sort_values()</b>, kde uvedeme název sloupce.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa10"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<b class="ks">print</b>(df.sort_values("Jmeno"))
+	
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa10')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+Je také možné přidávat nové sloupce a řádky. Např. chceme přidat sloupec pro rok narození, který vypočítáme z věku. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa11"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+df["Rok_narozeni"] = 2021 - df["Vek"]
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa11')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Filtrování dat</h4>
+
+	<p class="divText">
+	Vypíšeme na výstup všechny řádky, kde věk je roven dvaceti.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa12"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+<b class="ks">print</b>(df.loc[df['Vek'] == "20"])
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa12')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+	Podobně vypíšeme osoby, které mají jméno Gustav a jejich věk je 50.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="pa13"> 	
+df = <b class="ks">pd</b>.read_csv('data.csv') <br>
+x = df.loc[(df['Jmeno'] == "Gustav") & (df['Vek'] == "50")] <br>
+<b class="ks">print</b>(x)
+	
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#pa13')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+
+	<h3 class="myHeader">Matplotlib</h3>
+
+	<p class="divText">
+	Matplotlib je vizualizační knihovna. Matplotlib se používá pro vytváření vizualizaci dat v Pythonu. 
+Abychom mohli používat Matplotlib, tak musíme provést instalaci v příkazovém řádku.
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="ma1"> 	
+pip install matplotlib		
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#ma1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+Dále musíme mít <b class="ks">import</b> v rámci projektu.	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="ma2"> 	
+from matplotlib <b class="ks">import</b> pyplot <b class="ks">as</b> plt
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#ma2')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+		<h4 class = "podKapitola">Vytvoření grafu</h4>
+
+
+	<p class="divText">
+	Připravíme si dva seznamy, kde první seznam bude reprezentovat věk zaměstnance a druhý seznam bude reprezentovat jeho plat. <br> 
+	K vytvoření grafu slouží funkce <b class="ks">plot()</b>. K funkci předámě dvě hodnoty, první bude věk, které představuje osu x a druhá hodnota bude plat, která představuje osu y.
+	Abychom graf mohli zobrazit, použijeme funkci <b class="ks">show()</b>.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="ma3"> 	
+dev_x = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45] <br>
+
+dev_y = [27496, 31200, 35752, 38320, 42200, 45200, 53316, 55928, 56317, 58748, 64736] <br>
+<br>
+<b class="ks">plt</b>.plot(dev_x, dev_y) <br>
+<b class="ks">plt</b>.show()
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#ma3')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+									<!-- OBRAZEK-->
+	<p class="divText">
+	<img src="{% static 'images/mat1.PNG' %}" width="800" height="600">
+	</p>
+  									
+
+
+
+		<h4 class = "podKapitola">Práce s grafem</h4>
+
+
+	<p class="divText">
+	Cílem je vizualizovat data a poskytnout srozumitelné informace. Z uvedeného grafu zatím nelze poznat, o jaká data se jedná. 
+Nejprve celému grafu dáme nadpis. Nadpis se napíše pomocí funkce <b class="ks">title()</b>.
+Dále napíšeme, co představuje osa x a osa y, pomocí funkce <b class="ks">xlabel()</b> a <b class="ks">ylabel()</b>.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="ma4"> 	
+<b class="ks">plt</b>.plot(dev_x, dev_y) <br>
+<br>
+<b class="ks">plt</b>.title("Platy zamestancu") <br>
+<b class="ks">plt</b>.xlabel("Vek") <br>
+<b class="ks">plt</b>.ylabel("Plat") <br>
+<br>
+<b class="ks">plt</b>.show()
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#ma4')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+Máme situaci, kdy chceme porovnat platy dvou firem v závislosti na věku. Věk necháme stejný a budeme mít další seznam, který bude obsahovat platy zaměstnanců druhé firmy. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="ma5"> 	
+vek_x = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45] <br>
+
+dev_y = [27496, 31200, 35752, 38320, 42200, 45200, 53316, 55928, 56317, 58748, 64736] <br>
+<br>
+<b class="ks">plt</b>.plot(vek_x, dev_y) <br>
+<br>
+cizi_dev_y = [15372, 18876, 23850, 27287, 33016, 35998, 40003, 44000, 51496, 55370, 63640]
+<br><br>
+<b class="ks">plt</b>.plot(vek_x, cizi_dev_y) <br>
+<br>
+<b class="ks">plt</b>.title("Platy zamestancu") <br>
+<b class="ks">plt</b>.xlabel("Vek") <br>
+<b class="ks">plt</b>.ylabel("Plat") <br>
+<br>
+<b class="ks">plt</b>.show()
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#ma5')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+
+	<p class="divText">
+	Při zobrazení grafu nelze rozeznat, která čára patří k jaké firmě. Toto vyřešíme pomocí legendy. 
+Pro použití legendy, uvnitř funkce <b class="ks">plot()</b> napíšeme název, který bude vystihovat danou čáru v grafu. <br>
+Celkově vypadá kód takto:
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="ma6"> 	
+<b class="ks">from</b> matplotlib <b class="ks">import</b> pyplot <b class="ks">as</b> plt <br>
+<br>
+vek_x = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+<br>
+dev_y = [27496, 31200, 35752, 38320, 42200,
+         45200, 53316, 55928, 56317, 58748, 64736]
+<br><br>
+<b class="ks">plt</b>.plot(vek_x, dev_y, label="Prvni firma")
+<br><br>
+cizi_dev_y = [15372, 18876, 23850, 27287, 33016,
+            35998, 40003, 44000, 51496, 55370, 63640]
+<br><br>
+<b class="ks">plt</b>.plot(vek_x, cizi_dev_y, label="Druha firma")
+<br><br>
+<b class="ks">plt</b>.title("Platy zamestancu") <br>
+<b class="ks">plt</b>.xlabel("Vek") <br>
+<b class="ks">plt</b>.ylabel("Plat") <br>
+<br>
+<b class="ks">plt</b>.legend() <br>
+<br>
+<b class="ks">plt</b>.show()
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#ma6')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	<img src="{% static 'images/mat2.PNG' %}" width="800" height="600">
+	</p>
+
+
+	<h3 class="myHeader">Seaborn</h3>
+
+	<p class="divText">
+	Seaborn je vizualizační knihovna postavěná na Matplotlib. 
+Pro používaní Seaborn je zapotřebí provést instalaci v příkazovém řádku
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="s1"> 	
+pip install seaborn
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#s1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Dále provedeme <b class="ks">import</b> potřebných knihoven.
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="s2"> 	
+<b class="ks">import</b> numpy <b class="ks">as</b> np <br>
+<b class="ks">import</b> pandas <b class="ks">as</b> pd<br>
+<b class="ks">import</b> matplotlib.pyplot <b class="ks">as</b> plt <br>
+<b class="ks">import</b> seaborn <b class="ks">as</b> sns
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#s2')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Práce se Seaborn</h4>
+
+
+	<p class="divText">
+	Protože budeme pracovat s daty, tak použijeme předem připravená data, která jsou k dispozici od Seaborn. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="s3"> 	
+crash_df = <b class="ks">sns</b>.load_dataset('car_crashes') <br>
+<b class="ks">print</b>(crash_df)
+	
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#s3')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Pro zobrazování dat ve formě grafu je k dispozici funkce <b class="ks">displot()</b>. 	
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="s4"> 	
+crash_df = <b class="ks">sns</b>.load_dataset('car_crashes') <br>
+<b class="ks">sns</b>.displot(crash_df['not_distracted']) <br>
+<b class="ks">plt</b>.show()
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#s4')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	<img src="{% static 'images/sea1.PNG' %}" width="800" height="600">
+	</p>
+
+
+	<p class="divText">
+	Joint plot slouží pro vykreslení dat ze dvou proměnných. Při vykreslování grafu existuje klíčové slovo 
+<b class="ks">kind</b>. Pomocí <b class="ks">kind</b> lze určit jaký typ grafu se vykreslí. 
+<br>
+K dispozici jsou grafy typu: scatter, kde, hist, hex, reg a resid, <br>
+Z našich dat zvolíme dvě proměnné a zvolíme graf typu hex, což vykreslí data ve formě hexagonů.
+
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="s5"> 	
+crash_df = <b class="ks">sns</b>.load_dataset('car_crashes') <br>
+<b class="ks">sns</b>.jointplot(x='speeding', y='alcohol', data=crash_df, kind ='hex') <br>
+<b class="ks">plt</b>.show()
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#s5')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Pair plot zobrazí vztah mezi celými data v závislosti na číselných hodnotách. 
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="s6"> 	
+crash_df = <b class="ks">sns</b>.load_dataset('car_crashes') <br>
+<b class="ks">sns</b>.pairplot(crash_df) <br>
+<b class="ks">plt</b>.show()
+		
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#s6')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
+
+
+<br>
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

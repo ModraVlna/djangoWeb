@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instalace</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+
+<style type="text/css">
+	
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+	<h3 class="myHeader">Nasazení aplikace</h3>
+
+
+
+
+	<p class="divText">
+	Aby vytvořená aplikace byla dostupná světu musí se zvolit verzovací systém a web hostingová služba.
+ 
+	</p>
+
+
+	<h4 class = "podKapitola">Git</h4>
+
+
+	<p class="divText">
+	Pomocí Gitu lze ukládat kód v průběhu vývoje. Výhodou je, že kód je zaholován a lze si zobrazovat starší verze aplikace. <br>
+V této ukázce bude vybrán Github. Registrace a používaní Github je zdarma. <br>
+Po založení účtu na Githubu je potřeba provést určitá nastavení na svém zařízení. 
+<br> <br>
+Otevřeme terminál a zapneme virtuální prostředí pro náš projekt. Uvnitř adresáře, kde máme zdrojové kódy provedeme postupně 5 příkazů.
+ 
+	</p>
+
+
+
+
+<div class="divBlackBox">
+<p class="codeWhiteText" id="p1"> 	
+&#103;&#105;&#116;&#32;&#99;&#111;&#110;&#102;&#105;&#103;&#32;&#45;&#45;&#103;&#108;&#111;&#98;&#97;&#108;&#32;&#117;&#115;&#101;&#114;&#46;&#110;&#97;&#109;&#101;&#32;&#34;&#86;&#97;&#115;&#101;&#32;&#106;&#109;&#101;&#110;&#111;&#34;&#10;&#10; 
+<br>
+&#103;&#105;&#116;&#32;&#99;&#111;&#110;&#102;&#105;&#103;&#32;&#45;&#45;&#103;&#108;&#111;&#98;&#97;&#108;&#32;&#117;&#115;&#101;&#114;&#46;&#101;&#109;&#97;&#105;&#108;&#32;&#34;&#109;&#117;&#106;&#64;&#101;&#109;&#97;&#105;&#108;&#46;&#99;&#122;&#34;
+<br>
+&#103;&#105;&#116;&#32;&#99;&#111;&#110;&#102;&#105;&#103;&#32;&#45;&#45;&#103;&#108;&#111;&#98;&#97;&#108;&#32;&#112;&#117;&#115;&#104;&#46;&#100;&#101;&#102;&#97;&#117;&#108;&#116;&#32;&#109;&#97;&#116;&#99;&#104;&#105;&#110;&#103;
+<br>
+&#103;&#105;&#116;&#32;&#99;&#111;&#110;&#102;&#105;&#103;&#32;&#45;&#45;&#103;&#108;&#111;&#98;&#97;&#108;&#32;&#97;&#108;&#105;&#97;&#115;&#46;&#99;&#111;&#32;&#99;&#104;&#101;&#99;&#107;&#111;&#117;&#116;
+<br>
+&#103;&#105;&#116;&#32;&#105;&#110;&#105;&#116;
+
+</p>
+<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
+</button>
+</div>
+
+	<br>
+
+	<p class="divText">
+	Nyní máme na svém zařízení repositář, kam budeme vkládat náš kód, který chceme mít uložený na Github. <br>
+První příkaz přidá všechny soubory do našeho lokálního repositáře. 
+
+	</p>
+
+<div class="divBlackBox">
+<p class="codeWhiteText" id="p2"> 	
+&#103;&#105;&#116;&#104;&#117;&#98;&#32;&#97;&#100;&#100;&#32;&#46;
+
+</p>
+<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
+</button>
+</div>
+
+	<br>
+
+	<p class="divText">
+	Kód jsme přidali do repositáře a pomocí následujícího příkazu ho uložíme. 
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p3"> 	
+&#103;&#105;&#116;&#32;&#99;&#111;&#109;&#109;&#105;&#116;&#32;&#45;&#97;&#109;&#32;&#39;&#80;&#114;&#118;&#110;&#105;&#32;&#99;&#111;&#109;&#109;&#105;&#116;&#39;
+
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p3')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+		Zpráva v uvozovkách je informace o tom, jaké změny jsme provedli. 
+Máme připravený kód, který bude vidět na Github po provedení dalších nastavení. 
+<br> <br>
+V novém terminále vytvoříme adresář, kam budeme ukládat SSH klíč pro zajištění bezpečné komunikace. 
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p4"> 	
+&#109;&#107;&#100;&#105;&#114;&#32;&#126;&#47;&#46;&#115;&#115;&#104;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p4')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText" >
+	Vytvoříme SSH klíč.
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p5"> 	
+&#115;&#115;&#104;&#45;&#107;&#101;&#121;&#103;&#101;&#110;&#46;&#101;&#120;&#101;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p5')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Vytvoří se public a private RSA key pair. 
+Nás bude zajímat public klíč. Tento klíč musíme vložit do aplikace Github. Zobrazíme si tento klíč a zkopírujeme ho.
+
+
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p6"> 	
+&#99;&#97;&#116;&#32;&#105;&#100;&#95;&#114;&#115;&#97;&#46;&#112;&#117;&#98;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p6')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Na Github v položce nastavení, v sekci SSH a GPG klíče přidáme nový SSH klíč. Do položky vložíme daný klíč.  <br>
+Na Github vytvoříme repositář, který libovolně pojmenujeme. <br> 
+Zobrazí se nám, že máme vložit dva příkazy. Tyto příkazy zkopírujeme z Github. <br>
+Otevřeme nás terminál a zapneme virtuální prostředí. <br>
+Příkazy mají tuto strukturu:
+ 
+ 
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p7"> 	
+&#103;&#105;&#116;&#32;&#114;&#101;&#109;&#111;&#116;&#101;&#32;&#97;&#100;&#100;&#32;&#111;&#114;&#105;&#103;&#105;&#110;&#32;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;&#58;&#110;&#97;&#122;&#101;&#118;&#47;&#110;&#97;&#122;&#101;&#118;&#46;&#103;&#105;&#116;
+<br>
+&#103;&#105;&#116;&#32;&#112;&#117;&#115;&#104;&#32;&#45;&#117;&#32;&#111;&#114;&#105;&#103;&#105;&#110;&#32;&#109;&#97;&#115;&#116;&#101;&#114;
+
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p7')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Poté v Github uvidíme repositář, kde je náš zdrojový kód. <br>	
+Když provedeme nějaké změny v aplikace, tak použijeme pouze tři příkazy pro nahrání na Github.
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p8"> 	
+&#103;&#105;&#116;&#32;&#97;&#100;&#100;&#32;&#46; 
+<br>
+&#103;&#105;&#116;&#32;&#99;&#111;&#109;&#109;&#105;&#116;&#32;&#45;&#97;&#109;&#32;&#39;&#80;&#114;&#105;&#100;&#97;&#110;&#97;&#32;&#115;&#97;&#98;&#108;&#111;&#110;&#97;&#39;
+<br>
+&#103;&#105;&#116;&#32;&#112;&#117;&#115;&#104;
+
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p8')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<h4 class = "podKapitola">Heroku</h4>
+
+
+
+	<p class="divText">
+	Aplikace bude nasazena pomocí Heroku. Na Heroku vytvoříme zdarma účet a stáhneme program, který se nainstaluje. <br>
+Zavřeme na našem zařízení terminál s virtuálním prostředí a otevřeme nový terminál, kde spustíme virtuální prostředí. <br> 
+Pro kontrolu, že je Heroku nainstalován na našem zařízení, provedeme příkaz, který vypíše danou verzi. 
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p9"> 	
+&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#45;&#45;&#118;&#101;&#114;&#115;&#105;&#111;&#110;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p9')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Pro práci Heroku a Djnago budeme potřebovat stáhnout balíčky.
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p10"> 	
+&#112;&#105;&#112;&#32;&#105;&#110;&#115;&#116;&#97;&#108;&#108;&#32;&#103;&#117;&#110;&#105;&#99;&#111;&#114;&#110;
+<br>
+&#112;&#105;&#112;&#32;&#105;&#110;&#115;&#116;&#97;&#108;&#108;&#32;&#100;&#106;&#97;&#110;&#103;&#111;&#45;&#104;&#101;&#114;&#111;&#107;&#117;
+<br>
+&#112;&#105;&#112;&#32;&#105;&#110;&#115;&#116;&#97;&#108;&#108;&#32;&#112;&#121;&#116;&#104;&#111;&#110;&#45;&#100;&#101;&#99;&#111;&#117;&#112;&#108;&#101;
+
+
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p10')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText"> 
+	Vytvoříme soubor s názvem Procfile, kam napíšeme o jakou aplikaci se jedná.
+	</p>
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p11"> 	
+&#116;&#111;&#117;&#99;&#104;&#32;&#80;&#114;&#111;&#99;&#102;&#105;&#108;&#101;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p11')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<div class="divBox">
+		<p class="codeText" id="p12"> 	
+&#119;&#101;&#98;&#58;&#32;&#103;&#117;&#110;&#105;&#99;&#111;&#114;&#110;&#32;&#110;&#97;&#122;&#101;&#118;&#95;&#97;&#112;&#108;&#105;&#107;&#97;&#99;&#101;&#46;&#119;&#115;&#103;&#105;
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p12')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+	<br>
+
+	<p class="divText">
+	Dále vytvoříme textový soubor, do kterého napíšeme verze balíčků.
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p14"> 	
+		&#112;&#105;&#112;&#32;&#102;&#114;&#101;&#101;&#122;&#101;&#32;&#62;&#32;&#114;&#101;&#113;&#117;&#105;&#114;&#101;&#109;&#101;&#110;&#116;&#115;&#46;&#116;&#120;&#116;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p14')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+	
+	<p class="divText">
+	Nyní otevřeme soubor settings.py, ve kterém provedeme změny.
+	</p>
+
+	<div class="divBox">
+		<p class="codeText" id="p15"> 	
+&#105;&#109;&#112;&#111;&#114;&#116;&#32;&#111;&#115;
+<br>
+&#105;&#109;&#112;&#111;&#114;&#116;&#32;&#100;&#106;&#97;&#110;&#103;&#111;&#95;&#104;&#101;&#114;&#111;&#107;&#117;
+<br>
+&#105;&#109;&#112;&#111;&#114;&#116;&#32;&#100;&#106;&#95;&#100;&#97;&#116;&#97;&#98;&#97;&#115;&#101;&#95;&#117;&#114;&#108;
+<br>
+&#102;&#114;&#111;&#109;&#32;&#100;&#101;&#99;&#111;&#117;&#112;&#108;&#101;&#32;&#105;&#109;&#112;&#111;&#114;&#116;&#32;&#99;&#111;&#110;&#102;&#105;&#103;
+
+
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p15')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+
+	<p class="divText">
+	Uvnitř MIDDLEWARE přidáme
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="p16"> 	
+&#39;&#119;&#104;&#105;&#116;&#101;&#110;&#111;&#105;&#115;&#101;&#46;&#109;&#105;&#100;&#100;&#108;&#101;&#119;&#97;&#114;&#101;&#46;&#87;&#104;&#105;&#116;&#101;&#78;&#111;&#105;&#115;&#101;&#77;&#105;&#100;&#100;&#108;&#101;&#119;&#97;&#114;&#101;&#39;&#44;
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p16')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Na konci settings.py přidáme
+	</p>
+
+
+	<div class="divBox">
+		<p class="codeText" id="p17"> 	
+&#83;&#84;&#65;&#84;&#73;&#67;&#70;&#73;&#76;&#69;&#83;&#95;&#83;&#84;&#79;&#82;&#65;&#71;&#69;&#32;&#61;&#32;&#39;&#119;&#104;&#105;&#116;&#101;&#110;&#111;&#105;&#115;&#101;&#46;&#115;&#116;&#111;&#114;&#97;&#103;&#101;&#46;&#67;&#111;&#109;&#112;&#114;&#101;&#115;&#115;&#101;&#100;&#77;&#97;&#110;&#105;&#102;&#101;&#115;&#116;&#83;&#116;&#97;&#116;&#105;&#99;&#70;&#105;&#108;&#101;&#115;&#83;&#116;&#111;&#114;&#97;&#103;&#101;&#39;
+<br>
+&#100;&#106;&#97;&#110;&#103;&#111;&#95;&#104;&#101;&#114;&#111;&#107;&#117;&#40;&#115;&#101;&#116;&#116;&#105;&#110;&#103;&#115;&#40;&#108;&#111;&#99;&#97;&#108;&#115;&#41;&#41;
+
+	</p>
+	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p17')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Tyto změny musíme uložit a nahrát na Github. <br> 
+Po nahraní se v terminálu přihlásíme do Heroku.
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p18"> 	
+&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#108;&#111;&#103;&#105;&#110;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p18')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+Přidáme SSH klíče
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p19"> 	
+&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#107;&#101;&#121;&#115;&#58;&#97;&#100;&#100;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p19')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+	<br>
+
+	<p class="divText">
+	Vytvoříme Heroku aplikaci
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p20"> 	
+&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#99;&#114;&#101;&#97;&#116;&#101;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p20')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+	<br>
+
+	<p class="divText">
+	Přejmenujeme si název adresy např na
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p21"> 	
+&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#114;&#101;&#110;&#97;&#109;&#101;&#32;&#112;&#114;&#118;&#110;&#105;&#97;&#112;&#108;&#105;&#107;&#97;&#99;&#101;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p21')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+	<br>
+
+	<p class="divText">
+	Pokud název adresa již existuje, musíte zvolit jiný název. <br>
+Nyní je adresa aplikace prvniaplikace.herokuapp.com
+<br> <br>
+V terminálu provedeme příkaz
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p22"> 	
+&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#99;&#111;&#110;&#102;&#105;&#103;&#58;&#115;&#101;&#116;&#32;&#68;&#73;&#83;&#65;&#66;&#76;&#69;&#95;&#67;&#79;&#76;&#76;&#69;&#67;&#84;&#83;&#84;&#65;&#84;&#73;&#67;&#61;&#49;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p22')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+
+
+	<br>
+
+	<p class="divText">
+	Nahrajeme na Heroku náš kód z Github
+
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p23"> 	
+&#103;&#105;&#116;&#32;&#112;&#117;&#115;&#104;&#32;&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#109;&#97;&#115;&#116;&#101;&#114;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p23')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+
+	<br>
+
+	<p class="divText">
+Kdyby příkaz nefungoval, lze použít
+	</p>
+
+
+	<div class="divBlackBox">
+		<p class="codeWhiteText" id="p24"> 	
+&#103;&#105;&#116;&#32;&#112;&#117;&#115;&#104;&#32;&#104;&#101;&#114;&#111;&#107;&#117;&#32;&#109;&#97;&#105;&#110;
+	</p>
+	<button class="blackButtonCopy buttonBlack" onclick="copyToClipboard('#p24')" style="margin-left: auto; display: block;" >Uložit
+</button>
+	</div>
+
+
+
+	<br>
+
+	<p class="divText">
+	Poté je webová aplikace dostupná světu.
+
+	</p>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<textarea>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+</script>
+
+
+	<br>
+
+<br>	
+<br>
+
+
+</body>
+</html>
+	
+
+	
+
+
+{% endblock %}

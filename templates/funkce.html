@@ -32,14 +32,14 @@
 	
 	<p class="divText" >
 	Funkce je blok kódu, která slouží pro vykonání nějaké činnosti. Funkce umožňuje opakovaně použít blok kódu, aniž bychom ho museli pokaždé znovu opisovat. 
-	Funkce se skládá z hlavičky a z těla. Hlavička funkce obsahuje na začátku klíčové slovo def, poté následuje název funkce, závorky a dvojtečka. V závorce mohou a nemusí být parametry.
-	Za hlavičkou následuje tělo. Tělo obsahuje příkazy, které budou postupně vykonány pro zavolání funkce. Každý nový řádek je odsazen tabulátorem. 
+	Funkce se skládá z hlavičky a z těla. Hlavička funkce obsahuje na začátku klíčové slovo <b class="ks">def</b>, poté následuje název funkce, závorky a dvojtečka. V závorce mohou a nemusí být parametry.
+	Za hlavičkou následuje tělo. Tělo obsahuje příkazy, které budou postupně vykonány po zavolání funkce. Každý nový řádek je odsazen tabulátorem. 
 	</p>
 
 	<div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">def</b> moje_funkce():  # hlavicka <br>
-    		&nbsp;&nbsp;&nbsp;&nbsp;print("Ahoj") # telo
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Ahoj") # telo
 	</p>
 	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p1')" style="margin-left: auto; display: block;" >Uložit
 </button>
@@ -60,13 +60,13 @@
 
 
 	<p class="divText">
-	Bude funkce s názvem <b class="barvaPromenne">pozdrav</b>, které vypíše na výstup nějaký pozdrav. 
+	Bude funkce s názvem <b class="barvaPromenne">pozdrav</b>, která vypíše na výstup nějaký pozdrav. 
 	</p>
 
 	<div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">def</b> pozdrav():  # hlavicka <br>
-    		&nbsp;&nbsp;&nbsp;&nbsp;print("Ahoj")   # telo
+    		&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Ahoj")   # telo
 
 	</p>
 	<button class="buttonCopy buttonBlue" onclick="copyToClipboard('#p2')" style="margin-left: auto; display: block;" >Uložit
@@ -89,7 +89,7 @@
 	<div class="divBox">
 		<p class="codeText"> 	
 		<b class="ks">def</b> pozdrav(): <br>
-	    	&nbsp;&nbsp;&nbsp;&nbsp;print("Ahoj") <br>
+	    	&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Ahoj") <br>
 	    	<br>
 		pozdrav() # vypise: Ahoj
 
@@ -153,7 +153,7 @@ pozdrav() # vypise: Ahoj
 &#09;<b class="ks">print</b>("Ahoj " + jmeno)
 </p>
 
-
+<br>
 
 
 
@@ -188,7 +188,7 @@ pozdrav("Gustav") # vypise: Ahoj Gustav
 	Funkce může mít více parametrů. Při volání funkce a zadávání argumentů je potřeba, aby pořadí bylo zachováno. Počet parametrů a argumentů se musí vždy u dané funkci rovnat.
 	<br>
 	<br>
-	Vytvoříme funkci, která bude sčítat dvě hodnoty. Funkce bude mít dva parametry, které představují dvě hodnoty. Funkce výsledek vypíše na výstup.
+	Vytvoříme funkci, která bude sčítat dvě hodnoty. Funkce bude mít dva parametry, které představují dvě hodnoty. Funkce vypíše na výstup výsledek.
 
 	</p>
 
@@ -221,7 +221,7 @@ secti(6, 10) # vypise: 16
 
 
 	<p class="divText">
-	Příkaz <b class="barvaFunkce">return</b> se používá v rámci funkce pro vrácení nějaké hodnoty. Máme příklad, kde sčítáme dvě hodnoty. Výsledek sečtení můžeme vypsat na výstup nebo vrátit. Výpis hodnoty na výstup se dá provést pomocí <b class="barvaFunkce">print()</b>. Vrácení hodnoty je pomocí příkazu return. 
+	Příkaz <b class="barvaFunkce">return</b> se používá v rámci funkce pro vrácení nějaké hodnoty. Máme příklad, kde sčítáme dvě hodnoty. Výsledek sečtení můžeme vypsat na výstup nebo vrátit. Výpis hodnoty na výstup se dá provést pomocí <b class="barvaFunkce">print()</b>. Vrácení hodnoty je pomocí příkazu <b class="ks">return</b>. 
 	Příkaz <b class="barvaFunkce">return</b> se napíše uvnitř těla funkce před hodnotou, kterou chceme vypsat.
 
 	</p>
@@ -252,14 +252,15 @@ secti(6, 10)
 
 	<p class="divText">
 	Častá je otázka, jaký je rozdíl mezi použitím <b class="barvaFunkce">print()</b> 
-	a <b class="barvaFunkce">return</b>. Return umožňuje uložit výsledek jako proměnnou a dále s ní pracovat. <br>
+	a <b class="barvaFunkce">return</b>. <br>
+	<b class="ks">return</b> umožňuje uložit výsledek jako proměnnou a dále s ní pracovat. <br>
 	<br>
 
 	Ukážeme si to na příkladě. Vytvoříme dvě funkce, kde porovnáme použití 
 	<b class="barvaFunkce">print()</b> a <b class="barvaFunkce">return</b>.
 	První funkce se bude jmenovat 
-	<b class="barvaPromenne">return_vysledek()</b>. Druhá funkce se bude jmenovat <b class="barvaPromenne">print_vysledek()</b>
-	Funkce sečte dvě hodnoty. Zavoláme tuto funkci. Výsledek sečtení přiřadíme k proměnné s názvem vysledek a přičteme hodnotu 100. <br>
+	<b class="barvaPromenne">return_vysledek()</b>. Druhá funkce se bude jmenovat <b class="barvaPromenne">print_vysledek()</b>.
+	Funkce sečte dvě hodnoty. Zavoláme tuto funkci. Výsledek sečtení přiřadíme k proměnné s názvem <b class="barvaPromenne">vysledek</b> a přičteme hodnotu 100. <br>
 	<br>
 	První funkce tedy vrací součet dvou hodnot a přiřadí je k proměnné a přičteme ještě hodnotu 100.
 
@@ -322,7 +323,7 @@ vysledek2 = print_vysledek(6, 10) + 100 # Vyhodi chybu!
 	<br>
 
 	<p class="divText">
-	Použití druhé funkce vyhodí chybu. Protože proměnná <b class="barvaPromenne">vysledek2</b> je typu <b class="barvaFunkce">NoneType</b>. Print nevrací žádnou hodnotu, která by se dala ukládat. Z tohoto důvodu nelze k <b class="barvaPromenne">vysledek2</b> přičítat další hodnoty.
+	Použití druhé funkce vyhodí chybu. Protože proměnná <b class="barvaPromenne">vysledek2</b> je typu <b class="barvaFunkce">NoneType</b>. <b class="ks">print()</b> nevrací žádnou hodnotu, která by se dala ukládat. Z tohoto důvodu nelze k <b class="barvaPromenne">vysledek2</b> přičítat další hodnoty.
 	</p>
 
 	<h4 class = "podKapitola">Práce s funkcí</h4>
@@ -390,7 +391,7 @@ vysledek2 = print_vysledek(6, 10) + 100 # Vyhodi chybu!
 
 
 	<p class="divText"> 
-	Máme seznam obsahující čísla. Pomocí funkce chceme zjistit, jestli se v seznamu vyskytuje alespoň jedno sudé číslo. Pokud ano, tak se vrátí hodnota True. 
+	Máme seznam obsahující čísla. Pomocí funkce chceme zjistit, jestli se v seznamu vyskytuje alespoň jedno sudé číslo. Pokud ano, tak se vrátí hodnota <b class="ks">True</b>. 
 	Uvnitř funkce musí být cyklus, který projde všechny prvky v seznamu. Pokud číslo není sudé, tak bude cyklus pokračovat dál na další prvek. 
 
 	</p>
@@ -771,7 +772,7 @@ sude_v_seznamu([2, 3, 5]) # True <br>
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">if</b> cislo < 0: <br>
 		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("Zaporne cislo") <br>
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">elif</b> cislo == 0: <br>
-		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("1") <br>
+		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">print</b>("1") <br>
 		    &nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">else</b>: <br>
 		        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="ks">for</b> i <b class="ks">in range</b>(1, cislo + 1): <br>
 		            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vysledek = vysledek * i <br>

@@ -87,8 +87,11 @@ def komponenty_view(request, *args, **kwargs):
 def instalace_view(request, *args, **kwargs):
 	return render(request, "instalace.html", {}) #template
 
+def nasazeni_view(request, *args, **kwargs):
+	return render(request, "nasazeni.html", {}) #template
 
-
+def knihovny_view(request, *args, **kwargs):
+	return render(request, "knihovny.html", {}) #template
 
 
 
